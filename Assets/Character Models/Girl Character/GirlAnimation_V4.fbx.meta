@@ -1,0 +1,1337 @@
+fileFormatVersion: 2
+guid: 6a6417f390595ac4da33586c2403aff9
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: girlAnimate_v7:Character1_Ctrl_ChestEndEffector
+    100002: girlAnimate_v7:Character1_Ctrl_ChestOriginEffector
+    100004: girlAnimate_v7:Character1_Ctrl_Head
+    100006: girlAnimate_v7:Character1_Ctrl_HeadEffector
+    100008: girlAnimate_v7:Character1_Ctrl_Hips
+    100010: girlAnimate_v7:Character1_Ctrl_HipsEffector
+    100012: girlAnimate_v7:Character1_Ctrl_LeftAnkleEffector
+    100014: girlAnimate_v7:Character1_Ctrl_LeftArm
+    100016: girlAnimate_v7:Character1_Ctrl_LeftElbowEffector
+    100018: girlAnimate_v7:Character1_Ctrl_LeftFoot
+    100020: girlAnimate_v7:Character1_Ctrl_LeftFootEffector
+    100022: girlAnimate_v7:Character1_Ctrl_LeftForeArm
+    100024: girlAnimate_v7:Character1_Ctrl_LeftHand
+    100026: girlAnimate_v7:Character1_Ctrl_LeftHandMiddle1
+    100028: girlAnimate_v7:Character1_Ctrl_LeftHandMiddle2
+    100030: girlAnimate_v7:Character1_Ctrl_LeftHandMiddle3
+    100032: girlAnimate_v7:Character1_Ctrl_LeftHandMiddle4
+    100034: girlAnimate_v7:Character1_Ctrl_LeftHandMiddleEffector
+    100036: girlAnimate_v7:Character1_Ctrl_LeftHandThumb1
+    100038: girlAnimate_v7:Character1_Ctrl_LeftHandThumb2
+    100040: girlAnimate_v7:Character1_Ctrl_LeftHandThumb3
+    100042: girlAnimate_v7:Character1_Ctrl_LeftHandThumb4
+    100044: girlAnimate_v7:Character1_Ctrl_LeftHandThumbEffector
+    100046: girlAnimate_v7:Character1_Ctrl_LeftHipEffector
+    100048: girlAnimate_v7:Character1_Ctrl_LeftKneeEffector
+    100050: girlAnimate_v7:Character1_Ctrl_LeftLeg
+    100052: girlAnimate_v7:Character1_Ctrl_LeftShoulder
+    100054: girlAnimate_v7:Character1_Ctrl_LeftShoulderEffector
+    100056: girlAnimate_v7:Character1_Ctrl_LeftToeBase
+    100058: girlAnimate_v7:Character1_Ctrl_LeftUpLeg
+    100060: girlAnimate_v7:Character1_Ctrl_LeftWristEffector
+    100062: girlAnimate_v7:Character1_Ctrl_Neck
+    100064: girlAnimate_v7:Character1_Ctrl_RightAnkleEffector
+    100066: girlAnimate_v7:Character1_Ctrl_RightArm
+    100068: girlAnimate_v7:Character1_Ctrl_RightElbowEffector
+    100070: girlAnimate_v7:Character1_Ctrl_RightFoot
+    100072: girlAnimate_v7:Character1_Ctrl_RightFootEffector
+    100074: girlAnimate_v7:Character1_Ctrl_RightForeArm
+    100076: girlAnimate_v7:Character1_Ctrl_RightHand
+    100078: girlAnimate_v7:Character1_Ctrl_RightHandMiddle1
+    100080: girlAnimate_v7:Character1_Ctrl_RightHandMiddle2
+    100082: girlAnimate_v7:Character1_Ctrl_RightHandMiddle3
+    100084: girlAnimate_v7:Character1_Ctrl_RightHandMiddle4
+    100086: girlAnimate_v7:Character1_Ctrl_RightHandMiddleEffector
+    100088: girlAnimate_v7:Character1_Ctrl_RightHandThumb1
+    100090: girlAnimate_v7:Character1_Ctrl_RightHandThumb2
+    100092: girlAnimate_v7:Character1_Ctrl_RightHandThumb3
+    100094: girlAnimate_v7:Character1_Ctrl_RightHandThumb4
+    100096: girlAnimate_v7:Character1_Ctrl_RightHandThumbEffector
+    100098: girlAnimate_v7:Character1_Ctrl_RightHipEffector
+    100100: girlAnimate_v7:Character1_Ctrl_RightKneeEffector
+    100102: girlAnimate_v7:Character1_Ctrl_RightLeg
+    100104: girlAnimate_v7:Character1_Ctrl_RightShoulder
+    100106: girlAnimate_v7:Character1_Ctrl_RightShoulderEffector
+    100108: girlAnimate_v7:Character1_Ctrl_RightToeBase
+    100110: girlAnimate_v7:Character1_Ctrl_RightUpLeg
+    100112: girlAnimate_v7:Character1_Ctrl_RightWristEffector
+    100114: girlAnimate_v7:Character1_Ctrl_Spine
+    100116: girlAnimate_v7:Character1_Ctrl_Spine1
+    100118: girlAnimate_v7:Character1_Ctrl_Spine2
+    100120: //RootNode
+    400000: girlAnimate_v7:Character1_Ctrl_ChestEndEffector
+    400002: girlAnimate_v7:Character1_Ctrl_ChestOriginEffector
+    400004: girlAnimate_v7:Character1_Ctrl_Head
+    400006: girlAnimate_v7:Character1_Ctrl_HeadEffector
+    400008: girlAnimate_v7:Character1_Ctrl_Hips
+    400010: girlAnimate_v7:Character1_Ctrl_HipsEffector
+    400012: girlAnimate_v7:Character1_Ctrl_LeftAnkleEffector
+    400014: girlAnimate_v7:Character1_Ctrl_LeftArm
+    400016: girlAnimate_v7:Character1_Ctrl_LeftElbowEffector
+    400018: girlAnimate_v7:Character1_Ctrl_LeftFoot
+    400020: girlAnimate_v7:Character1_Ctrl_LeftFootEffector
+    400022: girlAnimate_v7:Character1_Ctrl_LeftForeArm
+    400024: girlAnimate_v7:Character1_Ctrl_LeftHand
+    400026: girlAnimate_v7:Character1_Ctrl_LeftHandMiddle1
+    400028: girlAnimate_v7:Character1_Ctrl_LeftHandMiddle2
+    400030: girlAnimate_v7:Character1_Ctrl_LeftHandMiddle3
+    400032: girlAnimate_v7:Character1_Ctrl_LeftHandMiddle4
+    400034: girlAnimate_v7:Character1_Ctrl_LeftHandMiddleEffector
+    400036: girlAnimate_v7:Character1_Ctrl_LeftHandThumb1
+    400038: girlAnimate_v7:Character1_Ctrl_LeftHandThumb2
+    400040: girlAnimate_v7:Character1_Ctrl_LeftHandThumb3
+    400042: girlAnimate_v7:Character1_Ctrl_LeftHandThumb4
+    400044: girlAnimate_v7:Character1_Ctrl_LeftHandThumbEffector
+    400046: girlAnimate_v7:Character1_Ctrl_LeftHipEffector
+    400048: girlAnimate_v7:Character1_Ctrl_LeftKneeEffector
+    400050: girlAnimate_v7:Character1_Ctrl_LeftLeg
+    400052: girlAnimate_v7:Character1_Ctrl_LeftShoulder
+    400054: girlAnimate_v7:Character1_Ctrl_LeftShoulderEffector
+    400056: girlAnimate_v7:Character1_Ctrl_LeftToeBase
+    400058: girlAnimate_v7:Character1_Ctrl_LeftUpLeg
+    400060: girlAnimate_v7:Character1_Ctrl_LeftWristEffector
+    400062: girlAnimate_v7:Character1_Ctrl_Neck
+    400064: girlAnimate_v7:Character1_Ctrl_RightAnkleEffector
+    400066: girlAnimate_v7:Character1_Ctrl_RightArm
+    400068: girlAnimate_v7:Character1_Ctrl_RightElbowEffector
+    400070: girlAnimate_v7:Character1_Ctrl_RightFoot
+    400072: girlAnimate_v7:Character1_Ctrl_RightFootEffector
+    400074: girlAnimate_v7:Character1_Ctrl_RightForeArm
+    400076: girlAnimate_v7:Character1_Ctrl_RightHand
+    400078: girlAnimate_v7:Character1_Ctrl_RightHandMiddle1
+    400080: girlAnimate_v7:Character1_Ctrl_RightHandMiddle2
+    400082: girlAnimate_v7:Character1_Ctrl_RightHandMiddle3
+    400084: girlAnimate_v7:Character1_Ctrl_RightHandMiddle4
+    400086: girlAnimate_v7:Character1_Ctrl_RightHandMiddleEffector
+    400088: girlAnimate_v7:Character1_Ctrl_RightHandThumb1
+    400090: girlAnimate_v7:Character1_Ctrl_RightHandThumb2
+    400092: girlAnimate_v7:Character1_Ctrl_RightHandThumb3
+    400094: girlAnimate_v7:Character1_Ctrl_RightHandThumb4
+    400096: girlAnimate_v7:Character1_Ctrl_RightHandThumbEffector
+    400098: girlAnimate_v7:Character1_Ctrl_RightHipEffector
+    400100: girlAnimate_v7:Character1_Ctrl_RightKneeEffector
+    400102: girlAnimate_v7:Character1_Ctrl_RightLeg
+    400104: girlAnimate_v7:Character1_Ctrl_RightShoulder
+    400106: girlAnimate_v7:Character1_Ctrl_RightShoulderEffector
+    400108: girlAnimate_v7:Character1_Ctrl_RightToeBase
+    400110: girlAnimate_v7:Character1_Ctrl_RightUpLeg
+    400112: girlAnimate_v7:Character1_Ctrl_RightWristEffector
+    400114: girlAnimate_v7:Character1_Ctrl_Spine
+    400116: girlAnimate_v7:Character1_Ctrl_Spine1
+    400118: girlAnimate_v7:Character1_Ctrl_Spine2
+    400120: //RootNode
+    7400000: Nina Walk
+    7400002: Nina Run
+    7400004: Nina Walk Backward
+    7400006: Nina Idle
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 3
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Nina Walk
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_ChestEndEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_ChestOriginEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_HeadEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_Hips
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_LeftUpLeg
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_LeftUpLeg/girlAnimate_v7:Character1_Ctrl_LeftLeg
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_LeftUpLeg/girlAnimate_v7:Character1_Ctrl_LeftLeg/girlAnimate_v7:Character1_Ctrl_LeftFoot
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_LeftUpLeg/girlAnimate_v7:Character1_Ctrl_LeftLeg/girlAnimate_v7:Character1_Ctrl_LeftFoot/girlAnimate_v7:Character1_Ctrl_LeftToeBase
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_RightUpLeg
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_RightUpLeg/girlAnimate_v7:Character1_Ctrl_RightLeg
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_RightUpLeg/girlAnimate_v7:Character1_Ctrl_RightLeg/girlAnimate_v7:Character1_Ctrl_RightFoot
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_RightUpLeg/girlAnimate_v7:Character1_Ctrl_RightLeg/girlAnimate_v7:Character1_Ctrl_RightFoot/girlAnimate_v7:Character1_Ctrl_RightToeBase
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_LeftShoulder
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_LeftShoulder/girlAnimate_v7:Character1_Ctrl_LeftArm
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_LeftShoulder/girlAnimate_v7:Character1_Ctrl_LeftArm/girlAnimate_v7:Character1_Ctrl_LeftForeArm
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_LeftShoulder/girlAnimate_v7:Character1_Ctrl_LeftArm/girlAnimate_v7:Character1_Ctrl_LeftForeArm/girlAnimate_v7:Character1_Ctrl_LeftHand
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_LeftShoulder/girlAnimate_v7:Character1_Ctrl_LeftArm/girlAnimate_v7:Character1_Ctrl_LeftForeArm/girlAnimate_v7:Character1_Ctrl_LeftHand/girlAnimate_v7:Character1_Ctrl_LeftHandMiddle1
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_LeftShoulder/girlAnimate_v7:Character1_Ctrl_LeftArm/girlAnimate_v7:Character1_Ctrl_LeftForeArm/girlAnimate_v7:Character1_Ctrl_LeftHand/girlAnimate_v7:Character1_Ctrl_LeftHandMiddle1/girlAnimate_v7:Character1_Ctrl_LeftHandMiddle2
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_LeftShoulder/girlAnimate_v7:Character1_Ctrl_LeftArm/girlAnimate_v7:Character1_Ctrl_LeftForeArm/girlAnimate_v7:Character1_Ctrl_LeftHand/girlAnimate_v7:Character1_Ctrl_LeftHandMiddle1/girlAnimate_v7:Character1_Ctrl_LeftHandMiddle2/girlAnimate_v7:Character1_Ctrl_LeftHandMiddle3
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_LeftShoulder/girlAnimate_v7:Character1_Ctrl_LeftArm/girlAnimate_v7:Character1_Ctrl_LeftForeArm/girlAnimate_v7:Character1_Ctrl_LeftHand/girlAnimate_v7:Character1_Ctrl_LeftHandMiddle1/girlAnimate_v7:Character1_Ctrl_LeftHandMiddle2/girlAnimate_v7:Character1_Ctrl_LeftHandMiddle3/girlAnimate_v7:Character1_Ctrl_LeftHandMiddle4
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_LeftShoulder/girlAnimate_v7:Character1_Ctrl_LeftArm/girlAnimate_v7:Character1_Ctrl_LeftForeArm/girlAnimate_v7:Character1_Ctrl_LeftHand/girlAnimate_v7:Character1_Ctrl_LeftHandThumb1
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_LeftShoulder/girlAnimate_v7:Character1_Ctrl_LeftArm/girlAnimate_v7:Character1_Ctrl_LeftForeArm/girlAnimate_v7:Character1_Ctrl_LeftHand/girlAnimate_v7:Character1_Ctrl_LeftHandThumb1/girlAnimate_v7:Character1_Ctrl_LeftHandThumb2
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_LeftShoulder/girlAnimate_v7:Character1_Ctrl_LeftArm/girlAnimate_v7:Character1_Ctrl_LeftForeArm/girlAnimate_v7:Character1_Ctrl_LeftHand/girlAnimate_v7:Character1_Ctrl_LeftHandThumb1/girlAnimate_v7:Character1_Ctrl_LeftHandThumb2/girlAnimate_v7:Character1_Ctrl_LeftHandThumb3
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_LeftShoulder/girlAnimate_v7:Character1_Ctrl_LeftArm/girlAnimate_v7:Character1_Ctrl_LeftForeArm/girlAnimate_v7:Character1_Ctrl_LeftHand/girlAnimate_v7:Character1_Ctrl_LeftHandThumb1/girlAnimate_v7:Character1_Ctrl_LeftHandThumb2/girlAnimate_v7:Character1_Ctrl_LeftHandThumb3/girlAnimate_v7:Character1_Ctrl_LeftHandThumb4
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_Neck
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_Neck/girlAnimate_v7:Character1_Ctrl_Head
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_RightShoulder
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_RightShoulder/girlAnimate_v7:Character1_Ctrl_RightArm
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_RightShoulder/girlAnimate_v7:Character1_Ctrl_RightArm/girlAnimate_v7:Character1_Ctrl_RightForeArm
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_RightShoulder/girlAnimate_v7:Character1_Ctrl_RightArm/girlAnimate_v7:Character1_Ctrl_RightForeArm/girlAnimate_v7:Character1_Ctrl_RightHand
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_RightShoulder/girlAnimate_v7:Character1_Ctrl_RightArm/girlAnimate_v7:Character1_Ctrl_RightForeArm/girlAnimate_v7:Character1_Ctrl_RightHand/girlAnimate_v7:Character1_Ctrl_RightHandMiddle1
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_RightShoulder/girlAnimate_v7:Character1_Ctrl_RightArm/girlAnimate_v7:Character1_Ctrl_RightForeArm/girlAnimate_v7:Character1_Ctrl_RightHand/girlAnimate_v7:Character1_Ctrl_RightHandMiddle1/girlAnimate_v7:Character1_Ctrl_RightHandMiddle2
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_RightShoulder/girlAnimate_v7:Character1_Ctrl_RightArm/girlAnimate_v7:Character1_Ctrl_RightForeArm/girlAnimate_v7:Character1_Ctrl_RightHand/girlAnimate_v7:Character1_Ctrl_RightHandMiddle1/girlAnimate_v7:Character1_Ctrl_RightHandMiddle2/girlAnimate_v7:Character1_Ctrl_RightHandMiddle3
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_RightShoulder/girlAnimate_v7:Character1_Ctrl_RightArm/girlAnimate_v7:Character1_Ctrl_RightForeArm/girlAnimate_v7:Character1_Ctrl_RightHand/girlAnimate_v7:Character1_Ctrl_RightHandMiddle1/girlAnimate_v7:Character1_Ctrl_RightHandMiddle2/girlAnimate_v7:Character1_Ctrl_RightHandMiddle3/girlAnimate_v7:Character1_Ctrl_RightHandMiddle4
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_RightShoulder/girlAnimate_v7:Character1_Ctrl_RightArm/girlAnimate_v7:Character1_Ctrl_RightForeArm/girlAnimate_v7:Character1_Ctrl_RightHand/girlAnimate_v7:Character1_Ctrl_RightHandThumb1
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_RightShoulder/girlAnimate_v7:Character1_Ctrl_RightArm/girlAnimate_v7:Character1_Ctrl_RightForeArm/girlAnimate_v7:Character1_Ctrl_RightHand/girlAnimate_v7:Character1_Ctrl_RightHandThumb1/girlAnimate_v7:Character1_Ctrl_RightHandThumb2
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_RightShoulder/girlAnimate_v7:Character1_Ctrl_RightArm/girlAnimate_v7:Character1_Ctrl_RightForeArm/girlAnimate_v7:Character1_Ctrl_RightHand/girlAnimate_v7:Character1_Ctrl_RightHandThumb1/girlAnimate_v7:Character1_Ctrl_RightHandThumb2/girlAnimate_v7:Character1_Ctrl_RightHandThumb3
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_RightShoulder/girlAnimate_v7:Character1_Ctrl_RightArm/girlAnimate_v7:Character1_Ctrl_RightForeArm/girlAnimate_v7:Character1_Ctrl_RightHand/girlAnimate_v7:Character1_Ctrl_RightHandThumb1/girlAnimate_v7:Character1_Ctrl_RightHandThumb2/girlAnimate_v7:Character1_Ctrl_RightHandThumb3/girlAnimate_v7:Character1_Ctrl_RightHandThumb4
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_HipsEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_LeftAnkleEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_LeftElbowEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_LeftFootEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_LeftHandMiddleEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_LeftHandThumbEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_LeftHipEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_LeftKneeEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_LeftShoulderEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_LeftWristEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_RightAnkleEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_RightElbowEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_RightFootEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_RightHandMiddleEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_RightHandThumbEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_RightHipEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_RightKneeEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_RightShoulderEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_RightWristEffector
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Nina Run
+      takeName: Take 001
+      firstFrame: 25
+      lastFrame: 41
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_ChestEndEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_ChestOriginEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_HeadEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_Hips
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_LeftUpLeg
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_LeftUpLeg/girlAnimate_v7:Character1_Ctrl_LeftLeg
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_LeftUpLeg/girlAnimate_v7:Character1_Ctrl_LeftLeg/girlAnimate_v7:Character1_Ctrl_LeftFoot
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_LeftUpLeg/girlAnimate_v7:Character1_Ctrl_LeftLeg/girlAnimate_v7:Character1_Ctrl_LeftFoot/girlAnimate_v7:Character1_Ctrl_LeftToeBase
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_RightUpLeg
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_RightUpLeg/girlAnimate_v7:Character1_Ctrl_RightLeg
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_RightUpLeg/girlAnimate_v7:Character1_Ctrl_RightLeg/girlAnimate_v7:Character1_Ctrl_RightFoot
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_RightUpLeg/girlAnimate_v7:Character1_Ctrl_RightLeg/girlAnimate_v7:Character1_Ctrl_RightFoot/girlAnimate_v7:Character1_Ctrl_RightToeBase
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_LeftShoulder
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_LeftShoulder/girlAnimate_v7:Character1_Ctrl_LeftArm
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_LeftShoulder/girlAnimate_v7:Character1_Ctrl_LeftArm/girlAnimate_v7:Character1_Ctrl_LeftForeArm
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_LeftShoulder/girlAnimate_v7:Character1_Ctrl_LeftArm/girlAnimate_v7:Character1_Ctrl_LeftForeArm/girlAnimate_v7:Character1_Ctrl_LeftHand
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_LeftShoulder/girlAnimate_v7:Character1_Ctrl_LeftArm/girlAnimate_v7:Character1_Ctrl_LeftForeArm/girlAnimate_v7:Character1_Ctrl_LeftHand/girlAnimate_v7:Character1_Ctrl_LeftHandMiddle1
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_LeftShoulder/girlAnimate_v7:Character1_Ctrl_LeftArm/girlAnimate_v7:Character1_Ctrl_LeftForeArm/girlAnimate_v7:Character1_Ctrl_LeftHand/girlAnimate_v7:Character1_Ctrl_LeftHandMiddle1/girlAnimate_v7:Character1_Ctrl_LeftHandMiddle2
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_LeftShoulder/girlAnimate_v7:Character1_Ctrl_LeftArm/girlAnimate_v7:Character1_Ctrl_LeftForeArm/girlAnimate_v7:Character1_Ctrl_LeftHand/girlAnimate_v7:Character1_Ctrl_LeftHandMiddle1/girlAnimate_v7:Character1_Ctrl_LeftHandMiddle2/girlAnimate_v7:Character1_Ctrl_LeftHandMiddle3
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_LeftShoulder/girlAnimate_v7:Character1_Ctrl_LeftArm/girlAnimate_v7:Character1_Ctrl_LeftForeArm/girlAnimate_v7:Character1_Ctrl_LeftHand/girlAnimate_v7:Character1_Ctrl_LeftHandMiddle1/girlAnimate_v7:Character1_Ctrl_LeftHandMiddle2/girlAnimate_v7:Character1_Ctrl_LeftHandMiddle3/girlAnimate_v7:Character1_Ctrl_LeftHandMiddle4
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_LeftShoulder/girlAnimate_v7:Character1_Ctrl_LeftArm/girlAnimate_v7:Character1_Ctrl_LeftForeArm/girlAnimate_v7:Character1_Ctrl_LeftHand/girlAnimate_v7:Character1_Ctrl_LeftHandThumb1
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_LeftShoulder/girlAnimate_v7:Character1_Ctrl_LeftArm/girlAnimate_v7:Character1_Ctrl_LeftForeArm/girlAnimate_v7:Character1_Ctrl_LeftHand/girlAnimate_v7:Character1_Ctrl_LeftHandThumb1/girlAnimate_v7:Character1_Ctrl_LeftHandThumb2
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_LeftShoulder/girlAnimate_v7:Character1_Ctrl_LeftArm/girlAnimate_v7:Character1_Ctrl_LeftForeArm/girlAnimate_v7:Character1_Ctrl_LeftHand/girlAnimate_v7:Character1_Ctrl_LeftHandThumb1/girlAnimate_v7:Character1_Ctrl_LeftHandThumb2/girlAnimate_v7:Character1_Ctrl_LeftHandThumb3
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_LeftShoulder/girlAnimate_v7:Character1_Ctrl_LeftArm/girlAnimate_v7:Character1_Ctrl_LeftForeArm/girlAnimate_v7:Character1_Ctrl_LeftHand/girlAnimate_v7:Character1_Ctrl_LeftHandThumb1/girlAnimate_v7:Character1_Ctrl_LeftHandThumb2/girlAnimate_v7:Character1_Ctrl_LeftHandThumb3/girlAnimate_v7:Character1_Ctrl_LeftHandThumb4
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_Neck
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_Neck/girlAnimate_v7:Character1_Ctrl_Head
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_RightShoulder
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_RightShoulder/girlAnimate_v7:Character1_Ctrl_RightArm
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_RightShoulder/girlAnimate_v7:Character1_Ctrl_RightArm/girlAnimate_v7:Character1_Ctrl_RightForeArm
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_RightShoulder/girlAnimate_v7:Character1_Ctrl_RightArm/girlAnimate_v7:Character1_Ctrl_RightForeArm/girlAnimate_v7:Character1_Ctrl_RightHand
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_RightShoulder/girlAnimate_v7:Character1_Ctrl_RightArm/girlAnimate_v7:Character1_Ctrl_RightForeArm/girlAnimate_v7:Character1_Ctrl_RightHand/girlAnimate_v7:Character1_Ctrl_RightHandMiddle1
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_RightShoulder/girlAnimate_v7:Character1_Ctrl_RightArm/girlAnimate_v7:Character1_Ctrl_RightForeArm/girlAnimate_v7:Character1_Ctrl_RightHand/girlAnimate_v7:Character1_Ctrl_RightHandMiddle1/girlAnimate_v7:Character1_Ctrl_RightHandMiddle2
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_RightShoulder/girlAnimate_v7:Character1_Ctrl_RightArm/girlAnimate_v7:Character1_Ctrl_RightForeArm/girlAnimate_v7:Character1_Ctrl_RightHand/girlAnimate_v7:Character1_Ctrl_RightHandMiddle1/girlAnimate_v7:Character1_Ctrl_RightHandMiddle2/girlAnimate_v7:Character1_Ctrl_RightHandMiddle3
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_RightShoulder/girlAnimate_v7:Character1_Ctrl_RightArm/girlAnimate_v7:Character1_Ctrl_RightForeArm/girlAnimate_v7:Character1_Ctrl_RightHand/girlAnimate_v7:Character1_Ctrl_RightHandMiddle1/girlAnimate_v7:Character1_Ctrl_RightHandMiddle2/girlAnimate_v7:Character1_Ctrl_RightHandMiddle3/girlAnimate_v7:Character1_Ctrl_RightHandMiddle4
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_RightShoulder/girlAnimate_v7:Character1_Ctrl_RightArm/girlAnimate_v7:Character1_Ctrl_RightForeArm/girlAnimate_v7:Character1_Ctrl_RightHand/girlAnimate_v7:Character1_Ctrl_RightHandThumb1
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_RightShoulder/girlAnimate_v7:Character1_Ctrl_RightArm/girlAnimate_v7:Character1_Ctrl_RightForeArm/girlAnimate_v7:Character1_Ctrl_RightHand/girlAnimate_v7:Character1_Ctrl_RightHandThumb1/girlAnimate_v7:Character1_Ctrl_RightHandThumb2
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_RightShoulder/girlAnimate_v7:Character1_Ctrl_RightArm/girlAnimate_v7:Character1_Ctrl_RightForeArm/girlAnimate_v7:Character1_Ctrl_RightHand/girlAnimate_v7:Character1_Ctrl_RightHandThumb1/girlAnimate_v7:Character1_Ctrl_RightHandThumb2/girlAnimate_v7:Character1_Ctrl_RightHandThumb3
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_RightShoulder/girlAnimate_v7:Character1_Ctrl_RightArm/girlAnimate_v7:Character1_Ctrl_RightForeArm/girlAnimate_v7:Character1_Ctrl_RightHand/girlAnimate_v7:Character1_Ctrl_RightHandThumb1/girlAnimate_v7:Character1_Ctrl_RightHandThumb2/girlAnimate_v7:Character1_Ctrl_RightHandThumb3/girlAnimate_v7:Character1_Ctrl_RightHandThumb4
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_HipsEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_LeftAnkleEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_LeftElbowEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_LeftFootEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_LeftHandMiddleEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_LeftHandThumbEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_LeftHipEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_LeftKneeEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_LeftShoulderEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_LeftWristEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_RightAnkleEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_RightElbowEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_RightFootEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_RightHandMiddleEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_RightHandThumbEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_RightHipEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_RightKneeEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_RightShoulderEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_RightWristEffector
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Nina Walk Backward
+      takeName: Take 001
+      firstFrame: 45
+      lastFrame: 68
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_ChestEndEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_ChestOriginEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_HeadEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_Hips
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_LeftUpLeg
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_LeftUpLeg/girlAnimate_v7:Character1_Ctrl_LeftLeg
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_LeftUpLeg/girlAnimate_v7:Character1_Ctrl_LeftLeg/girlAnimate_v7:Character1_Ctrl_LeftFoot
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_LeftUpLeg/girlAnimate_v7:Character1_Ctrl_LeftLeg/girlAnimate_v7:Character1_Ctrl_LeftFoot/girlAnimate_v7:Character1_Ctrl_LeftToeBase
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_RightUpLeg
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_RightUpLeg/girlAnimate_v7:Character1_Ctrl_RightLeg
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_RightUpLeg/girlAnimate_v7:Character1_Ctrl_RightLeg/girlAnimate_v7:Character1_Ctrl_RightFoot
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_RightUpLeg/girlAnimate_v7:Character1_Ctrl_RightLeg/girlAnimate_v7:Character1_Ctrl_RightFoot/girlAnimate_v7:Character1_Ctrl_RightToeBase
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_LeftShoulder
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_LeftShoulder/girlAnimate_v7:Character1_Ctrl_LeftArm
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_LeftShoulder/girlAnimate_v7:Character1_Ctrl_LeftArm/girlAnimate_v7:Character1_Ctrl_LeftForeArm
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_LeftShoulder/girlAnimate_v7:Character1_Ctrl_LeftArm/girlAnimate_v7:Character1_Ctrl_LeftForeArm/girlAnimate_v7:Character1_Ctrl_LeftHand
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_LeftShoulder/girlAnimate_v7:Character1_Ctrl_LeftArm/girlAnimate_v7:Character1_Ctrl_LeftForeArm/girlAnimate_v7:Character1_Ctrl_LeftHand/girlAnimate_v7:Character1_Ctrl_LeftHandMiddle1
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_LeftShoulder/girlAnimate_v7:Character1_Ctrl_LeftArm/girlAnimate_v7:Character1_Ctrl_LeftForeArm/girlAnimate_v7:Character1_Ctrl_LeftHand/girlAnimate_v7:Character1_Ctrl_LeftHandMiddle1/girlAnimate_v7:Character1_Ctrl_LeftHandMiddle2
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_LeftShoulder/girlAnimate_v7:Character1_Ctrl_LeftArm/girlAnimate_v7:Character1_Ctrl_LeftForeArm/girlAnimate_v7:Character1_Ctrl_LeftHand/girlAnimate_v7:Character1_Ctrl_LeftHandMiddle1/girlAnimate_v7:Character1_Ctrl_LeftHandMiddle2/girlAnimate_v7:Character1_Ctrl_LeftHandMiddle3
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_LeftShoulder/girlAnimate_v7:Character1_Ctrl_LeftArm/girlAnimate_v7:Character1_Ctrl_LeftForeArm/girlAnimate_v7:Character1_Ctrl_LeftHand/girlAnimate_v7:Character1_Ctrl_LeftHandMiddle1/girlAnimate_v7:Character1_Ctrl_LeftHandMiddle2/girlAnimate_v7:Character1_Ctrl_LeftHandMiddle3/girlAnimate_v7:Character1_Ctrl_LeftHandMiddle4
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_LeftShoulder/girlAnimate_v7:Character1_Ctrl_LeftArm/girlAnimate_v7:Character1_Ctrl_LeftForeArm/girlAnimate_v7:Character1_Ctrl_LeftHand/girlAnimate_v7:Character1_Ctrl_LeftHandThumb1
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_LeftShoulder/girlAnimate_v7:Character1_Ctrl_LeftArm/girlAnimate_v7:Character1_Ctrl_LeftForeArm/girlAnimate_v7:Character1_Ctrl_LeftHand/girlAnimate_v7:Character1_Ctrl_LeftHandThumb1/girlAnimate_v7:Character1_Ctrl_LeftHandThumb2
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_LeftShoulder/girlAnimate_v7:Character1_Ctrl_LeftArm/girlAnimate_v7:Character1_Ctrl_LeftForeArm/girlAnimate_v7:Character1_Ctrl_LeftHand/girlAnimate_v7:Character1_Ctrl_LeftHandThumb1/girlAnimate_v7:Character1_Ctrl_LeftHandThumb2/girlAnimate_v7:Character1_Ctrl_LeftHandThumb3
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_LeftShoulder/girlAnimate_v7:Character1_Ctrl_LeftArm/girlAnimate_v7:Character1_Ctrl_LeftForeArm/girlAnimate_v7:Character1_Ctrl_LeftHand/girlAnimate_v7:Character1_Ctrl_LeftHandThumb1/girlAnimate_v7:Character1_Ctrl_LeftHandThumb2/girlAnimate_v7:Character1_Ctrl_LeftHandThumb3/girlAnimate_v7:Character1_Ctrl_LeftHandThumb4
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_Neck
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_Neck/girlAnimate_v7:Character1_Ctrl_Head
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_RightShoulder
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_RightShoulder/girlAnimate_v7:Character1_Ctrl_RightArm
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_RightShoulder/girlAnimate_v7:Character1_Ctrl_RightArm/girlAnimate_v7:Character1_Ctrl_RightForeArm
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_RightShoulder/girlAnimate_v7:Character1_Ctrl_RightArm/girlAnimate_v7:Character1_Ctrl_RightForeArm/girlAnimate_v7:Character1_Ctrl_RightHand
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_RightShoulder/girlAnimate_v7:Character1_Ctrl_RightArm/girlAnimate_v7:Character1_Ctrl_RightForeArm/girlAnimate_v7:Character1_Ctrl_RightHand/girlAnimate_v7:Character1_Ctrl_RightHandMiddle1
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_RightShoulder/girlAnimate_v7:Character1_Ctrl_RightArm/girlAnimate_v7:Character1_Ctrl_RightForeArm/girlAnimate_v7:Character1_Ctrl_RightHand/girlAnimate_v7:Character1_Ctrl_RightHandMiddle1/girlAnimate_v7:Character1_Ctrl_RightHandMiddle2
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_RightShoulder/girlAnimate_v7:Character1_Ctrl_RightArm/girlAnimate_v7:Character1_Ctrl_RightForeArm/girlAnimate_v7:Character1_Ctrl_RightHand/girlAnimate_v7:Character1_Ctrl_RightHandMiddle1/girlAnimate_v7:Character1_Ctrl_RightHandMiddle2/girlAnimate_v7:Character1_Ctrl_RightHandMiddle3
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_RightShoulder/girlAnimate_v7:Character1_Ctrl_RightArm/girlAnimate_v7:Character1_Ctrl_RightForeArm/girlAnimate_v7:Character1_Ctrl_RightHand/girlAnimate_v7:Character1_Ctrl_RightHandMiddle1/girlAnimate_v7:Character1_Ctrl_RightHandMiddle2/girlAnimate_v7:Character1_Ctrl_RightHandMiddle3/girlAnimate_v7:Character1_Ctrl_RightHandMiddle4
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_RightShoulder/girlAnimate_v7:Character1_Ctrl_RightArm/girlAnimate_v7:Character1_Ctrl_RightForeArm/girlAnimate_v7:Character1_Ctrl_RightHand/girlAnimate_v7:Character1_Ctrl_RightHandThumb1
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_RightShoulder/girlAnimate_v7:Character1_Ctrl_RightArm/girlAnimate_v7:Character1_Ctrl_RightForeArm/girlAnimate_v7:Character1_Ctrl_RightHand/girlAnimate_v7:Character1_Ctrl_RightHandThumb1/girlAnimate_v7:Character1_Ctrl_RightHandThumb2
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_RightShoulder/girlAnimate_v7:Character1_Ctrl_RightArm/girlAnimate_v7:Character1_Ctrl_RightForeArm/girlAnimate_v7:Character1_Ctrl_RightHand/girlAnimate_v7:Character1_Ctrl_RightHandThumb1/girlAnimate_v7:Character1_Ctrl_RightHandThumb2/girlAnimate_v7:Character1_Ctrl_RightHandThumb3
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_RightShoulder/girlAnimate_v7:Character1_Ctrl_RightArm/girlAnimate_v7:Character1_Ctrl_RightForeArm/girlAnimate_v7:Character1_Ctrl_RightHand/girlAnimate_v7:Character1_Ctrl_RightHandThumb1/girlAnimate_v7:Character1_Ctrl_RightHandThumb2/girlAnimate_v7:Character1_Ctrl_RightHandThumb3/girlAnimate_v7:Character1_Ctrl_RightHandThumb4
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_HipsEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_LeftAnkleEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_LeftElbowEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_LeftFootEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_LeftHandMiddleEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_LeftHandThumbEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_LeftHipEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_LeftKneeEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_LeftShoulderEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_LeftWristEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_RightAnkleEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_RightElbowEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_RightFootEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_RightHandMiddleEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_RightHandThumbEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_RightHipEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_RightKneeEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_RightShoulderEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_RightWristEffector
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Nina Idle
+      takeName: Take 001
+      firstFrame: 70
+      lastFrame: 142
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_ChestEndEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_ChestOriginEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_HeadEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_Hips
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_LeftUpLeg
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_LeftUpLeg/girlAnimate_v7:Character1_Ctrl_LeftLeg
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_LeftUpLeg/girlAnimate_v7:Character1_Ctrl_LeftLeg/girlAnimate_v7:Character1_Ctrl_LeftFoot
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_LeftUpLeg/girlAnimate_v7:Character1_Ctrl_LeftLeg/girlAnimate_v7:Character1_Ctrl_LeftFoot/girlAnimate_v7:Character1_Ctrl_LeftToeBase
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_RightUpLeg
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_RightUpLeg/girlAnimate_v7:Character1_Ctrl_RightLeg
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_RightUpLeg/girlAnimate_v7:Character1_Ctrl_RightLeg/girlAnimate_v7:Character1_Ctrl_RightFoot
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_RightUpLeg/girlAnimate_v7:Character1_Ctrl_RightLeg/girlAnimate_v7:Character1_Ctrl_RightFoot/girlAnimate_v7:Character1_Ctrl_RightToeBase
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_LeftShoulder
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_LeftShoulder/girlAnimate_v7:Character1_Ctrl_LeftArm
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_LeftShoulder/girlAnimate_v7:Character1_Ctrl_LeftArm/girlAnimate_v7:Character1_Ctrl_LeftForeArm
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_LeftShoulder/girlAnimate_v7:Character1_Ctrl_LeftArm/girlAnimate_v7:Character1_Ctrl_LeftForeArm/girlAnimate_v7:Character1_Ctrl_LeftHand
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_LeftShoulder/girlAnimate_v7:Character1_Ctrl_LeftArm/girlAnimate_v7:Character1_Ctrl_LeftForeArm/girlAnimate_v7:Character1_Ctrl_LeftHand/girlAnimate_v7:Character1_Ctrl_LeftHandMiddle1
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_LeftShoulder/girlAnimate_v7:Character1_Ctrl_LeftArm/girlAnimate_v7:Character1_Ctrl_LeftForeArm/girlAnimate_v7:Character1_Ctrl_LeftHand/girlAnimate_v7:Character1_Ctrl_LeftHandMiddle1/girlAnimate_v7:Character1_Ctrl_LeftHandMiddle2
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_LeftShoulder/girlAnimate_v7:Character1_Ctrl_LeftArm/girlAnimate_v7:Character1_Ctrl_LeftForeArm/girlAnimate_v7:Character1_Ctrl_LeftHand/girlAnimate_v7:Character1_Ctrl_LeftHandMiddle1/girlAnimate_v7:Character1_Ctrl_LeftHandMiddle2/girlAnimate_v7:Character1_Ctrl_LeftHandMiddle3
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_LeftShoulder/girlAnimate_v7:Character1_Ctrl_LeftArm/girlAnimate_v7:Character1_Ctrl_LeftForeArm/girlAnimate_v7:Character1_Ctrl_LeftHand/girlAnimate_v7:Character1_Ctrl_LeftHandMiddle1/girlAnimate_v7:Character1_Ctrl_LeftHandMiddle2/girlAnimate_v7:Character1_Ctrl_LeftHandMiddle3/girlAnimate_v7:Character1_Ctrl_LeftHandMiddle4
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_LeftShoulder/girlAnimate_v7:Character1_Ctrl_LeftArm/girlAnimate_v7:Character1_Ctrl_LeftForeArm/girlAnimate_v7:Character1_Ctrl_LeftHand/girlAnimate_v7:Character1_Ctrl_LeftHandThumb1
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_LeftShoulder/girlAnimate_v7:Character1_Ctrl_LeftArm/girlAnimate_v7:Character1_Ctrl_LeftForeArm/girlAnimate_v7:Character1_Ctrl_LeftHand/girlAnimate_v7:Character1_Ctrl_LeftHandThumb1/girlAnimate_v7:Character1_Ctrl_LeftHandThumb2
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_LeftShoulder/girlAnimate_v7:Character1_Ctrl_LeftArm/girlAnimate_v7:Character1_Ctrl_LeftForeArm/girlAnimate_v7:Character1_Ctrl_LeftHand/girlAnimate_v7:Character1_Ctrl_LeftHandThumb1/girlAnimate_v7:Character1_Ctrl_LeftHandThumb2/girlAnimate_v7:Character1_Ctrl_LeftHandThumb3
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_LeftShoulder/girlAnimate_v7:Character1_Ctrl_LeftArm/girlAnimate_v7:Character1_Ctrl_LeftForeArm/girlAnimate_v7:Character1_Ctrl_LeftHand/girlAnimate_v7:Character1_Ctrl_LeftHandThumb1/girlAnimate_v7:Character1_Ctrl_LeftHandThumb2/girlAnimate_v7:Character1_Ctrl_LeftHandThumb3/girlAnimate_v7:Character1_Ctrl_LeftHandThumb4
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_Neck
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_Neck/girlAnimate_v7:Character1_Ctrl_Head
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_RightShoulder
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_RightShoulder/girlAnimate_v7:Character1_Ctrl_RightArm
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_RightShoulder/girlAnimate_v7:Character1_Ctrl_RightArm/girlAnimate_v7:Character1_Ctrl_RightForeArm
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_RightShoulder/girlAnimate_v7:Character1_Ctrl_RightArm/girlAnimate_v7:Character1_Ctrl_RightForeArm/girlAnimate_v7:Character1_Ctrl_RightHand
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_RightShoulder/girlAnimate_v7:Character1_Ctrl_RightArm/girlAnimate_v7:Character1_Ctrl_RightForeArm/girlAnimate_v7:Character1_Ctrl_RightHand/girlAnimate_v7:Character1_Ctrl_RightHandMiddle1
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_RightShoulder/girlAnimate_v7:Character1_Ctrl_RightArm/girlAnimate_v7:Character1_Ctrl_RightForeArm/girlAnimate_v7:Character1_Ctrl_RightHand/girlAnimate_v7:Character1_Ctrl_RightHandMiddle1/girlAnimate_v7:Character1_Ctrl_RightHandMiddle2
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_RightShoulder/girlAnimate_v7:Character1_Ctrl_RightArm/girlAnimate_v7:Character1_Ctrl_RightForeArm/girlAnimate_v7:Character1_Ctrl_RightHand/girlAnimate_v7:Character1_Ctrl_RightHandMiddle1/girlAnimate_v7:Character1_Ctrl_RightHandMiddle2/girlAnimate_v7:Character1_Ctrl_RightHandMiddle3
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_RightShoulder/girlAnimate_v7:Character1_Ctrl_RightArm/girlAnimate_v7:Character1_Ctrl_RightForeArm/girlAnimate_v7:Character1_Ctrl_RightHand/girlAnimate_v7:Character1_Ctrl_RightHandMiddle1/girlAnimate_v7:Character1_Ctrl_RightHandMiddle2/girlAnimate_v7:Character1_Ctrl_RightHandMiddle3/girlAnimate_v7:Character1_Ctrl_RightHandMiddle4
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_RightShoulder/girlAnimate_v7:Character1_Ctrl_RightArm/girlAnimate_v7:Character1_Ctrl_RightForeArm/girlAnimate_v7:Character1_Ctrl_RightHand/girlAnimate_v7:Character1_Ctrl_RightHandThumb1
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_RightShoulder/girlAnimate_v7:Character1_Ctrl_RightArm/girlAnimate_v7:Character1_Ctrl_RightForeArm/girlAnimate_v7:Character1_Ctrl_RightHand/girlAnimate_v7:Character1_Ctrl_RightHandThumb1/girlAnimate_v7:Character1_Ctrl_RightHandThumb2
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_RightShoulder/girlAnimate_v7:Character1_Ctrl_RightArm/girlAnimate_v7:Character1_Ctrl_RightForeArm/girlAnimate_v7:Character1_Ctrl_RightHand/girlAnimate_v7:Character1_Ctrl_RightHandThumb1/girlAnimate_v7:Character1_Ctrl_RightHandThumb2/girlAnimate_v7:Character1_Ctrl_RightHandThumb3
+        weight: 1
+      - path: girlAnimate_v7:Character1_Ctrl_Hips/girlAnimate_v7:Character1_Ctrl_Spine/girlAnimate_v7:Character1_Ctrl_Spine1/girlAnimate_v7:Character1_Ctrl_Spine2/girlAnimate_v7:Character1_Ctrl_RightShoulder/girlAnimate_v7:Character1_Ctrl_RightArm/girlAnimate_v7:Character1_Ctrl_RightForeArm/girlAnimate_v7:Character1_Ctrl_RightHand/girlAnimate_v7:Character1_Ctrl_RightHandThumb1/girlAnimate_v7:Character1_Ctrl_RightHandThumb2/girlAnimate_v7:Character1_Ctrl_RightHandThumb3/girlAnimate_v7:Character1_Ctrl_RightHandThumb4
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_HipsEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_LeftAnkleEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_LeftElbowEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_LeftFootEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_LeftHandMiddleEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_LeftHandThumbEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_LeftHipEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_LeftKneeEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_LeftShoulderEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_LeftWristEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_RightAnkleEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_RightElbowEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_RightFootEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_RightHandMiddleEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_RightHandThumbEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_RightHipEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_RightKneeEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_RightShoulderEffector
+        weight: 0
+      - path: girlAnimate_v7:Character1_Ctrl_RightWristEffector
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human:
+    - boneName: girlAnimate_v7:Character1_Ctrl_Hips
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: girlAnimate_v7:Character1_Ctrl_LeftUpLeg
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: girlAnimate_v7:Character1_Ctrl_RightUpLeg
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: girlAnimate_v7:Character1_Ctrl_LeftLeg
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: girlAnimate_v7:Character1_Ctrl_RightLeg
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: girlAnimate_v7:Character1_Ctrl_LeftFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: girlAnimate_v7:Character1_Ctrl_RightFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: girlAnimate_v7:Character1_Ctrl_Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: girlAnimate_v7:Character1_Ctrl_Spine1
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: girlAnimate_v7:Character1_Ctrl_Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: girlAnimate_v7:Character1_Ctrl_LeftShoulder
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: girlAnimate_v7:Character1_Ctrl_RightShoulder
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: girlAnimate_v7:Character1_Ctrl_LeftArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: girlAnimate_v7:Character1_Ctrl_RightArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: girlAnimate_v7:Character1_Ctrl_LeftForeArm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: girlAnimate_v7:Character1_Ctrl_RightForeArm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: girlAnimate_v7:Character1_Ctrl_LeftHand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: girlAnimate_v7:Character1_Ctrl_RightHand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: girlAnimate_v7:Character1_Ctrl_LeftToeBase
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: girlAnimate_v7:Character1_Ctrl_RightToeBase
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: girlAnimate_v7:Character1_Ctrl_LeftHandThumb1
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: girlAnimate_v7:Character1_Ctrl_LeftHandThumb2
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: girlAnimate_v7:Character1_Ctrl_LeftHandThumb3
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: girlAnimate_v7:Character1_Ctrl_LeftHandMiddle1
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: girlAnimate_v7:Character1_Ctrl_LeftHandMiddle2
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: girlAnimate_v7:Character1_Ctrl_LeftHandMiddle3
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: girlAnimate_v7:Character1_Ctrl_RightHandThumb1
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: girlAnimate_v7:Character1_Ctrl_RightHandThumb2
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: girlAnimate_v7:Character1_Ctrl_RightHandThumb3
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: girlAnimate_v7:Character1_Ctrl_RightHandMiddle1
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: girlAnimate_v7:Character1_Ctrl_RightHandMiddle2
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: girlAnimate_v7:Character1_Ctrl_RightHandMiddle3
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: GirlAnimation_V4(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_ChestEndEffector
+      position: {x: -.000877928687, y: 1.28944528, z: .530175865}
+      rotation: {x: -1.08824997e-06, y: -.0105741862, z: 1.1508007e-08, w: .999944091}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_ChestOriginEffector
+      position: {x: -.000877919199, y: 1.0775162, z: .530176342}
+      rotation: {x: -1.08831796e-06, y: -.00211486733, z: -2.30165309e-09, w: .999997795}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_HeadEffector
+      position: {x: -2.88337461e-08, y: .422278047, z: -7.36713389e-07}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_Hips
+      position: {x: -.000877922401, y: .741534114, z: -.0227098074}
+      rotation: {x: 3.50059643e-08, y: 2.22044631e-16, z: -9.91638311e-24, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_LeftUpLeg
+      position: {x: -.129996538, y: .00656276708, z: 0}
+      rotation: {x: -.121581078, y: -.115681089, z: -.0196744595, w: .985621095}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_LeftLeg
+      position: {x: 3.5527136e-17, y: -.268942088, z: 0}
+      rotation: {x: .231954142, y: .0535587072, z: .000173296838, w: .97125113}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_LeftFoot
+      position: {x: .0124220746, y: -.479817986, z: 0}
+      rotation: {x: -.315311909, y: .0629959404, z: .0119763492, w: .946819186}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_LeftToeBase
+      position: {x: .000555133796, y: -.00510932924, z: .143797517}
+      rotation: {x: -9.35007449e-07, y: 3.51864209e-08, z: -5.92860691e-11, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_RightUpLeg
+      position: {x: .131752387, y: .0103691285, z: 0}
+      rotation: {x: .11802949, y: .000653840892, z: .0128409741, w: .992926896}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_RightLeg
+      position: {x: 2.86102289e-08, y: -.27274847, z: 4.39024006e-06}
+      rotation: {x: 3.55646898e-06, y: .002546323, z: .0157454088, w: .999872804}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_RightFoot
+      position: {x: -.0173882954, y: -.479817986, z: -5.42101074e-22}
+      rotation: {x: .143815279, y: -.00327689038, z: -.0251679886, w: .989279091}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_RightToeBase
+      position: {x: .000566072471, y: -.00510917651, z: .14379774}
+      rotation: {x: -2.72823115e-07, y: -1.6653348e-16, z: -2.03469588e-10, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_Spine
+      position: {x: -0, y: .319107115, z: 0}
+      rotation: {x: -1.12343321e-06, y: -.00211486733, z: -2.37591724e-09, w: .999997795}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_Spine1
+      position: {x: -0, y: .0653478801, z: 0}
+      rotation: {x: 3.1030655e-16, y: -.00422974629, z: 8.33892873e-19, w: .999991059}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_Spine2
+      position: {x: -0, y: .143868566, z: 0}
+      rotation: {x: 3.1030655e-16, y: -.00422974303, z: 8.33892304e-19, w: .999991059}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_LeftShoulder
+      position: {x: -.0700000003, y: .00271265022, z: 0}
+      rotation: {x: -.00509466417, y: -.0141088236, z: -.199983954, w: .979684412}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_LeftArm
+      position: {x: -.0805538744, y: -.0701893196, z: .00700398302}
+      rotation: {x: .120123252, y: .0493339673, z: -.147017941, w: .980572402}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_LeftForeArm
+      position: {x: -.205424935, y: -.178998351, z: .0178611353}
+      rotation: {x: .14118658, y: .261943072, z: -.0274231229, w: .954306126}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_LeftHand
+      position: {x: -.110167466, y: -.0968494192, z: -.0124780508}
+      rotation: {x: -.198068783, y: -.301636934, z: .157446593, w: .919235826}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_LeftHandMiddle1
+      position: {x: -.0619661324, y: -.0252675805, z: .00198583002}
+      rotation: {x: -.127995953, y: -.0495833829, z: -.102817312, w: .985183835}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_LeftHandMiddle2
+      position: {x: -.0413113758, y: -.0373336785, z: .00353368046}
+      rotation: {x: .000338252139, y: -.0207292493, z: -.221772075, w: .974878192}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_LeftHandMiddle3
+      position: {x: -.00726028439, y: -.0212278552, z: .00200924277}
+      rotation: {x: -.0156553295, y: -.00103421195, z: .0650738999, w: .997757137}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_LeftHandMiddle4
+      position: {x: -.00947318971, y: -.0233920664, z: .00145729783}
+      rotation: {x: -1.96425507e-08, y: -3.31890506e-15, z: 2.10649546e-07, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_LeftHandThumb1
+      position: {x: -.0661587492, y: -.0165145304, z: .0197637547}
+      rotation: {x: -.0562396422, y: -.243225113, z: -.497268289, w: .830904841}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_LeftHandThumb2
+      position: {x: .0100468444, y: -.0179372784, z: .0219421778}
+      rotation: {x: .393580705, y: .37269488, z: -.128573537, w: .830458701}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_LeftHandThumb3
+      position: {x: -.00716091134, y: .00487504946, z: .0192337558}
+      rotation: {x: -.0964952111, y: .0504020229, z: -.0339212753, w: .993477643}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_LeftHandThumb4
+      position: {x: -.0109379189, y: .000506315206, z: .0238695815}
+      rotation: {x: 5.21375512e-07, y: -7.80071474e-08, z: -4.15076642e-07, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_Neck
+      position: {x: -0, y: .647824228, z: 0}
+      rotation: {x: -3.63683072e-16, y: 5.55111479e-17, z: -2.77555541e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_Head
+      position: {x: -0, y: -.460997045, z: 0}
+      rotation: {x: 3.63683072e-16, y: 5.55111479e-17, z: 2.77555541e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_RightShoulder
+      position: {x: .0699999928, y: .00271265022, z: 0}
+      rotation: {x: .00495758932, y: .000222275587, z: .194603235, w: .980869472}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_RightArm
+      position: {x: .0814804286, y: -.0694372356, z: -.00199643197}
+      rotation: {x: -.0953674018, y: .0455812737, z: .140587389, w: .984409809}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_RightForeArm
+      position: {x: .207783461, y: -.177086592, z: -.00509220548}
+      rotation: {x: .0369109325, y: .00776944868, z: -.0277292617, w: .998903573}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_RightHand
+      position: {x: .1155793, y: -.0853935331, z: .00593984546}
+      rotation: {x: -.0371238627, y: -.2722148, z: -.104993552, w: .955770493}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_RightHandMiddle1
+      position: {x: .0723506883, y: -.0456963442, z: .0100720543}
+      rotation: {x: -.164377734, y: .0259612575, z: .215026528, w: .962325156}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_RightHandMiddle2
+      position: {x: .02318592, y: -.0500820801, z: -.00172254443}
+      rotation: {x: .0022172688, y: -.00808828324, z: .0826864764, w: .996540308}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_RightHandMiddle3
+      position: {x: .00310344691, y: -.0113246916, z: -.00119093596}
+      rotation: {x: -.000180914256, y: .00138623978, z: -.0340703242, w: .999418497}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_RightHandMiddle4
+      position: {x: .00662105531, y: -.0189121999, z: -.000863788126}
+      rotation: {x: 1.92484375e-08, y: -3.57833017e-07, z: -1.1807245e-07, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_RightHandThumb1
+      position: {x: .0379277021, y: -.0542058274, z: .0404538102}
+      rotation: {x: .418836325, y: .059804447, z: -.0613014884, w: .90401423}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_RightHandThumb2
+      position: {x: .0031742095, y: .00504508009, z: .00780266756}
+      rotation: {x: -.129597962, y: .130641833, z: .00115397258, w: .982922077}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_RightHandThumb3
+      position: {x: .0018778228, y: .00431804638, z: .019587215}
+      rotation: {x: -.0845751166, y: -.0632292852, z: .0236883964, w: .994126737}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_RightHandThumb4
+      position: {x: .00931293424, y: -.000605354318, z: .0340875871}
+      rotation: {x: 5.15204931e-07, y: 5.33821662e-08, z: 1.96416593e-07, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_HipsEffector
+      position: {x: 3.76701337e-07, y: .769907951, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_LeftAnkleEffector
+      position: {x: -.140000001, y: .0243799984, z: -4.76837148e-09}
+      rotation: {x: -6.29859187e-08, y: 0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_LeftElbowEffector
+      position: {x: -.286510438, y: .989306867, z: .00325680641}
+      rotation: {x: .00414252607, y: .0709664077, z: .167088732, w: .983375788}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_LeftFootEffector
+      position: {x: -.118059754, y: .0192694254, z: .143797502}
+      rotation: {x: -.000593233737, y: 0, z: -0, w: .999999821}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_LeftHandMiddleEffector
+      position: {x: -.368637234, y: .738548338, z: -.129436687}
+      rotation: {x: -.164944246, y: -.0385999866, z: .490859866, w: .854611039}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_LeftHandThumbEffector
+      position: {x: -.369365156, y: .785759926, z: -.103102461}
+      rotation: {x: -.592124641, y: .0518081933, z: .6999529, w: .395942301}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_LeftHipEffector
+      position: {x: -.130874082, y: .762482643, z: 1.10734948e-18}
+      rotation: {x: -.113524102, y: -.00223225821, z: .00600397447, w: .993514597}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_LeftKneeEffector
+      position: {x: -.12780188, y: .500444829, z: .0604712851}
+      rotation: {x: .0625137016, y: .00163103535, z: -.00328026526, w: .998037398}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_LeftShoulderEffector
+      position: {x: -.151545927, y: 1.22667396, z: .00381831196}
+      rotation: {x: .0215669684, y: -.0269409753, z: .167844206, w: .985209346}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_LeftWristEffector
+      position: {x: -.359405726, y: .861405849, z: .00304291025}
+      rotation: {x: .000633314368, y: -.0120159378, z: .143247858, w: .989613712}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_RightAnkleEffector
+      position: {x: .119999997, y: .0243285745, z: 3.93867504e-06}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_RightElbowEffector
+      position: {x: .289869905, y: .992566884, z: .00401084311}
+      rotation: {x: .0144425016, y: .00605905941, z: -.19196786, w: .981276274}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_RightFootEffector
+      position: {x: .116527848, y: .0391748361, z: .143097878}
+      rotation: {x: -.0693764612, y: .00785756297, z: .000947847497, w: .99755919}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_RightHandMiddleEffector
+      position: {x: .225629136, y: .796052992, z: .314618081}
+      rotation: {x: -.460929602, y: -.405283958, z: -.378333747, w: .692930281}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_RightHandThumbEffector
+      position: {x: .188503698, y: .853610218, z: .267756522}
+      rotation: {x: .0717070997, y: -.666839421, z: -.0184506476, w: .741513908}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_RightHipEffector
+      position: {x: .130874842, y: .766288996, z: 1.11309652e-18}
+      rotation: {x: -.112073064, y: .00288069388, z: -.00869616028, w: .993657768}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_RightKneeEffector
+      position: {x: .126337379, y: .500434339, z: .0607657358}
+      rotation: {x: .0635425076, y: .00346562732, z: .00519187516, w: .997959614}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_RightShoulderEffector
+      position: {x: .150611296, y: 1.22742617, z: .00120707834}
+      rotation: {x: -.00535780704, y: -.0160804186, z: -.164153412, w: .986289203}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: girlAnimate_v7:Character1_Ctrl_RightWristEffector
+      position: {x: .364773184, y: .869796634, z: .00571075315}
+      rotation: {x: .00804177299, y: .00672145886, z: -.227177218, w: .973797023}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  userData: 

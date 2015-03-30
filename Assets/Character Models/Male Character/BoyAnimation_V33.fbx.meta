@@ -1,0 +1,990 @@
+fileFormatVersion: 2
+guid: add8b6a4b891ca14a8ef0d222979f6fe
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Head
+    100002: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips
+    100004: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftArm
+    100006: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftFoot
+    100008: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftForeArm
+    100010: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHand
+    100012: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandMiddle1
+    100014: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandMiddle2
+    100016: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandMiddle3
+    100018: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandMiddle4
+    100020: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandThumb1
+    100022: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandThumb2
+    100024: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandThumb3
+    100026: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandThumb4
+    100028: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftLeg
+    100030: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftShoulder
+    100032: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftToeBase
+    100034: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftUpLeg
+    100036: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Neck
+    100038: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference
+    100040: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightArm
+    100042: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightFoot
+    100044: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightForeArm
+    100046: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHand
+    100048: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandMiddle1
+    100050: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandMiddle2
+    100052: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandMiddle3
+    100054: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandMiddle4
+    100056: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandThumb1
+    100058: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandThumb2
+    100060: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandThumb3
+    100062: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandThumb4
+    100064: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightLeg
+    100066: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightShoulder
+    100068: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightToeBase
+    100070: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightUpLeg
+    100072: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine
+    100074: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1
+    100076: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2
+    100078: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:polySurface246
+    100080: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:polySurface247
+    100082: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:polySurface248
+    100084: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:transform27
+    100086: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:transform28
+    100088: //RootNode
+    400000: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Head
+    400002: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips
+    400004: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftArm
+    400006: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftFoot
+    400008: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftForeArm
+    400010: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHand
+    400012: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandMiddle1
+    400014: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandMiddle2
+    400016: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandMiddle3
+    400018: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandMiddle4
+    400020: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandThumb1
+    400022: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandThumb2
+    400024: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandThumb3
+    400026: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandThumb4
+    400028: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftLeg
+    400030: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftShoulder
+    400032: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftToeBase
+    400034: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftUpLeg
+    400036: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Neck
+    400038: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference
+    400040: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightArm
+    400042: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightFoot
+    400044: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightForeArm
+    400046: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHand
+    400048: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandMiddle1
+    400050: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandMiddle2
+    400052: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandMiddle3
+    400054: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandMiddle4
+    400056: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandThumb1
+    400058: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandThumb2
+    400060: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandThumb3
+    400062: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandThumb4
+    400064: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightLeg
+    400066: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightShoulder
+    400068: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightToeBase
+    400070: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightUpLeg
+    400072: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine
+    400074: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1
+    400076: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2
+    400078: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:polySurface246
+    400080: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:polySurface247
+    400082: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:polySurface248
+    400084: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:transform27
+    400086: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:transform28
+    400088: //RootNode
+    4300000: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:polySurface248
+    7400000: Owen Walk
+    7400002: Owen Run
+    7400004: Owen Walk Backwards
+    9500000: //RootNode
+    13700000: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:polySurface248
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 3
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Owen Walk
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftUpLeg
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftUpLeg/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftLeg
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftUpLeg/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftLeg/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftFoot
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftUpLeg/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftLeg/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftFoot/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftToeBase
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightUpLeg
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightUpLeg/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightLeg
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightUpLeg/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightLeg/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightFoot
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightUpLeg/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightLeg/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightFoot/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightToeBase
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftShoulder
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftArm
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftForeArm
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHand
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHand/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandMiddle1
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHand/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandMiddle1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandMiddle2
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHand/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandMiddle1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandMiddle2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandMiddle3
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHand/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandMiddle1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandMiddle2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandMiddle3/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandMiddle4
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHand/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandThumb1
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHand/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandThumb1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandThumb2
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHand/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandThumb1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandThumb2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandThumb3
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHand/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandThumb1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandThumb2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandThumb3/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandThumb4
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Neck
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Neck/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Head
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightShoulder
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightArm
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightForeArm
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHand
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHand/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandMiddle1
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHand/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandMiddle1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandMiddle2
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHand/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandMiddle1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandMiddle2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandMiddle3
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHand/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandMiddle1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandMiddle2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandMiddle3/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandMiddle4
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHand/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandThumb1
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHand/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandThumb1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandThumb2
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHand/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandThumb1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandThumb2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandThumb3
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHand/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandThumb1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandThumb2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandThumb3/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandThumb4
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:polySurface246
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:polySurface246/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:transform28
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:polySurface247
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:polySurface247/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:transform27
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:polySurface248
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Owen Run
+      takeName: Take 001
+      firstFrame: 25
+      lastFrame: 41
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftUpLeg
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftUpLeg/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftLeg
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftUpLeg/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftLeg/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftFoot
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftUpLeg/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftLeg/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftFoot/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftToeBase
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightUpLeg
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightUpLeg/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightLeg
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightUpLeg/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightLeg/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightFoot
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightUpLeg/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightLeg/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightFoot/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightToeBase
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftShoulder
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftArm
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftForeArm
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHand
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHand/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandMiddle1
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHand/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandMiddle1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandMiddle2
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHand/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandMiddle1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandMiddle2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandMiddle3
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHand/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandMiddle1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandMiddle2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandMiddle3/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandMiddle4
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHand/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandThumb1
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHand/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandThumb1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandThumb2
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHand/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandThumb1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandThumb2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandThumb3
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHand/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandThumb1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandThumb2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandThumb3/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandThumb4
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Neck
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Neck/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Head
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightShoulder
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightArm
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightForeArm
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHand
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHand/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandMiddle1
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHand/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandMiddle1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandMiddle2
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHand/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandMiddle1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandMiddle2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandMiddle3
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHand/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandMiddle1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandMiddle2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandMiddle3/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandMiddle4
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHand/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandThumb1
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHand/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandThumb1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandThumb2
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHand/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandThumb1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandThumb2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandThumb3
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHand/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandThumb1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandThumb2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandThumb3/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandThumb4
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:polySurface246
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:polySurface246/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:transform28
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:polySurface247
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:polySurface247/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:transform27
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:polySurface248
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Owen Walk Backwards
+      takeName: Take 001
+      firstFrame: 45
+      lastFrame: 68
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftUpLeg
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftUpLeg/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftLeg
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftUpLeg/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftLeg/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftFoot
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftUpLeg/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftLeg/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftFoot/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftToeBase
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightUpLeg
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightUpLeg/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightLeg
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightUpLeg/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightLeg/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightFoot
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightUpLeg/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightLeg/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightFoot/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightToeBase
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftShoulder
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftArm
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftForeArm
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHand
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHand/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandMiddle1
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHand/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandMiddle1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandMiddle2
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHand/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandMiddle1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandMiddle2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandMiddle3
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHand/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandMiddle1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandMiddle2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandMiddle3/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandMiddle4
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHand/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandThumb1
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHand/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandThumb1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandThumb2
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHand/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandThumb1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandThumb2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandThumb3
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHand/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandThumb1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandThumb2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandThumb3/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandThumb4
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Neck
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Neck/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Head
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightShoulder
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightArm
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightForeArm
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHand
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHand/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandMiddle1
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHand/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandMiddle1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandMiddle2
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHand/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandMiddle1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandMiddle2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandMiddle3
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHand/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandMiddle1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandMiddle2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandMiddle3/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandMiddle4
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHand/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandThumb1
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHand/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandThumb1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandThumb2
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHand/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandThumb1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandThumb2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandThumb3
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightShoulder/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightForeArm/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHand/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandThumb1/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandThumb2/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandThumb3/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandThumb4
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:polySurface246
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:polySurface246/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:transform28
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:polySurface247
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:polySurface247/BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:transform27
+        weight: 1
+      - path: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:polySurface248
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human:
+    - boneName: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftUpLeg
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightUpLeg
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftLeg
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightLeg
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftShoulder
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightShoulder
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftForeArm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightForeArm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftToeBase
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightToeBase
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandThumb1
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandThumb2
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandThumb3
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandMiddle1
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandMiddle2
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandMiddle3
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandThumb1
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandThumb2
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandThumb3
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandMiddle1
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandMiddle2
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandMiddle3
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: BoyAnimation_V33(Clone)
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Reference
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Hips
+      position: {x: .00198554993, y: .730554342, z: -1.43051147e-06}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftUpLeg
+      position: {x: -.124958009, y: -.0761992931, z: -2.98023224e-08}
+      rotation: {x: 2.23517395e-06, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1.00000012, z: 1.00000012}
+      transformModified: 1
+    - name: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftLeg
+      position: {x: .0165559947, y: -.348238468, z: .0285477713}
+      rotation: {x: -5.00585884e-06, y: 1.8189876e-10, z: 3.41060596e-10, w: 1}
+      scale: {x: 1.00000048, y: 1.00000048, z: 1.00000048}
+      transformModified: 1
+    - name: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftFoot
+      position: {x: .004730165, y: -.288504243, z: -.0285469498}
+      rotation: {x: 2.77068489e-06, y: -1.81897997e-10, z: -3.41061013e-10, w: 1}
+      scale: {x: 1, y: 1, z: .999999881}
+      transformModified: 1
+    - name: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftToeBase
+      position: {x: 4.27089752e-11, y: .00144694245, z: .120110556}
+      rotation: {x: 0, y: -9.46506069e-19, z: 9.76208284e-18, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightUpLeg
+      position: {x: .120986879, y: -.0761996508, z: 2.89082527e-06}
+      rotation: {x: 4.79631217e-06, y: 3.63798769e-10, z: 1.81897192e-10, w: 1}
+      scale: {x: 1.00000012, y: .99999994, z: .99999994}
+      transformModified: 1
+    - name: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightLeg
+      position: {x: -.0132520795, y: -.348237187, z: .02854863}
+      rotation: {x: -1.06170783e-05, y: -1.81898774e-10, z: -1.81899121e-10, w: 1}
+      scale: {x: 1.00000048, y: 1.00000048, z: 1.00000036}
+      transformModified: 1
+    - name: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightFoot
+      position: {x: -.00520300865, y: -.288505942, z: -.0285478737}
+      rotation: {x: 5.84404916e-06, y: -1.81898774e-10, z: -1.01341986e-15, w: 1}
+      scale: {x: 1.00000036, y: 1.00000036, z: 1.00000036}
+      transformModified: 1
+    - name: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightToeBase
+      position: {x: 1.16229494e-05, y: .00144803838, z: .120111473}
+      rotation: {x: -6.00288981e-25, y: -1.27608102e-08, z: 5.90548036e-16, w: 1}
+      scale: {x: 1.00000036, y: 1.00000036, z: 1.00000036}
+      transformModified: 1
+    - name: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine
+      position: {x: 0, y: .242374897, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine1
+      position: {x: 0, y: .192016959, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Spine2
+      position: {x: -.00332260132, y: .19930923, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftShoulder
+      position: {x: -.0534896851, y: -.0627552271, z: 0}
+      rotation: {x: 3.52198072e-07, y: -2.23678327e-07, z: -.0509063303, w: .99870342}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftArm
+      position: {x: -.200515717, y: -.0919001102, z: -9.83476639e-07}
+      rotation: {x: 2.85112469e-06, y: -4.67780274e-06, z: -.364411324, w: .931238115}
+      scale: {x: .99999994, y: .99999994, z: 1}
+      transformModified: 1
+    - name: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftForeArm
+      position: {x: -.112857811, y: -.140895903, z: 9.33060619e-07}
+      rotation: {x: -3.49245965e-08, y: -2.32830644e-08, z: 2.91038287e-08, w: 1}
+      scale: {x: 1.00000036, y: 1.00000048, z: 1.00000024}
+      transformModified: 1
+    - name: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHand
+      position: {x: -.108158141, y: -.122513346, z: 1.88224851e-06}
+      rotation: {x: 1.93811573e-07, y: 1.78669325e-07, z: .474706262, w: .880144358}
+      scale: {x: 1.00000036, y: 1.00000024, z: 1.00000024}
+      transformModified: 1
+    - name: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandMiddle1
+      position: {x: -.0500152037, y: .0156399664, z: .00198653294}
+      rotation: {x: -.00341315684, y: .0139751695, z: -.195960477, w: .980506301}
+      scale: {x: .999999762, y: .99999994, z: .999999762}
+      transformModified: 1
+    - name: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandMiddle2
+      position: {x: -.0349855945, y: -.00849123672, z: 3.81427981e-06}
+      rotation: {x: 7.37060873e-06, y: -1.63883285e-09, z: .118678235, w: .992932737}
+      scale: {x: .999999881, y: .99999994, z: 1.00000012}
+      transformModified: 1
+    - name: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandMiddle3
+      position: {x: -.0224409141, y: -4.87570787e-06, z: 1.85714282e-06}
+      rotation: {x: -1.16404131e-08, y: -1.7287467e-09, z: 2.28020948e-14, w: 1}
+      scale: {x: 1, y: 1.00000012, z: 1.00000048}
+      transformModified: 1
+    - name: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandMiddle4
+      position: {x: -.0162791125, y: 4.15905834e-06, z: -2.11721726e-06}
+      rotation: {x: -2.91171443e-09, y: 2.91036839e-09, z: -5.03301401e-08, w: 1}
+      scale: {x: .99999994, y: 1, z: 1.00000048}
+      transformModified: 1
+    - name: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandThumb1
+      position: {x: -.0344871469, y: .00929820258, z: .0323094279}
+      rotation: {x: .00375958695, y: .0523848608, z: -.011317688, w: .998555839}
+      scale: {x: 1, y: 1.00000012, z: 1.00000012}
+      transformModified: 1
+    - name: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandThumb2
+      position: {x: -.0122885965, y: .00260287896, z: .0079651773}
+      rotation: {x: -.209359109, y: -.28237018, z: -.117905594, w: .92872715}
+      scale: {x: 1.00000024, y: .99999994, z: .999999821}
+      transformModified: 1
+    - name: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandThumb3
+      position: {x: -.00312277605, y: -.00240027788, z: .00857854076}
+      rotation: {x: .190320581, y: .134520426, z: .106919177, w: .966566443}
+      scale: {x: .999999702, y: .99999994, z: 1.00000024}
+      transformModified: 1
+    - name: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_LeftHandThumb4
+      position: {x: -.00724145258, y: .00279525621, z: .00937326346}
+      rotation: {x: 2.6592339e-08, y: 1.38331557e-09, z: 1.12532987e-08, w: 1}
+      scale: {x: 1.00000024, y: 1.00000036, z: 1.00000036}
+      transformModified: 1
+    - name: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Neck
+      position: {x: .00332260132, y: .192017078, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_Head
+      position: {x: 0, y: .533814907, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightShoulder
+      position: {x: .0601272583, y: -.0627552271, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightArm
+      position: {x: .203857362, y: -.0668338537, z: 2.98023224e-08}
+      rotation: {x: -2.96030407e-06, y: -1.03828788e-05, z: .426716387, w: .904385507}
+      scale: {x: 1, y: 1.00000012, z: .99999994}
+      transformModified: 1
+    - name: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightForeArm
+      position: {x: .115928829, y: -.153146207, z: -2.92554296e-06}
+      rotation: {x: 5.82076609e-09, y: 5.82076609e-09, z: -1.09139364e-08, w: 1}
+      scale: {x: 1.00000024, y: 1.00000036, z: 1.00000036}
+      transformModified: 1
+    - name: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHand
+      position: {x: .114044189, y: -.145493805, z: 3.81300356e-06}
+      rotation: {x: 4.02147151e-08, y: 6.32457215e-08, z: -.419734359, w: .907647014}
+      scale: {x: 1.00000024, y: 1, z: 1}
+      transformModified: 1
+    - name: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandMiddle1
+      position: {x: .0248713121, y: -.00357719511, z: .00167078129}
+      rotation: {x: -.000132609654, y: -.00269409455, z: -.00379396998, w: .999989152}
+      scale: {x: 1, y: 1.00000012, z: 1.00000012}
+      transformModified: 1
+    - name: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandMiddle2
+      position: {x: .0394390076, y: 9.08335608e-07, z: -.00137901481}
+      rotation: {x: 8.71692762e-09, y: -5.30853958e-06, z: -2.47907542e-06, w: 1}
+      scale: {x: 1, y: 1.00000012, z: 1}
+      transformModified: 1
+    - name: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandMiddle3
+      position: {x: .0224305373, y: 4.37392737e-06, z: -.000788003963}
+      rotation: {x: -7.27442107e-09, y: 2.65659783e-05, z: -5.41000311e-08, w: 1}
+      scale: {x: 1.00000012, y: .99999994, z: 1}
+      transformModified: 1
+    - name: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandMiddle4
+      position: {x: .0162634943, y: -1.01241574e-06, z: -.00056573248}
+      rotation: {x: -1.39023179e-13, y: -5.31552432e-05, z: 2.70498788e-08, w: 1}
+      scale: {x: .999999881, y: .99999994, z: .999999881}
+      transformModified: 1
+    - name: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandThumb1
+      position: {x: .0158791207, y: .0100290738, z: .03475371}
+      rotation: {x: .0367538184, y: .00541412272, z: -.0311267208, w: .998824775}
+      scale: {x: .999999821, y: 1.00000012, z: 1}
+      transformModified: 1
+    - name: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandThumb2
+      position: {x: .00870071817, y: .00222217618, z: .0106601557}
+      rotation: {x: .0593662523, y: -.139482692, z: -.0193785317, w: .988253355}
+      scale: {x: .999999821, y: .99999994, z: 1}
+      transformModified: 1
+    - name: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandThumb3
+      position: {x: .0142680574, y: .00492469035, z: .00826261658}
+      rotation: {x: -.0286729317, y: .0208013561, z: .0371151417, w: .998682976}
+      scale: {x: .999999821, y: 1.00000024, z: .999999881}
+      transformModified: 1
+    - name: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:Character2_RightHandThumb4
+      position: {x: .0152751654, y: .00234124321, z: .010488525}
+      rotation: {x: -1.61230498e-15, y: -7.45597946e-16, z: -3.61295108e-23, w: 1}
+      scale: {x: .999999881, y: .999999881, z: 1}
+      transformModified: 1
+    - name: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:polySurface246
+      position: {x: 43.6089745, y: .229197189, z: 13.2079506}
+      rotation: {x: 0, y: -0, z: 0, w: 1}
+      scale: {x: .890025973, y: 1, z: 1.03105474}
+      transformModified: 1
+    - name: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:transform28
+      position: {x: -42.1263657, y: -.262089908, z: -12.8214417}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:polySurface247
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:transform27
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: BoyAnimation_V1:BoyAnimation_V10:BoyAnim_v5:polySurface248
+      position: {x: -43.1195068, y: 1.51478136, z: -13.4226475}
+      rotation: {x: 0, y: -0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  userData: 
