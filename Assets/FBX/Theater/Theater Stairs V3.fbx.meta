@@ -1,0 +1,81 @@
+fileFormatVersion: 2
+guid: 5578de394f89c6f408b4cf72109e12ba
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: T_stairs2
+    100002: T_stairs4
+    100004: Tfrontstairs
+    100006: Tfrontstairs1
+    100008: //RootNode
+    100010: Theater_Stairs
+    100012: transform701
+    100014: transform702
+    100016: transform926
+    100018: transform927
+    400000: T_stairs2
+    400002: T_stairs4
+    400004: Tfrontstairs
+    400006: Tfrontstairs1
+    400008: //RootNode
+    400010: Theater_Stairs
+    400012: transform701
+    400014: transform702
+    400016: transform926
+    400018: transform927
+    2300000: Theater_Stairs
+    3300000: Theater_Stairs
+    4300000: Theater_Stairs
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  userData: 

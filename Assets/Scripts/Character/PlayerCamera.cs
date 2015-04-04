@@ -44,10 +44,7 @@ public class PlayerCamera : BaseCamera {
 	private float verticalInput;
 
 	private PlayerControl playerControl;
-	//private PlayerInformation playerInformation;
 	private GameManager gameManager;
-	private UserInterface userInterface;
-	private AngerGameUi angerGame;
 
 	# endregion Private Variables
 
@@ -71,16 +68,30 @@ public class PlayerCamera : BaseCamera {
 
 	private void Start() {
 		gameManager = GameManager.current;
-		userInterface = UserInterface.current;
-		angerGame = AngerGameUi.current;
 		playerControl = followTarget.GetComponent<PlayerControl>();
-		//playerInformation = followTarget.GetComponent<PlayerInformation>();
 
-		Reset();
+		_distanceAway = distanceAway;
+		_distanceUp = distanceUp;
+		_FPVThreshold = FPVThreshold;
+		_camState = camState;
+		_FPVRotationDegreePerSecond = FPVRotationDegreePerSecond;
+		_cameraSmoothDampTime = cameraSmoothDampTime;
+		_lookDirectionDampTime = lookDirectionDampTime;
+
+		cameraVelocitySmooth = Vector3.zero;
+		targetPosition = Vector3.zero;
+
+		lookDirection = followTarget.forward;
+		curLookDirection = lookDirection;
+		velocityLookDirection = Vector3.zero;
+
+		fpvInput = 0f;
+		verticalInput = 0f;
+		horizontalInput = 0f;
 	}
 
 	private void LateUpdate() {
-		if (gameManager.GameState == GameState.MainGame && !angerGame.DangerModeEnabled) {
+		if (gameManager.GameState == GameState.MainGame) {
 			if (gameManager.BasePlayerData != null) {
 				fpvInput = Input.GetAxis(PlayerUtility.FPVKey);
 				horizontalInput = Input.GetAxis(PlayerUtility.Horizontal);
@@ -89,7 +100,7 @@ public class PlayerCamera : BaseCamera {
 				Vector3 characterOffset = followTarget.position + new Vector3(0f, _distanceUp, 0f);
 				Vector3 lookAt = characterOffset;
 
-				if (Input.GetButtonDown(PlayerUtility.FocusBehind) && userInterface.InactiveUI()) {
+				if (Input.GetButtonDown(PlayerUtility.FocusBehind) && UserInterface.InactiveUI()) {
 					_camState = (_camState == CameraState.OrbitFollow) ? CameraState.Behind : CameraState.OrbitFollow;
 				}
 				else {
@@ -150,12 +161,13 @@ public class PlayerCamera : BaseCamera {
 
 	private void CompensateForWalls(Vector3 from, ref Vector3 to) {
 		RaycastHit wallHit = new RaycastHit();
-		if (Physics.Linecast(from, to, out wallHit, 1 << LayerManager.LayerWalls | 1 << LayerManager.LayerGround | 1 << LayerManager.LayerObject | 1 << LayerManager.LayerTheatre)) {
+		int layers = (1 << LayerManager.LayerWalls | 1 << LayerManager.LayerGround | 1 << LayerManager.LayerObject | 1 << LayerManager.LayerTheatre);
+		if (Physics.Linecast(from, to, out wallHit, layers)) {
 			to = new Vector3(wallHit.point.x, to.y, wallHit.point.z);
 		}
 	}
 
-	private void Reset() {
+	private void ResetPlayerCamera() {
 		_distanceAway = distanceAway;
 		_distanceUp = distanceUp;
 		_FPVThreshold = FPVThreshold;
@@ -164,8 +176,12 @@ public class PlayerCamera : BaseCamera {
 		_cameraSmoothDampTime = cameraSmoothDampTime;
 		_lookDirectionDampTime = lookDirectionDampTime;
 
+		cameraVelocitySmooth = Vector3.zero;
+		targetPosition = Vector3.zero;
+
 		lookDirection = followTarget.forward;
 		curLookDirection = lookDirection;
+		velocityLookDirection = Vector3.zero;
 
 		fpvInput = 0f;
 		verticalInput = 0f;

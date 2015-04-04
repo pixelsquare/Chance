@@ -1,14 +1,13 @@
 ﻿using System.Collections;
 using GameUtilities;
 using GameUtilities.AnchorPoint;
-using GameUtilities.GameGUI;
-using GameUtilities.LayerManager;
+using GameUtilities.GUIDepth;
 using GameUtilities.PlayerUtility;
-using MiniGame;
+using MiniGames;
 using NPC;
 using NPC.Database;
 using UnityEngine;
-
+using GameUtilities.LayerManager;
 
 public class DialogueManager : MonoBehaviour {
 	# region Public Variables
@@ -57,15 +56,14 @@ public class DialogueManager : MonoBehaviour {
 
 	private bool showNPCInformation;
 
-	private Transform npcT;
-	private NPCControl npcControl;
-	private NPCInformation npcInformation;
+	//private NPCControl npcControl;
+	//private NPCInformation npcInformation;
 
 	private NPCData baseNPCData;
 	private NPCDialogue[] npcDialogueList;
 	private DialogueData[] npcDialogueData;
 
-	private Event e;
+	//private Event e;
 	private DialogueButton pressedButton;
 
 	// Window Backdrop
@@ -74,9 +72,11 @@ public class DialogueManager : MonoBehaviour {
 
 	// Game Story Variables
 	private bool isGameStory;
-	private Story[] storyLine;
-	private int storyLineIndx = 0;
-	private float skipTextAlpha = 0;
+	//private Story[] storyLine;
+	//private int storyLineIndx = 0;
+	//private float skipTextAlpha = 0;
+
+	private bool questionBoxEnabled;
 
 	private Statistics totalStatistics;
 
@@ -88,9 +88,9 @@ public class DialogueManager : MonoBehaviour {
 	private Color spacebarColor;
 
 	private GameManager gameManager;
-	private AngerGameUi miniGameUi;
-	private NPCManager npcManager;
-	private MissionManager missionManager;
+	//private NPCManager npcManager;
+	private KeypressGameUI keypressGame;
+	private DanceUI danceGame;
 
 	# endregion Private Variables
 
@@ -122,20 +122,29 @@ public class DialogueManager : MonoBehaviour {
 	public NPCData BaseNPCData {
 		get { return baseNPCData; }
 	}
+
+	public int DialogueDataIndx {
+		get { return dialogueDataIndx; }
+	}
+
+	public DialogueData[] NpcDialogueData {
+		get { return npcDialogueData; }
+	}
 	// --
 
 	public static DialogueManager current;
 
 	private void Awake() {
 		current = this;
-		GameStory.Initialize();
+		//GameStory.Initialize();
 	}
 
 	private void Start() {
 		gameManager = GameManager.current;
-		miniGameUi = AngerGameUi.current;
-		npcManager = NPCManager.current;
-		missionManager = MissionManager.current;
+		//npcManager = NPCManager.current;
+		keypressGame = KeypressGameUI.current;
+		danceGame = DanceUI.current;
+
 		textureColor = new Color(0f, 0f, 0f, 0.1f);
 		//RunDialogue(NPCNameID.Andy, DialogueType.Normal, 0); // Run In Intro not in main game (gameManager Resets Dialogue thus it will not work)
 	}
@@ -180,92 +189,42 @@ public class DialogueManager : MonoBehaviour {
 					}
 				}
 			}
-			else if (gameManager.GameState == GameState.GameStory) {
+			//else if (gameManager.GameState == GameState.GameStory) {
 				// Skip the story
-				if (Input.GetButtonDown(PlayerUtility.NextDialogue)) {
-					gameManager.SwitchGameState(GameState.MainGame);
-				}
+				//if (Input.GetButtonDown(PlayerUtility.NextDialogue)) {
+				//    gameManager.SwitchGameState(GameState.MainGame);
+				//}
 
-				skipTextAlpha = Mathf.Lerp(0f, 1f, Mathf.PingPong(Time.time, 1f) / 1f);
-			}
+				//skipTextAlpha = Mathf.Lerp(0f, 1f, Mathf.PingPong(Time.time, 1f) / 1f);
+			//}
 		}
 	}
 
-	private void OnGUI() {
-		if (dialogueEnabled) {
-			e = Event.current;
+	public void MainGUI(Event e) {
+		if (dialogueEnabled && !questionBoxEnabled) {
 			GUI.depth = GUIDepth.dialogueDepth;
 
 			if (gameManager.GameState == GameState.GameStory && isGameStory) {
-				DrawGameStory();
+				//DrawGameStory(e);
 			}
 			else if (gameManager.GameState == GameState.MainGame || gameManager.GameState == GameState.Intro) {	// Remove Intro
 				// Draw Dialogue
-				DrawDialogue();
+				DrawDialogue(e);
 
 				// NPC Information
 				if (showNPCInformation) {
-					NpcInformationTooltip();
+					NpcInformationTooltip(e);
 				}
 			}
 		}
-	}
 
-	/* Game Story */
-	public void RunGameStory() {
-		isGameStory = true;
-		dialogueEnabled = true;
-		storyLine = GameStory.StoryText;
-		StartCoroutine("PrintGameStory");
-	}
-
-	private void DrawGameStory() {
-		GUI.BeginGroup(mainRect);
-
-		// Dialogue Backdrop
-		GUI.DrawTexture(mainRect, blackTexture);
-
-		Rect textRect = new Rect(mainRect.width * 0.5f, mainRect.height * 0.5f, mainRect.width * 0.9f, mainRect.height * 0.05f);
-		AnchorPoint.SetAnchor(ref textRect, Anchor.MiddleCenter);
-		GUI.Box(textRect, "> " + dialogueOutputText + " <", gameStorySkin.GetStyle("Story Text"));
-
-		GUI.EndGroup();
-
-		guiOriginalColor = GUI.color;
-		GUI.color = new Color(1f, 1f, 1f, skipTextAlpha);
-
-		Rect skipTextRect = new Rect(Screen.width * 0.5f, Screen.height * 0.95f, Screen.width * 0.3f, Screen.height * 0.1f * screenHeightRatio);
-		AnchorPoint.SetAnchor(ref skipTextRect, Anchor.MiddleCenter);
-		GUI.Box(skipTextRect, "<<< Press (Spacebar) to SKIP >>>", gameStorySkin.GetStyle("Story Skip Text"));
-		GUI.color = guiOriginalColor;
-	}
-
-	private IEnumerator PrintGameStory() {
-		yield return new WaitForSeconds(1.5f);
-		while (storyLineIndx < storyLine.Length) {
-			if (!isPrinting) {
-				dialogueInputText = storyLine[storyLineIndx].Text;
-				isPrinting = true;
-				charCount = 0;
-				StartCoroutine("NormalPrint");
-
-				if (donePrinting) {
-					yield return new WaitForSeconds(storyLine[storyLineIndx].Duration);
-					dialogueOutputText = string.Empty;
-					storyLineIndx++;
-					charCount = 0;
-					charIndx = 0;
-					donePrinting = false;
-				}
-			}
-			yield return null;
+		if (questionBoxEnabled) {
+			MiniGameQuestionBox(e);
 		}
-
-		gameManager.SwitchGameState(GameState.MainGame);
 	}
 
 	/* Dialogue */
-	private void DrawDialogue() {
+	private void DrawDialogue(Event e) {
 		GUI.BeginGroup(mainRect);
 
 		guiOriginalColor = GUI.color;
@@ -275,7 +234,7 @@ public class DialogueManager : MonoBehaviour {
 
 		// Main Character Avatar
 		if (npcDialogueData[dialogueDataIndx].Texture != null) {
-			Rect avatarRect = new Rect(mainRect.width * 0.5f, mainRect.height * 0.5f, mainRect.width * 0.5f, mainRect.height * 0.5f);
+			Rect avatarRect = new Rect(mainRect.width * 0.5f, mainRect.height * 0.5f, mainRect.width * 0.3f, mainRect.height * 0.5f);
 			AnchorPoint.SetAnchor(ref avatarRect, Anchor.MiddleCenter);
 			GUI.DrawTexture(avatarRect, npcDialogueData[dialogueDataIndx].Texture);
 		}
@@ -309,7 +268,7 @@ public class DialogueManager : MonoBehaviour {
 						GUI.Box(buttonRect, npcDialogueData[dialogueDataIndx].Buttons[i].ButtonName, dialogueSkin.GetStyle("Dialogue Button Left"));
 					}
 					else if (i == 1) {
-						GUI.Box(buttonRect, npcDialogueData[dialogueDataIndx].Buttons[i].ButtonName, dialogueSkin.GetStyle("Dialogue Name BG"));
+						GUI.Box(buttonRect, npcDialogueData[dialogueDataIndx].Buttons[i].ButtonName, dialogueSkin.GetStyle("Dialogue Button Middle"));
 					}
 					else if (i == 2) {
 						GUI.Box(buttonRect, npcDialogueData[dialogueDataIndx].Buttons[i].ButtonName, dialogueSkin.GetStyle("Dialogue Button Right"));
@@ -350,16 +309,9 @@ public class DialogueManager : MonoBehaviour {
 							Debug.Log("[DIALOGUE] Correct!");
 						}
 						else if (pressedButton.ButtonType == ButtonType.Wrong) {
-							Debug.Log("[DIALOGUE] Wrong! Entering DANGER MODE!");
-							DialogueEnabled = false;
-
-							if (pressedButton.ToughnessLevel != ToughnessLevel.None) {
-								miniGameUi.RunMiniGame(
-									pressedButton.ToughnessLevel,
-									baseNPCData.NpcSympathyText.Text,
-									new MiniGameResult(DialogueMiniGameStart, DialogueMiniGameFailed, DialogueMiniGameSuccess, DialogueMiniGameEnd)
-								);
-							}
+							Debug.Log("[DIALOGUE] Wrong!");
+							//DialogueEnabled = false;
+							questionBoxEnabled = true;
 						}
 
 						// Add relationship stat to NPC
@@ -382,7 +334,7 @@ public class DialogueManager : MonoBehaviour {
 						}
 						else {
 							dialogueEnabled = false;
-							if (!dialogueEnabled && !miniGameUi.DangerModeEnabled) {
+							if (!dialogueEnabled) {
 								AddTotalStatisticsToNpc();
 							}
 						}
@@ -443,7 +395,7 @@ public class DialogueManager : MonoBehaviour {
 		GUI.EndGroup();
 	}
 
-	private void NpcInformationTooltip() {
+	private void NpcInformationTooltip(Event e) {
 		GUI.BeginGroup(mainRect);
 
 		// Information Box holder
@@ -492,7 +444,7 @@ public class DialogueManager : MonoBehaviour {
 		// Art bar
 		Rect artRect = new Rect(npcProgressStatRect.width * 0.5f, npcProgressStatRect.height * 0.15f, npcProgressStatRect.width * 0.85f, npcProgressStatRect.height * 0.15f);
 		AnchorPoint.SetAnchor(ref artRect, Anchor.MiddleCenter);
-		GameGUI.ProgressBar(
+		UserInterface.ProgressBar(
 			"Art [" + (float)baseNPCData.NpcStatistics.Art + "]",
 			(float)baseNPCData.NpcStatistics.Art,
 			(float)Statistics.statMax,
@@ -504,7 +456,7 @@ public class DialogueManager : MonoBehaviour {
 		// Programming bar
 		Rect progRect = new Rect(npcProgressStatRect.width * 0.5f, npcProgressStatRect.height * 0.32f, npcProgressStatRect.width * 0.85f, npcProgressStatRect.height * 0.15f);
 		AnchorPoint.SetAnchor(ref progRect, Anchor.MiddleCenter);
-		GameGUI.ProgressBar(
+		UserInterface.ProgressBar(
 			"Programming [" + (float)baseNPCData.NpcStatistics.Programming + "]",
 			(float)baseNPCData.NpcStatistics.Programming,
 			(float)Statistics.statMax,
@@ -516,7 +468,7 @@ public class DialogueManager : MonoBehaviour {
 		// Design bar
 		Rect designRect = new Rect(npcProgressStatRect.width * 0.5f, npcProgressStatRect.height * 0.49f, npcProgressStatRect.width * 0.85f, npcProgressStatRect.height * 0.15f);
 		AnchorPoint.SetAnchor(ref designRect, Anchor.MiddleCenter);
-		GameGUI.ProgressBar(
+		UserInterface.ProgressBar(
 			"Design [" + (float)baseNPCData.NpcStatistics.Design + "]",
 			(float)baseNPCData.NpcStatistics.Design,
 			(float)Statistics.statMax,
@@ -528,7 +480,7 @@ public class DialogueManager : MonoBehaviour {
 		// Sound bar
 		Rect soundRect = new Rect(npcProgressStatRect.width * 0.5f, npcProgressStatRect.height * 0.65f, npcProgressStatRect.width * 0.85f, npcProgressStatRect.height * 0.15f);
 		AnchorPoint.SetAnchor(ref soundRect, Anchor.MiddleCenter);
-		GameGUI.ProgressBar(
+		UserInterface.ProgressBar(
 			"Sound [" + (float)baseNPCData.NpcStatistics.Sound + "]",
 			(float)baseNPCData.NpcStatistics.Sound,
 			(float)Statistics.statMax,
@@ -540,7 +492,7 @@ public class DialogueManager : MonoBehaviour {
 		// Like / Dislike
 		Rect likeDislikeRect = new Rect(npcProgressStatRect.width * 0.5f, npcProgressStatRect.height * 0.82f, npcProgressStatRect.width * 0.85f, npcProgressStatRect.height * 0.15f);
 		AnchorPoint.SetAnchor(ref likeDislikeRect, Anchor.MiddleCenter);
-		GameGUI.SliderBox(
+		UserInterface.SliderBox(
 			"Like / Dislike",
 			(float)baseNPCData.NpcStatistics.Like / (float)Statistics.statMax,
 			likeDislikeRect,
@@ -556,6 +508,93 @@ public class DialogueManager : MonoBehaviour {
 		GUI.EndGroup(); // informationBoxRect
 
 		# endregion NPC Statistics
+
+		GUI.EndGroup();
+	}
+
+	private void MiniGameQuestionBox(Event e) {
+		GUI.BeginGroup(mainRect);
+		Rect questionBox = new Rect(mainRect.width * 0.5f, mainRect.height * 0.5f, mainRect.width * 0.3f, mainRect.height * 0.2f);
+		AnchorPoint.SetAnchor(ref questionBox, Anchor.MiddleCenter);
+        GUI.Box(questionBox, string.Empty, dialogueSkin.GetStyle("Dialogue Mini Game Box BG"));
+
+		GUI.BeginGroup(questionBox);
+		Rect questionText = new Rect(questionBox.width * 0.5f, questionBox.height * 0.4f, questionBox.width * 0.9f, questionBox.height * 0.5f);
+		AnchorPoint.SetAnchor(ref questionText, Anchor.MiddleCenter);
+        GUI.Box(questionText, "You have offended " + baseNPCData.NpcName, dialogueSkin.GetStyle("Dialogue Mini Game Text"));
+
+		Rect buttonsRect = new Rect(questionBox.width * 0.5f, questionBox.height * 0.8f, questionBox.width * 0.9f, questionBox.height * 0.2f);
+		AnchorPoint.SetAnchor(ref buttonsRect, Anchor.MiddleCenter);
+		//GUI.Box(buttonsRect, string.Empty);
+
+		GUI.BeginGroup(buttonsRect);
+		Rect apologizeRect = new Rect(buttonsRect.width * 0.3f, buttonsRect.height * 0.5f, buttonsRect.width * 0.4f, buttonsRect.height * 0.9f);
+		AnchorPoint.SetAnchor(ref apologizeRect, Anchor.MiddleCenter);
+        GUI.Box(apologizeRect, string.Empty, dialogueSkin.GetStyle("Dialogue Mini Game Apologize"));
+
+		if (apologizeRect.Contains(e.mousePosition)) {
+			if (e.button == 0 && e.type == EventType.mouseUp) {
+				Debug.Log("[DIALOGUE] Entering DANGER MODE!");
+				DialogueEnabled = false;
+				NPCManager.current.GetNpcControl(gameManager.BasePlayerData.PlayerInformation.InteractingTo).CurState = NPCState.MiniGame;
+				gameManager.BasePlayerData.MiniGamesPlayed++;
+
+				System.Random rng = new System.Random();
+				int rand = 0;
+				rand = rng.Next(0, 100);
+
+				if (dialogueDataIndx >= 0 || dialogueDataIndx <= 5) {
+					if (rand < 50) {
+						if (pressedButton.KeypressLevel != KeypressLevel.None) {
+							keypressGame.RunKeypress(
+								pressedButton.KeypressLevel,
+								baseNPCData.NpcSympathyText
+							);
+						}
+					}
+					else {
+						danceGame.RunDance();
+					}
+				}
+				else {
+					if (rand <= 30) {
+						if (pressedButton.KeypressLevel != KeypressLevel.None) {
+							keypressGame.RunKeypress(
+								pressedButton.KeypressLevel,
+								baseNPCData.NpcSympathyText
+							);
+						}
+					}
+					else {
+						danceGame.RunDance();
+					}
+				}
+
+				questionBoxEnabled = false;
+			}
+		}
+
+		Rect continueRect = new Rect(buttonsRect.width * 0.7f, buttonsRect.height * 0.5f, buttonsRect.width * 0.4f, buttonsRect.height * 0.9f);
+		AnchorPoint.SetAnchor(ref continueRect, Anchor.MiddleCenter);
+        GUI.Box(continueRect, string.Empty, dialogueSkin.GetStyle("Dialogue Mini Game Ignore"));
+
+		if (continueRect.Contains(e.mousePosition)) {
+			if (e.button == 0 && e.type == EventType.mouseUp) {
+				DialogueEnabled = false;
+				if (dialogueDataIndx < (npcDialogueData.Length - 1)) {
+					AddTotalStatisticsToNpc();
+				}
+				else {
+					DialogueEnabled = true;
+				}
+
+				questionBoxEnabled = false;
+			}
+		}
+
+		GUI.EndGroup();
+
+		GUI.EndGroup();
 
 		GUI.EndGroup();
 	}
@@ -580,16 +619,15 @@ public class DialogueManager : MonoBehaviour {
 		showNPCInformation = true;
 
 		dialogueDBIndx = (int)nameID;
-		npcT = npcManager.GetMainNpc(nameID);
-		npcControl = npcManager.GetMainNpcControl(nameID);
-		npcInformation = npcManager.GetMainNpcInformation(nameID);
-		baseNPCData = NPCDatabase.GetNPC(nameID);
+		//npcControl = npcManager.GetNpcControl(nameID);
+		//npcInformation = npcManager.GetNpcInformation(nameID);
+		baseNPCData = NPCDatabase.GetNpc(nameID);
 
 		if (type == ReplyType.Accept) {
-			npcDialogueData = NPCDatabase.GetNPCRandomAcceptedText(nameID);
+			npcDialogueData = NPCDatabase.GetNpcRandomAcceptedText(nameID);
 		}
 		else if (type == ReplyType.Decline) {
-			npcDialogueData = NPCDatabase.GetNPCRandomDeclineText(nameID);
+			npcDialogueData = NPCDatabase.GetNpcRandomDeclineText(nameID);
 		}
 
 		if (npcDialogueData == null || baseNPCData.NpcNameID == NPCNameID.None) {
@@ -605,29 +643,28 @@ public class DialogueManager : MonoBehaviour {
 
 	private void SetDataName(NPCNameID nameID, int selectionIndx) {
 		dialogueDBIndx = (int)nameID;
-		npcT = npcManager.GetMainNpc(nameID);
-		npcControl = npcManager.GetMainNpcControl(nameID);
-		npcInformation = npcManager.GetMainNpcInformation(nameID);
-		baseNPCData = NPCDatabase.GetNPC(nameID);
+		//npcControl = npcManager.GetNpcControl(nameID);
+		//npcInformation = npcManager.GetNpcInformation(nameID);
+		baseNPCData = NPCDatabase.GetNpc(nameID);
 
 		if (dialogueType == DialogueType.Continous) {
 				Debug.Log("[DIALOGUE: CONTINOUS MODE] Initialize Continous Dialogue");
-				npcDialogueData = NPCDatabase.GetNPCContinousDialogueData(nameID);
+				npcDialogueData = NPCDatabase.GetNpcContinousDialogueData(nameID);
 			}
 		else if (dialogueType == DialogueType.Random) {
 				Debug.Log("[DIALOGUE: RANDOM MODE] Initialize Random Dialogue");
-				npcDialogueData = NPCDatabase.GetNPCRandomDialogueData(nameID);
+				npcDialogueData = NPCDatabase.GetNpcRandomDialogueData(nameID);
 			}
 		else if (dialogueType == DialogueType.Selection) {
 			Debug.Log("[DIALOGUE: SELECTION MODE] Initialize Selection Dialogue");
-			npcDialogueList = NPCDatabase.GetNPCDialogueList(nameID);
+			npcDialogueList = NPCDatabase.GetNpcDialogueList(nameID);
 
 			if (selectionIndx > -1 && selectionIndx < npcDialogueList.Length) {
-				npcDialogueData = NPCDatabase.GetNPCSelectionDialogueData(selectionIndx, nameID);
+				npcDialogueData = NPCDatabase.GetNpcSelectionDialogueData(selectionIndx, nameID);
 			}
 			else {
 				Debug.Log("[DIALOGUE: SELECTION MODE] Invalid Index. -> [Fallback to Continous Dialogue]");
-				npcDialogueData = NPCDatabase.GetNPCContinousDialogueData(nameID);
+				npcDialogueData = NPCDatabase.GetNpcContinousDialogueData(nameID);
 			}
 		}
 
@@ -674,7 +711,7 @@ public class DialogueManager : MonoBehaviour {
 
 		baseNPCData = new NPCData();
 		isGameStory = false;
-		storyLineIndx = 0;
+		//storyLineIndx = 0;
 
 		totalStatistics = new Statistics();
 	}
@@ -773,47 +810,9 @@ public class DialogueManager : MonoBehaviour {
 	}
 
 	public void AddTotalStatisticsToNpc() {
-		NPCDatabase.AddNPCStats((NPCNameID)dialogueDBIndx, new Statistics(totalStatistics.Like, totalStatistics.Dislike));
-		missionManager.AddTalkedToNpc(baseNPCData.NpcNameID);
+		NPCDatabase.AddNpcStatistics((NPCNameID)dialogueDBIndx, new Statistics(totalStatistics.Like, totalStatistics.Dislike));
+		GameUtility.SetGameObjectLayerRecursively(NPCManager.current.GetNpc(baseNPCData.NpcNameID), LayerManager.LayerNPC);
 		baseNPCData.NpcTalkedCount++;
-	}
-
-	/* Others */
-	private void DialogueMiniGameStart() {
-		Debug.Log("[DIALOGUE MINI GAME] START");
-		npcControl.RunPreResult();
-		GameUtility.SetGameObjectLayerRecursively(npcT, LayerManager.LayerNpcInteracted);
-		gameManager.BasePlayerData.PlayerControl.SwitchToDialogueCamera();
-	}
-
-	private void DialogueMiniGameEnd() {
-		Debug.Log("[DIALOGUE MINI GAME] END");
-		GameUtility.SetGameObjectLayerRecursively(NPCManager.current.GetMainNpc(baseNPCData.NpcNameID), LayerManager.LayerNPC);
-		gameManager.BasePlayerData.PlayerControl.EndDialogueCamera();
-	}
-
-	private void DialogueMiniGameFailed() {
-		Debug.Log("[DIALOGUE MINI GAME] RESULT: FALED");
-		Statistics penaltyStat = miniGameUi.BaseMiniGameMode.GameOverPenalty;
-		AddTotalStatistics(penaltyStat);
-
-		Debug.Log("[MINI GAME PENALTY] " + baseNPCData.NpcName + " has recieved a penalty of " +
-			penaltyStat.ToString() + " because of mini game undone. [" + miniGameUi.ToughnessLevel.ToString() + "]");
-		AddTotalStatisticsToNpc();
-		NPCManager.current.GetMainNpcControl(baseNPCData.NpcNameID).RunPostBadResult();
-		npcInformation.RunEmoticon(EmoticonNameID.Sad);
-	}
-
-	private void DialogueMiniGameSuccess() {
-		Debug.Log("[DIALOGUE MINI GAME] SUCCESS");
-		NPCManager.current.GetMainNpcControl(baseNPCData.NpcNameID).RunPostGoodResult();
-		npcInformation.RunEmoticon(EmoticonNameID.Happy);
-		if (dialogueDataIndx < (npcDialogueData.Length - 1)) {
-			AddTotalStatisticsToNpc();
-		}
-		else {
-			DialogueEnabled = true;
-		}
 	}
 
 	private void DialogueButtonDown(int indx) {
@@ -833,16 +832,9 @@ public class DialogueManager : MonoBehaviour {
 			Debug.Log("[DIALOGUE] Correct!");
 		}
 		else if (pressedButton.ButtonType == ButtonType.Wrong) {
-			Debug.Log("[DIALOGUE] Wrong! Entering DANGER MODE!");
-			DialogueEnabled = false;
-
-			if (pressedButton.ToughnessLevel != ToughnessLevel.None) {
-				miniGameUi.RunMiniGame(
-					pressedButton.ToughnessLevel,
-					baseNPCData.NpcSympathyText.Text,
-					new MiniGameResult(DialogueMiniGameStart, DialogueMiniGameFailed, DialogueMiniGameSuccess, DialogueMiniGameEnd)
-				);
-			}
+			Debug.Log("[DIALOGUE] Wrong!");
+			//DialogueEnabled = false;
+			questionBoxEnabled = true;
 		}
 
 		// Add relationship stat to NPC
@@ -864,7 +856,7 @@ public class DialogueManager : MonoBehaviour {
 		}
 		else {
 			dialogueEnabled = false;
-			if (!dialogueEnabled && !miniGameUi.DangerModeEnabled) {
+			if (!dialogueEnabled) {
 				AddTotalStatisticsToNpc();
 			}
 		}

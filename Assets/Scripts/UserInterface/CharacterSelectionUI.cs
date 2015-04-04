@@ -1,6 +1,5 @@
 ﻿using GameUtilities;
 using GameUtilities.AnchorPoint;
-using GameUtilities.GameGUI;
 using Player;
 using UnityEngine;
 
@@ -8,25 +7,19 @@ public class CharacterSelectionUI : MonoBehaviour {
 	# region Public Variables
 
 	[SerializeField]
-	private Texture2D blackTexture;
-	[SerializeField]
 	private GUISkin charSelectionSkin;
 	[SerializeField]
 	private GUISkin progressBarSkin;
 	[SerializeField]
 	private GUISkin tempSkin;
 	[SerializeField]
-	private CameraOribit ninaIdleCamera;
+    private CameraOrbit ninaIdleCamera;
 	[SerializeField]
-	private CameraOribit owenIdleCamera;
+    private CameraOrbit owenIdleCamera;
 	[SerializeField]
 	private Transform characterNina;
 	[SerializeField]
 	private Transform characterOwen;
-	[SerializeField]
-	private Texture2D ninaAvatar;
-	[SerializeField]
-	private Texture2D owenAvatar;
 
 	# endregion
 
@@ -118,17 +111,21 @@ public class CharacterSelectionUI : MonoBehaviour {
 		GUI.Box(selectionWindow, string.Empty, charSelectionSkin.GetStyle("CS Menu BG"));
 
 		GUI.BeginGroup(selectionWindow);
-		Rect insertNameRect = new Rect(selectionWindow.width * 0.5f, selectionWindow.height * 0.1f, selectionWindow.width * 0.9f, selectionWindow.height * 0.1f);
-		AnchorPoint.SetAnchor(ref insertNameRect, Anchor.MiddleCenter);
-		GUI.Box(insertNameRect, "NAME", charSelectionSkin.GetStyle("CS Title"));
+        //Rect insertNameRect = new Rect(selectionWindow.width * 0.5f, selectionWindow.height * 0.1f, selectionWindow.width * 0.9f, selectionWindow.height * 0.1f);
+        //AnchorPoint.SetAnchor(ref insertNameRect, Anchor.MiddleCenter);
+        //GUI.Box(insertNameRect, "NAME", charSelectionSkin.GetStyle("CS Title"));
+
+        Rect playerNameBgRect = new Rect(selectionWindow.width * 0.5f, selectionWindow.height * 0.17f, selectionWindow.width * 0.9f, selectionWindow.height * 0.15f);
+        AnchorPoint.SetAnchor(ref playerNameBgRect, Anchor.MiddleCenter);
+        GUI.Box(playerNameBgRect, string.Empty, charSelectionSkin.GetStyle("CS Enter Name"));
 
 		Rect playerNameRect = new Rect(selectionWindow.width * 0.5f, selectionWindow.height * 0.2f, selectionWindow.width * 0.9f, selectionWindow.height * 0.1f);
 		AnchorPoint.SetAnchor(ref playerNameRect, Anchor.MiddleCenter);
-		playerName = GUI.TextArea(playerNameRect, playerName, 12, tempSkin.GetStyle("Block"));
+        playerName = GUI.TextArea(playerNameRect, playerName, 12, charSelectionSkin.GetStyle("CS Enter Name Text"));
 
-		Rect statRect = new Rect(selectionWindow.width * 0.5f, selectionWindow.height * 0.3f, selectionWindow.width * 0.9f, selectionWindow.height * 0.1f);
-		AnchorPoint.SetAnchor(ref statRect, Anchor.MiddleCenter);
-		GUI.Box(statRect, "STATISTICS", charSelectionSkin.GetStyle("CS Title"));
+        //Rect statRect = new Rect(selectionWindow.width * 0.5f, selectionWindow.height * 0.3f, selectionWindow.width * 0.9f, selectionWindow.height * 0.1f);
+        //AnchorPoint.SetAnchor(ref statRect, Anchor.MiddleCenter);
+        //GUI.Box(statRect, "STATISTICS", charSelectionSkin.GetStyle("CS Title"));
 
 		# region Artist and Programmer Slider
 		Rect artistProgRect = new Rect(selectionWindow.width * 0.5f, selectionWindow.height * 0.4f, selectionWindow.width * 0.9f, selectionWindow.height * 0.15f);
@@ -170,17 +167,23 @@ public class CharacterSelectionUI : MonoBehaviour {
 		GUI.BeginGroup(buttonBoxRect);
 		Rect backBtnRect = new Rect(buttonBoxRect.width * 0.25f, buttonBoxRect.height * 0.5f, buttonBoxRect.width * 0.4f, buttonBoxRect.height * 0.9f);
 		AnchorPoint.SetAnchor(ref backBtnRect, Anchor.MiddleCenter);
-		GUI.Box(backBtnRect, "BACK!", charSelectionSkin.GetStyle("CS Back Button"));
+		GUI.Box(backBtnRect, string.Empty, charSelectionSkin.GetStyle("CS Back Button"));
 
 		if (backBtnRect.Contains(e.mousePosition)) {
 			if (e.button == 0 && e.type == EventType.mouseUp) {
 				gameManager.SwitchGameState(GameState.MainMenu);
+
+				AudioSource audioSource = AudioManager.current.GetAudioSource(AudioNameID.GeneralBtn, true);
+				if (audioSource != null) {
+					audioSource.gameObject.SetActive(true);
+					audioSource.Play();
+				}
 			}
 		}
 
 		Rect okBtnRect = new Rect(buttonBoxRect.width * 0.75f, buttonBoxRect.height * 0.5f, buttonBoxRect.width * 0.4f, buttonBoxRect.height * 0.9f);
 		AnchorPoint.SetAnchor(ref okBtnRect, Anchor.MiddleCenter);
-		GUI.Box(okBtnRect, "OK!!", charSelectionSkin.GetStyle("CS Ok Button"));
+		GUI.Box(okBtnRect, string.Empty, charSelectionSkin.GetStyle("CS Ok Button"));
 
 		if (okBtnRect.Contains(e.mousePosition)) {
 			if (e.button == 0 && e.type == EventType.mouseUp) {
@@ -189,17 +192,23 @@ public class CharacterSelectionUI : MonoBehaviour {
 
 				if (isNinaShown) {
 					playerData.PlayerT = characterNina;
-					playerData.PlayerAvatar = ninaAvatar;
+					playerData.PlayerAvatar = Resources.AvatarDatabase.NinaAvatar;
 					owenPlayerInformation.PlayerEnabled = false;
 				}
 				else {
 					playerData.PlayerT = characterOwen;
-					playerData.PlayerAvatar = owenAvatar;
+					playerData.PlayerAvatar = Resources.AvatarDatabase.OwenAvatar;
 					ninaPlayerInformation.PlayerEnabled = false;
 				}
 
 				gameManager.BasePlayerData = playerData;
 				gameManager.SwitchGameState(GameState.GameStory);
+
+				AudioSource audioSource = AudioManager.current.GetAudioSource(AudioNameID.GeneralBtn, true);
+				if (audioSource != null) {
+					audioSource.gameObject.SetActive(true);
+					audioSource.Play();
+				}
 			}
 		}
 
@@ -210,7 +219,7 @@ public class CharacterSelectionUI : MonoBehaviour {
 
 		# region Character Selection
 
-		Rect selectionRect = new Rect(mainRect.width * 0.75f, mainRect.height * 0.75f, mainRect.width * 0.4f, mainRect.height * 0.05f);
+		Rect selectionRect = new Rect(mainRect.width * 0.75f, mainRect.height * 0.725f, mainRect.width * 0.4f, mainRect.height * 0.05f);
 		AnchorPoint.SetAnchor(ref selectionRect, Anchor.MiddleCenter);
 		GUI.Box(selectionRect, string.Empty, charSelectionSkin.GetStyle("CS Name Box BG"));
 
@@ -221,21 +230,33 @@ public class CharacterSelectionUI : MonoBehaviour {
 
 		Rect leftButtonRect = new Rect(selectionRect.width * 0.15f, selectionRect.height * 0.5f, selectionRect.width * 0.15f, selectionRect.height * 0.9f);
 		AnchorPoint.SetAnchor(ref leftButtonRect, Anchor.MiddleCenter);
-		GUI.Box(leftButtonRect, "<<", charSelectionSkin.GetStyle("CS Left Arrow Button"));
+		GUI.Box(leftButtonRect, string.Empty, charSelectionSkin.GetStyle("CS Left Arrow Button"));
 
 		if (leftButtonRect.Contains(e.mousePosition)) {
 			if (e.button == 0 && e.type == EventType.mouseUp) {
 				isNinaShown = !isNinaShown;
+
+				AudioSource audioSource = AudioManager.current.GetAudioSource(AudioNameID.GeneralBtn, true);
+				if (audioSource != null) {
+					audioSource.gameObject.SetActive(true);
+					audioSource.Play();
+				}
 			}
 		}
 
 		Rect rightButtonRect = new Rect(selectionRect.width * 0.85f, selectionRect.height * 0.5f, selectionRect.width * 0.15f, selectionRect.height * 0.9f);
 		AnchorPoint.SetAnchor(ref rightButtonRect, Anchor.MiddleCenter);
-		GUI.Box(rightButtonRect, ">>", charSelectionSkin.GetStyle("CS Right Arrow Button"));
+		GUI.Box(rightButtonRect, string.Empty, charSelectionSkin.GetStyle("CS Right Arrow Button"));
 
 		if (rightButtonRect.Contains(e.mousePosition)) {
 			if (e.button == 0 && e.type == EventType.mouseUp) {
 				isNinaShown = !isNinaShown;
+
+				AudioSource audioSource = AudioManager.current.GetAudioSource(AudioNameID.GeneralBtn, true);
+				if (audioSource != null) {
+					audioSource.gameObject.SetActive(true);
+					audioSource.Play();
+				}
 			}
 		}
 
@@ -262,7 +283,7 @@ public class CharacterSelectionUI : MonoBehaviour {
 		AnchorPoint.SetAnchor(ref sliderBoxRect, Anchor.MiddleCenter);
 		//GUI.Box(sliderBoxRect, string.Empty, charSelectionSkin.GetStyle("CS Attribute Left"));
 
-		GameGUI.SliderBox(
+		UserInterface.SliderBox(
 			string.Empty, 
 			val, 
 			sliderBoxRect,

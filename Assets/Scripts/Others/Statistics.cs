@@ -129,6 +129,14 @@ public struct Statistics {
 		get { return new Statistics(1, 1, 1, 1, 1, 1); }
 	}
 
+	public static Statistics dislikeStat {
+		get { return new Statistics(0, 0, 0, 0, 0, 1); }
+	}
+
+	public static Statistics likeStat {
+		get { return new Statistics(0, 0, 0, 0, 1, 0); }
+	}
+
 	public void ClampAllValues() {
 		art = Mathf.Clamp(art, 0, statMax);
 		programming = Mathf.Clamp(programming, 0, statMax);

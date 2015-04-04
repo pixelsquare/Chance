@@ -16,6 +16,7 @@ public class BaseNPC : MonoBehaviour {
 
 	# region Private Variables
 
+	protected bool npcControlEnabled;
 	protected Animator npcAnim;
 	protected AnimatorStateInfo npcAnimStateInfo;
 	protected NPCInformation npcInformation;
@@ -27,11 +28,19 @@ public class BaseNPC : MonoBehaviour {
 	# endregion Private Variables
 
 	// Public Properties
+	public bool NpcControlEnabled {
+		get { return npcControlEnabled; }
+		set { 
+			npcControlEnabled = value;
+			enabled = value;
+			gameObject.SetActive(value);
+		}
+	}
 	public Transform NpcRayPos {
 		get { return npcRayPos; }
 	}
 
-	public Animator npcAnimator {
+	public Animator NpcAnimator {
 		get { return npcAnim; }
 	}
 
@@ -63,6 +72,7 @@ public class BaseNPC : MonoBehaviour {
 
 		npcAnim = GetComponent<Animator>();
 		gameObject.layer = LayerManager.LayerNPC;
+		npcControlEnabled = gameObject.activeInHierarchy;
 
 		if (npcAnim.layerCount >= 2) {
 			npcAnim.SetLayerWeight(1, 1);
@@ -71,7 +81,7 @@ public class BaseNPC : MonoBehaviour {
 
 	protected virtual void Update() { }
 
-	protected virtual void Reset() {
-		npcInformation.Reset();
+	public virtual void Reset() {
+		npcInformation.ResetObject();
 	}
 }

@@ -3,7 +3,7 @@ using GameUtilities.LayerManager;
 using NPC;
 using UnityEngine;
 
-public enum NPCState { Idle, Wander, Interact }
+public enum NPCState { Idle, Wander, Interact, MiniGame }
 
 public class NPCControl : BaseNPC {
 	# region Public Variables
@@ -11,13 +11,13 @@ public class NPCControl : BaseNPC {
 	[SerializeField]
 	private NPCState npcState;
 	[SerializeField]
-	private float randomWithinRadius = 5f;
-	[SerializeField]
 	private Transform headPivot;
 	[SerializeField]
-	private float minHeadTurn = -90f;
+	private float randomWithinRadius = 5f;
 	[SerializeField]
-	private float maxHeadTurn = 90f;
+	private float minHeadTurn = -15f;
+	[SerializeField]
+	private float maxHeadTurn = 15f;
 	[SerializeField]
 	private float headTurnDampTime = 3f;
 	[SerializeField]
@@ -31,7 +31,7 @@ public class NPCControl : BaseNPC {
 	[SerializeField]
 	private float obstructionDistance = 1f;
 	[SerializeField]
-	private float sphereCastRadius = 1.5f;
+	private float sphereCastRadius = 0.5f;
 
 	# endregion Public Variables
 
@@ -39,12 +39,17 @@ public class NPCControl : BaseNPC {
 
 	private NPCState curState;
 	private bool isInteracting;
-	private Vector3 targetPos;
-	private Vector3 randPoint;
 	private float speed;
 	private float stateRandTime;
+	private Vector3 targetPos;
+	private Vector3 randPoint;
+	private BoxCollider firstFloor;
+	private BoxCollider secondFloor;
 	private NavMeshAgent navAgent;
-	private AngerGameUi miniGameUi;
+
+	private int randomLocationIndx;
+	private bool newDirection;
+	private bool aiHasStarted;
 
 	# endregion Private Variables
 
@@ -65,18 +70,9 @@ public class NPCControl : BaseNPC {
 	# endregion Reset Variables
 
 	// Public Properties
-	public Transform HeadPivot {
-		get { return headPivot; }
-	}
-
 	public NPCState CurState {
 		get { return curState; }
 		set { curState = value; }
-	}
-
-	public Vector3 TargetPos {
-		get { return targetPos; }
-		set { targetPos = value; }
 	}
 	// --
 
@@ -87,21 +83,25 @@ public class NPCControl : BaseNPC {
 	protected override void Start() {                  
 		base.Start();
 		navAgent = GetComponent<NavMeshAgent>(); 
-		miniGameUi = AngerGameUi.current;
 	}
 	              
 	protected override void Update() {
 		base.Update();
-		if (curState == NPCState.Idle) {
-			IdleState();
+		if (aiHasStarted) {
+			if (curState == NPCState.Idle) {
+				IdleState();
+			}
+			else if (curState == NPCState.Wander) {
+				WanderState();
+			}
+			else if (curState == NPCState.Interact) {
+				InteractState();
+			}
+			else if (curState == NPCState.MiniGame) {
+				MiniGameState();
+			}
+			npcAnim.SetFloat("Speed", speed);
 		}
-		else if (curState == NPCState.Wander) {
-			WanderState();
-		}
-		else if (curState == NPCState.Interact) {
-			InteractState();
-		}
-		npcAnim.SetFloat("Speed", speed);
 	}
 
 	private void IdleState() {
@@ -115,30 +115,32 @@ public class NPCControl : BaseNPC {
 
 	private void WanderState() {
 		headPivot.rotation = Quaternion.Lerp(headPivot.rotation, Quaternion.LookRotation(NpcRayPos.forward), _headTurnDampTime * Time.deltaTime);
+		
 		if (Vector3.Distance(targetPos, transform.position) > 1f) {
-			speed = 1;
 			ObstructionAvoidance(ref targetPos);
-			targetPos.y = 0f;
+			speed = 1;
 			navAgent.SetDestination(targetPos);
 			curState = NPCState.Wander;
 		}
 		else {
 			if (speed > 0f) {
 				curState = NPCState.Idle;
-				stateRandTime = Random.Range(_minChangeDirTime, _maxChangeDirTime);
 			}
 
-			StartCoroutine("SetNewTargetPosition");
+			if (!newDirection) {
+				StartCoroutine("SetNewTargetPosition");
+				newDirection = true;
+			}
 		}
 
 		Debug.DrawLine(transform.position, targetPos, Color.red);
 	}
 
 	private void InteractState() {
-		if (npcInformation.NpcNameID == gameManager.BasePlayerData.PlayerInformation.InteractingTo) {
+		if (npcInformation.BaseNpcData.NpcNameID == gameManager.BasePlayerData.PlayerInformation.InteractingTo) {
 			LookToPlayer();
 
-			if (userInterface.GivingItem || dialogueManager.DialogueEnabled || miniGameUi.DangerModeEnabled) {
+			if (userInterface.GivingItem || dialogueManager.DialogueEnabled || curState == NPCState.MiniGame) {
 				Vector3 lookAt = gameManager.BasePlayerData.PlayerT.position - transform.position;
 				// Rotate towards the player
 				if (Vector3.Angle(transform.forward, lookAt) > 0f) {
@@ -168,7 +170,6 @@ public class NPCControl : BaseNPC {
 				// Reset the player's AI
 				curState = _npcState;
 				targetPos = transform.position;
-				targetPos.y = 0f;
 				randPoint = Vector3.zero;
 				speed = 0f;
 				isInteracting = false;
@@ -183,42 +184,67 @@ public class NPCControl : BaseNPC {
 		}
 	}
 
+	private void MiniGameState() {
+		LookToPlayer();
+		if (speed > 0) {
+			speed = 0;
+			navAgent.Stop(true);
+			StopCoroutine("SetNewTargetPosition");
+			curState = NPCState.MiniGame;
+		}
+	}
+
+	public void InitializeNpcControl(Vector3 position, Quaternion rotation, BoxCollider firstFlr, BoxCollider secondFlr) {
+		transform.position = position;
+		transform.rotation = rotation;
+		targetPos = transform.position;
+		firstFloor = firstFlr;
+		secondFloor = secondFlr;
+		aiHasStarted = true;
+	}
+
 	private IEnumerator SetNewTargetPosition() {
+		stateRandTime = Random.Range(_minChangeDirTime, _maxChangeDirTime);
 		yield return new WaitForSeconds(stateRandTime);
 
 		if (npcAnim.GetFloat("Speed") < 0.01f) {
-			randPoint = Random.insideUnitSphere * _randomWithinRadius;
-			randPoint.y = 0f;
-			targetPos = transform.position + randPoint;
+			System.Random rng = new System.Random();
+			randomLocationIndx = rng.Next(0, 100);
+			if (randomLocationIndx >= 0 && randomLocationIndx <= 25) {
+				randPoint.x = Random.Range(firstFloor.bounds.min.x, firstFloor.bounds.max.x);
+				randPoint.y = firstFloor.transform.position.y;
+				randPoint.z = Random.Range(firstFloor.bounds.min.z, firstFloor.bounds.max.z);
+				targetPos = randPoint;
+			}
+			else if(randomLocationIndx > 25 && randomLocationIndx <= 50) {
+				randPoint.x = Random.Range(secondFloor.bounds.min.x, secondFloor.bounds.max.x);
+				randPoint.y = secondFloor.transform.position.y;
+				randPoint.z = Random.Range(secondFloor.bounds.min.z, secondFloor.bounds.max.z);
+				targetPos = randPoint;
+			}
+			else if (randomLocationIndx > 50) {
+				randPoint = Random.insideUnitSphere * _randomWithinRadius;
+				randPoint.y = 0f;
+				targetPos = transform.position + randPoint;
+			}
+
 			curState = NPCState.Wander;
 		}
 
-		StopCoroutine("SetNewTargetPosition");
+		newDirection = false;
+		yield return null;
 	}
 
 	private void ObstructionAvoidance(ref Vector3 targetPosition) {
 		RaycastHit hit;
-		if (Physics.SphereCast(transform.position, _sphereCastRadius, transform.forward, out hit, _obstructionDistance,
-			1 << LayerManager.LayerWalls | 1 << LayerManager.LayerNPC | 1 << LayerManager.LayerObject | 
-		    1 << LayerManager.LayerNina | 1 << LayerManager.LayerOwen)) {
-				Vector3 inverseDir = Vector3.Reflect(hit.point - transform.position, hit.normal);
-				targetPosition = transform.position + (inverseDir * Random.Range(1f, 5f));
-				targetPosition.y = 0f;
-				Debug.DrawLine(hit.point, targetPosition, Color.green);
+		if (Physics.SphereCast(NpcRayPos.position, _sphereCastRadius, transform.forward, out hit, _obstructionDistance,
+			1 << LayerManager.LayerWalls | 1 << LayerManager.LayerNPC | 1 << LayerManager.LayerObject |
+			1 << LayerManager.LayerNina | 1 << LayerManager.LayerOwen | 1 << LayerManager.LayerNpcInteracted)) {
+			Vector3 inverseDir = Vector3.Reflect(hit.point - transform.position, hit.normal);
+			targetPosition = transform.position + (inverseDir * Random.Range(1f, 5f));
+			targetPosition.y = 0f;
+			Debug.DrawLine(hit.point, targetPosition, Color.green);
 		}
-
-		//RaycastHit hit;
-		//Debug.DrawLine(NpcRayPos.position, NpcRayPos.position + (NpcRayPos.forward * _obstructionDistance), Color.blue);
-		//// Make the AI run the opposite of where it is facing. When one of this layers are detected by raycast
-		//// this prevents the AI to make unecessary movements. thus, changing its path when bumping to something.
-		//if (Physics.Raycast(NpcRayPos.position, NpcRayPos.position + NpcRayPos.forward, out hit, _obstructionDistance, 
-		//    1 << LayerManager.LayerWalls | 1 << LayerManager.LayerNPC | 1 << LayerManager.LayerObject | 
-		//    1 << LayerManager.LayerNina | 1 << LayerManager.LayerOwen)) {
-		//    Vector3 inverseDir = Vector3.Reflect(hit.point - transform.position, hit.normal);
-		//    targetPosition = transform.position + (inverseDir * 5f);
-		//    targetPosition.y = 0f;
-		//    Debug.DrawLine(hit.point, targetPosition, Color.green);
-		//}
 	}
 
 	private void LookToPlayer() {
@@ -232,7 +258,7 @@ public class NPCControl : BaseNPC {
 			//float angle = Mathf.Acos(angleRad) * Mathf.Rad2Deg;
 		# endregion
 
-		if (gameManager.BasePlayerData != null) {
+		if (gameManager.BasePlayerData != null && gameManager.BasePlayerData.PlayerT != null) {
 			float angle = Vector3.Angle(transform.forward, (gameManager.BasePlayerData.PlayerT.position - transform.position));
 			Vector3 headDir = gameManager.BasePlayerData.PlayerControl.PlayerHead.position - headPivot.position;
 
@@ -249,15 +275,15 @@ public class NPCControl : BaseNPC {
 		return Random.Range(_minChangeDirTime, _maxChangeDirTime);
 	}
 
-	public void RunPreResult() {
+	public void RunAnimationPreResult() {
 		npcAnim.SetFloat("Anger", 0.5f);
 	}
 
-	public void RunPostBadResult() {
-		StartCoroutine(PostBadResult());
+	public void RunAnimationBadResult() {
+		StartCoroutine(AnimationBadResult());
 	}
 
-	public IEnumerator PostBadResult() {
+	public IEnumerator AnimationBadResult() {
 		float time = 0f;
 		float anger = npcAnim.GetFloat("Anger");
 		while (anger < 1f) {
@@ -271,13 +297,12 @@ public class NPCControl : BaseNPC {
 		npcAnim.SetFloat("Anger", 0f);
 	}
 
-	public void RunPostGoodResult() {
+	public void RunAnimationGoodResult() {
 		npcAnim.SetFloat("Anger", 0f);
 	}
 
-	protected override void Reset() {
+	public override void Reset() {
 		base.Reset();
-		StopAllCoroutines();
 		_npcState = npcState;
 		_randomWithinRadius = randomWithinRadius;
 		_minHeadTurn = minHeadTurn;
@@ -290,11 +315,15 @@ public class NPCControl : BaseNPC {
 		_obstructionDistance = obstructionDistance;
 		_sphereCastRadius = sphereCastRadius;
 
+		isInteracting = false;
 		curState = _npcState;
 		targetPos = transform.position;
 		randPoint = Vector3.zero;
 		speed = 0f;
 		stateRandTime = 0f;
 		stateRandTime = GetRandomDirTime();
+		if (curState == NPCState.Wander) {
+			StartCoroutine("SetNewTargetPosition");
+		}
 	}
 }

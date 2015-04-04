@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 
 public class BaseCamera : MonoBehaviour {
-	private bool enableCamera;
-	public bool EnableCamera {
-		get { return enableCamera; }
+	private bool cameraEnabled;
+	public bool CameraEnabled {
+		get { return cameraEnabled; }
 		set {
-			enableCamera = value;
+			cameraEnabled = value;
+			camera.enabled = value;
+			enabled = value;
 			gameObject.SetActive(value);
 		}
 	}

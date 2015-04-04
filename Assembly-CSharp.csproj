@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{BDFB2905-5B30-7720-E04C-FEEB36D2D98D}</ProjectGuid>
+	<ProjectGuid>{CD478CE1-593B-E96A-C84C-3B636440F457}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -19,7 +19,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_WEBPLAYER;WEBPLUG;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_GENERICS;ENABLE_SUBSTANCE;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_3_2;UNITY_4_3;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_GENERICS;ENABLE_SUBSTANCE;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_3_2;UNITY_4_3;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -54,35 +54,38 @@
      <Compile Include="Assets\Scripts\Character\PlayerInformation.cs" />
      <Compile Include="Assets\Scripts\Game Managers\AudioManager.cs" />
      <Compile Include="Assets\Scripts\Game Managers\DialogueManager.cs" />
-     <Compile Include="Assets\Scripts\Game Managers\GameEnding.cs" />
      <Compile Include="Assets\Scripts\Game Managers\GameManager.cs" />
-     <Compile Include="Assets\Scripts\Game Managers\MissionManager.cs" />
      <Compile Include="Assets\Scripts\Game Managers\NPCManager.cs" />
+     <Compile Include="Assets\Scripts\Game Managers\ParticleManager.cs" />
      <Compile Include="Assets\Scripts\Game Managers\UserInterface.cs" />
      <Compile Include="Assets\Scripts\Game Utility\GameUtility.cs" />
-     <Compile Include="Assets\Scripts\Inventory\TextureResource.cs" />
      <Compile Include="Assets\Scripts\Item\ItemData.cs" />
      <Compile Include="Assets\Scripts\Item\ItemInformation.cs" />
+     <Compile Include="Assets\Scripts\Mini Games\DanceUI.cs" />
+     <Compile Include="Assets\Scripts\Mini Games\HideNSeekUI.cs" />
+     <Compile Include="Assets\Scripts\Mini Games\KeypressGameUI.cs" />
+     <Compile Include="Assets\Scripts\Mini Games\MiniGamesData.cs" />
+     <Compile Include="Assets\Scripts\Mission\MissionData.cs" />
      <Compile Include="Assets\Scripts\NPC\Base\BaseNPC.cs" />
-     <Compile Include="Assets\Scripts\NPC\Base\NPC.cs" />
      <Compile Include="Assets\Scripts\NPC\Base\NPCData.cs" />
+     <Compile Include="Assets\Scripts\NPC\Base\NPCScript.cs" />
      <Compile Include="Assets\Scripts\NPC\NPCControl.cs" />
      <Compile Include="Assets\Scripts\NPC\NPCInformation.cs" />
-     <Compile Include="Assets\Scripts\Others\CameraOribit.cs" />
+     <Compile Include="Assets\Scripts\Others\Audio.cs" />
+     <Compile Include="Assets\Scripts\Others\BaseInteractedObject.cs" />
+     <Compile Include="Assets\Scripts\Others\CameraOrbit.cs" />
+     <Compile Include="Assets\Scripts\Others\Cutscene.cs" />
      <Compile Include="Assets\Scripts\Others\Emoticon.cs" />
-     <Compile Include="Assets\Scripts\Others\GameEndData.cs" />
+     <Compile Include="Assets\Scripts\Others\GameEnding.cs" />
      <Compile Include="Assets\Scripts\Others\GameStory.cs" />
-     <Compile Include="Assets\Scripts\Others\MiniGameData.cs" />
-     <Compile Include="Assets\Scripts\Others\MissionData.cs" />
+     <Compile Include="Assets\Scripts\Others\Resources.cs" />
      <Compile Include="Assets\Scripts\Others\RoamingCamera.cs" />
      <Compile Include="Assets\Scripts\Others\Statistics.cs" />
-     <Compile Include="Assets\Scripts\UserInterface\AngerGameUi.cs" />
      <Compile Include="Assets\Scripts\UserInterface\CharacterSelectionUI.cs" />
      <Compile Include="Assets\Scripts\UserInterface\GameEndUI.cs" />
      <Compile Include="Assets\Scripts\UserInterface\MainGameUI.cs" />
      <Compile Include="Assets\Scripts\UserInterface\MainMenuUI.cs" />
      <Compile Include="Assets\Scripts\UserInterface\MissionUi.cs" />
-     <Compile Include="Assets\Scripts\UserInterface\ScreenFade.cs" />
      <Compile Include="Assets\Shaders\MatCap Shaders\Demo\Assets\MC_AutoRotate.cs" />
      <Compile Include="Assets\Shaders\MatCap Shaders\Demo\Assets\MC_SwitchTexture.cs" />
      <None Include="Assets\Shaders\MatCap Shaders\Shaders\MatCap_TextureAdd_Bumped.shader" />

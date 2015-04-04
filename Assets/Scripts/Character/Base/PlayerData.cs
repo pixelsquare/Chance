@@ -66,5 +66,23 @@ namespace Player {
 			get { return playerStatistics; }
 			set { playerStatistics = value; }
 		}
+
+		private int missionsCompleted;
+		public int MissionsCompleted {
+			get { return missionsCompleted; }
+			set { missionsCompleted = value; }
+		}
+
+		private int missionsFailed;
+		public int MissionsFailed {
+			get { return missionsFailed; }
+			set { missionsFailed = value; }
+		}
+
+		private int miniGamesPlayed;
+		public int MiniGamesPlayed {
+			get { return miniGamesPlayed; }
+			set { miniGamesPlayed = value; }
+		}
 	}
 }

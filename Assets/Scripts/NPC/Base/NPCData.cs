@@ -1,6 +1,6 @@
 ﻿using Item;
-using MiniGame;
 using UnityEngine;
+using MiniGames;
 
 namespace NPC {
 	/*
@@ -10,36 +10,49 @@ namespace NPC {
 
 	public class NPCData {
 		public NPCData() {
+			npcNickname = string.Empty;
 			npcName = string.Empty;
 			npcAvatar = null;
 			npcNameID = NPCNameID.None;
 			npcDesc = string.Empty;
 			npcStatistics = Statistics.zero;
+			npcTalkedCount = 0;	
 			npcItemsNeeded = null;
+			npcItemsHave = new ItemData[20];
 			npcDialogue = null;
 			npcSympathyText = new SympathyText();
+			npcItemAcceptDialogue = null;
+			npcItemDeclineDialogue = null;
 			npcDialogueEnded = false;
 			npcNextDialogueindx = 0;
 			npcDialogueIndx = -1;
-			npcTalkedCount = 0;
+			npcFound = false;
 		}
 
-		public NPCData(string name, Texture2D avatar, NPCNameID nameID, string desc, Statistics stat, 
-			ItemsNeeded[] items, NPCDialogue[] dialogue, SympathyText sympathyText, AcceptedText[] acceptedText, DeclinedText[] declinedText) {
-			npcName = name;
-			npcAvatar = avatar;
-			npcNameID = nameID;
-			npcDesc = desc;
-			npcStatistics = stat;
-			npcItemsNeeded = items;
-			npcDialogue = dialogue;
-			npcSympathyText = sympathyText;
-			npcAcceptedText = acceptedText;
-			npcDeclinedText = declinedText;
-			npcDialogueEnded = false;
-			npcNextDialogueindx = 0;
-			npcDialogueIndx = -1;
-			npcTalkedCount = 0;
+		public NPCData(string nickname, string name, Texture2D avatar, NPCNameID nameID, string desc, Statistics stat, 
+			ItemsNeeded[] items, NPCDialogue[] dialogue, SympathyText sympathyText, ItemAcceptDialogue[] itemAccept, ItemDeclineDialogue[] itemDecline) {
+				npcNickname = nickname;
+				npcName = name;
+				npcAvatar = avatar;
+				npcNameID = nameID;
+				npcDesc = desc;
+				npcStatistics = stat;
+				npcItemsNeeded = items;
+				npcItemsHave = new ItemData[20];
+				npcDialogue = dialogue;
+				npcSympathyText = sympathyText;
+				npcItemAcceptDialogue = itemAccept;
+				npcItemDeclineDialogue = itemDecline;
+				npcDialogueEnded = false;
+				npcNextDialogueindx = 0;
+				npcDialogueIndx = -1;
+				npcTalkedCount = 0;
+				npcFound = false;
+		}
+
+		private string npcNickname;
+		public string NpcNickname {
+			get { return npcNickname; }
 		}
 
 		private string npcName;
@@ -62,21 +75,27 @@ namespace NPC {
 			get { return npcDesc; }
 		}
 
-		private int npcTalkedCount;
-		public int NpcTalkedCount {
-			get { return npcTalkedCount; }
-			set { npcTalkedCount = value; }
-		}
-
 		private Statistics npcStatistics;
 		public Statistics NpcStatistics {
 			get { return npcStatistics; }
 			set { npcStatistics = value; }
 		}
 
+		private int npcTalkedCount;
+		public int NpcTalkedCount {
+			get { return npcTalkedCount; }
+			set { npcTalkedCount = value; }
+		}
+
 		private ItemsNeeded[] npcItemsNeeded;
 		public ItemsNeeded[] NpcItemsNeeded {
 			get { return npcItemsNeeded; }
+		}
+
+		private ItemData[] npcItemsHave;
+		public ItemData[] NpcItemsHave {
+			get { return npcItemsHave; }
+			set { npcItemsHave = value; }
 		}
 
 		private NPCDialogue[] npcDialogue;
@@ -90,16 +109,16 @@ namespace NPC {
 			get { return npcSympathyText; }
 		}
 
-		private AcceptedText[] npcAcceptedText;
-		public AcceptedText[] NpcAcceptedText {
-			get { return npcAcceptedText; }
-			set { npcAcceptedText = value; }
+		private ItemAcceptDialogue[] npcItemAcceptDialogue;
+		public ItemAcceptDialogue[] NpcItemAcceptDialogue {
+			get { return npcItemAcceptDialogue; }
+			set { npcItemAcceptDialogue = value; }
 		}
 
-		private DeclinedText[] npcDeclinedText;
-		public DeclinedText[] NpcDeclinedText {
-			get { return npcDeclinedText; }
-			set { npcDeclinedText = value; }
+		private ItemDeclineDialogue[] npcItemDeclineDialogue;
+		public ItemDeclineDialogue[] NpcItemDeclineDialogue {
+			get { return npcItemDeclineDialogue; }
+			set { npcItemDeclineDialogue = value; }
 		}
 
 		private bool npcDialogueEnded;
@@ -118,6 +137,12 @@ namespace NPC {
 		public int NpcDialogueIndx {
 			get { return npcDialogueIndx; }
 			set { npcDialogueIndx = value; }
+		}
+
+		private bool npcFound;
+		public bool NpcFound {
+			get { return npcFound; }
+			set { npcFound = value; }
 		}
 	}
 
@@ -144,8 +169,8 @@ namespace NPC {
 		}
 	}
 
-	public struct AcceptedText {
-		public AcceptedText(DialogueData[] data) {
+	public struct ItemAcceptDialogue {
+		public ItemAcceptDialogue(DialogueData[] data) {
 			dialogueData = data;
 		}
 
@@ -155,8 +180,8 @@ namespace NPC {
 		}
 	}
 
-	public struct DeclinedText {
-		public DeclinedText(DialogueData[] data) {
+	public struct ItemDeclineDialogue {
+		public ItemDeclineDialogue(DialogueData[] data) {
 			dialogueData = data;
 		}
 
@@ -249,7 +274,7 @@ namespace NPC {
 		public DialogueButton(string name, ButtonType type) {
 			buttonName = name;
 			buttonType = type;
-			toughnessLevel = ToughnessLevel.None;
+			toughnessLevel = KeypressLevel.None;
 			addedStatistics = Statistics.zero;
 			buttonDialogueData = null;
 			goToDialogueIndx = -1;
@@ -259,14 +284,14 @@ namespace NPC {
 		public DialogueButton(Texture2D tex, string name, ButtonType type) {
 			buttonName = name;
 			buttonType = type;
-			toughnessLevel = ToughnessLevel.None;
+			toughnessLevel = KeypressLevel.None;
 			addedStatistics = Statistics.zero;
 			buttonDialogueData = null;
 			goToDialogueIndx = -1;
 			texture = tex;
 		}
 
-		public DialogueButton(string name, ButtonType type, ToughnessLevel toughness) {
+		public DialogueButton(string name, ButtonType type, KeypressLevel toughness) {
 			buttonName = name;
 			buttonType = type;
 			toughnessLevel = toughness;
@@ -276,7 +301,7 @@ namespace NPC {
 			texture = null;
 		}
 
-		public DialogueButton(Texture2D tex, string name, ButtonType type, ToughnessLevel toughness) {
+		public DialogueButton(Texture2D tex, string name, ButtonType type, KeypressLevel toughness) {
 			buttonName = name;
 			buttonType = type;
 			toughnessLevel = toughness;
@@ -289,14 +314,14 @@ namespace NPC {
 		public DialogueButton(string name, int goToIndx, ButtonType type) {
 			buttonName = name;
 			buttonType = type;
-			toughnessLevel = ToughnessLevel.None;
+			toughnessLevel = KeypressLevel.None;
 			addedStatistics = Statistics.zero;
 			buttonDialogueData = null;
 			goToDialogueIndx = goToIndx;
 			texture = null;
 		}
 
-		public DialogueButton(string name, int goToIndx, ButtonType type, ToughnessLevel toughness) {
+		public DialogueButton(string name, int goToIndx, ButtonType type, KeypressLevel toughness) {
 			buttonName = name;
 			buttonType = type;
 			toughnessLevel = toughness;
@@ -306,7 +331,7 @@ namespace NPC {
 			texture = null;
 		}
 
-		public DialogueButton(Texture2D tex, string name, int goToIndx, ButtonType type, ToughnessLevel toughness) {
+		public DialogueButton(Texture2D tex, string name, int goToIndx, ButtonType type, KeypressLevel toughness) {
 			buttonName = name;
 			buttonType = type;
 			toughnessLevel = toughness;
@@ -319,7 +344,7 @@ namespace NPC {
 		public DialogueButton(string name, ButtonType type, Statistics addedStat) {
 			buttonName = name;
 			buttonType = type;
-			toughnessLevel = ToughnessLevel.None;
+			toughnessLevel = KeypressLevel.None;
 			addedStatistics = addedStat;
 			buttonDialogueData = null;
 			goToDialogueIndx = -1;
@@ -329,14 +354,14 @@ namespace NPC {
 		public DialogueButton(Texture2D tex, string name, ButtonType type, Statistics addedStat) {
 			buttonName = name;
 			buttonType = type;
-			toughnessLevel = ToughnessLevel.None;
+			toughnessLevel = KeypressLevel.None;
 			addedStatistics = addedStat;
 			buttonDialogueData = null;
 			goToDialogueIndx = -1;
 			texture = tex;
 		}
 
-		public DialogueButton(string name, ButtonType type, ToughnessLevel toughness, Statistics addedStat) {
+		public DialogueButton(string name, ButtonType type, KeypressLevel toughness, Statistics addedStat) {
 			buttonName = name;
 			buttonType = type;
 			toughnessLevel = toughness;
@@ -346,7 +371,7 @@ namespace NPC {
 			texture = null;
 		}
 
-		public DialogueButton(Texture2D tex, string name, ButtonType type, ToughnessLevel toughness, Statistics addedStat) {
+		public DialogueButton(Texture2D tex, string name, ButtonType type, KeypressLevel toughness, Statistics addedStat) {
 			buttonName = name;
 			buttonType = type;
 			toughnessLevel = toughness;
@@ -359,7 +384,7 @@ namespace NPC {
 		public DialogueButton(string name, int goToIndx, ButtonType type, Statistics addedStat) {
 			buttonName = name;
 			buttonType = type;
-			toughnessLevel = ToughnessLevel.None;
+			toughnessLevel = KeypressLevel.None;
 			addedStatistics = addedStat;
 			buttonDialogueData = null;
 			goToDialogueIndx = goToIndx;
@@ -369,14 +394,14 @@ namespace NPC {
 		public DialogueButton(Texture2D tex, string name, int goToIndx, ButtonType type, Statistics addedStat) {
 			buttonName = name;
 			buttonType = type;
-			toughnessLevel = ToughnessLevel.None;
+			toughnessLevel = KeypressLevel.None;
 			addedStatistics = addedStat;
 			buttonDialogueData = null;
 			goToDialogueIndx = goToIndx;
 			texture = tex;
 		}
 
-		public DialogueButton(string name, int goToIndx, ButtonType type, ToughnessLevel toughness, Statistics addedStat) {
+		public DialogueButton(string name, int goToIndx, ButtonType type, KeypressLevel toughness, Statistics addedStat) {
 			buttonName = name;
 			buttonType = type;
 			toughnessLevel = toughness;
@@ -386,7 +411,7 @@ namespace NPC {
 			texture = null;
 		}
 
-		public DialogueButton(Texture2D tex, string name, int goToIndx, ButtonType type, ToughnessLevel toughness, Statistics addedStat) {
+		public DialogueButton(Texture2D tex, string name, int goToIndx, ButtonType type, KeypressLevel toughness, Statistics addedStat) {
 			buttonName = name;
 			buttonType = type;
 			toughnessLevel = toughness;
@@ -399,7 +424,7 @@ namespace NPC {
 		public DialogueButton(string name, ButtonType type, DialogueData[] data) {
 			buttonName = name;
 			buttonType = type;
-			toughnessLevel = ToughnessLevel.None;
+			toughnessLevel = KeypressLevel.None;
 			buttonDialogueData = data;
 			addedStatistics = Statistics.zero;
 			goToDialogueIndx = -1;
@@ -409,14 +434,14 @@ namespace NPC {
 		public DialogueButton(Texture2D tex, string name, ButtonType type, DialogueData[] data) {
 			buttonName = name;
 			buttonType = type;
-			toughnessLevel = ToughnessLevel.None;
+			toughnessLevel = KeypressLevel.None;
 			buttonDialogueData = data;
 			addedStatistics = Statistics.zero;
 			goToDialogueIndx = -1;
 			texture = tex;
 		}
 
-		public DialogueButton(string name, ButtonType type, ToughnessLevel toughness, DialogueData[] data) {
+		public DialogueButton(string name, ButtonType type, KeypressLevel toughness, DialogueData[] data) {
 			buttonName = name;
 			buttonType = type;
 			toughnessLevel = toughness;
@@ -426,7 +451,7 @@ namespace NPC {
 			texture = null;
 		}
 
-		public DialogueButton(Texture2D tex, string name, ButtonType type, ToughnessLevel toughness, DialogueData[] data) {
+		public DialogueButton(Texture2D tex, string name, ButtonType type, KeypressLevel toughness, DialogueData[] data) {
 			buttonName = name;
 			buttonType = type;
 			toughnessLevel = toughness;
@@ -439,7 +464,7 @@ namespace NPC {
 		public DialogueButton(string name, int goToIndx, ButtonType type, DialogueData[] data) {
 			buttonName = name;
 			buttonType = type;
-			toughnessLevel = ToughnessLevel.None;
+			toughnessLevel = KeypressLevel.None;
 			buttonDialogueData = data;
 			addedStatistics = Statistics.zero;
 			goToDialogueIndx = goToIndx;
@@ -449,14 +474,14 @@ namespace NPC {
 		public DialogueButton(Texture2D tex, string name, int goToIndx, ButtonType type, DialogueData[] data) {
 			buttonName = name;
 			buttonType = type;
-			toughnessLevel = ToughnessLevel.None;
+			toughnessLevel = KeypressLevel.None;
 			buttonDialogueData = data;
 			addedStatistics = Statistics.zero;
 			goToDialogueIndx = goToIndx;
 			texture = tex;
 		}
 
-		public DialogueButton(string name, int goToIndx, ButtonType type, ToughnessLevel toughness, DialogueData[] data) {
+		public DialogueButton(string name, int goToIndx, ButtonType type, KeypressLevel toughness, DialogueData[] data) {
 			buttonName = name;
 			buttonType = type;
 			toughnessLevel = toughness;
@@ -466,7 +491,7 @@ namespace NPC {
 			texture = null;
 		}
 
-		public DialogueButton(Texture2D tex, string name, int goToIndx, ButtonType type, ToughnessLevel toughness, DialogueData[] data) {
+		public DialogueButton(Texture2D tex, string name, int goToIndx, ButtonType type, KeypressLevel toughness, DialogueData[] data) {
 			buttonName = name;
 			buttonType = type;
 			toughnessLevel = toughness;
@@ -479,7 +504,7 @@ namespace NPC {
 		public DialogueButton(string name, ButtonType type, Statistics addedStat, DialogueData[] data) {
 			buttonName = name;
 			buttonType = type;
-			toughnessLevel = ToughnessLevel.None;
+			toughnessLevel = KeypressLevel.None;
 			addedStatistics = addedStat;
 			buttonDialogueData = data;
 			goToDialogueIndx = -1;
@@ -489,14 +514,14 @@ namespace NPC {
 		public DialogueButton(Texture2D tex, string name, ButtonType type, Statistics addedStat, DialogueData[] data) {
 			buttonName = name;
 			buttonType = type;
-			toughnessLevel = ToughnessLevel.None;
+			toughnessLevel = KeypressLevel.None;
 			addedStatistics = addedStat;
 			buttonDialogueData = data;
 			goToDialogueIndx = -1;
 			texture = tex;
 		}
 
-		public DialogueButton(string name, ButtonType type, ToughnessLevel toughness, Statistics addedStat, DialogueData[] data) {
+		public DialogueButton(string name, ButtonType type, KeypressLevel toughness, Statistics addedStat, DialogueData[] data) {
 			buttonName = name;
 			buttonType = type;
 			toughnessLevel = toughness;
@@ -506,7 +531,7 @@ namespace NPC {
 			texture = null;
 		}
 
-		public DialogueButton(Texture2D tex, string name, ButtonType type, ToughnessLevel toughness, Statistics addedStat, DialogueData[] data) {
+		public DialogueButton(Texture2D tex, string name, ButtonType type, KeypressLevel toughness, Statistics addedStat, DialogueData[] data) {
 			buttonName = name;
 			buttonType = type;
 			toughnessLevel = toughness;
@@ -519,7 +544,7 @@ namespace NPC {
 		public DialogueButton(string name, int goToIndx, ButtonType type, Statistics addedStat, DialogueData[] data) {
 			buttonName = name;
 			buttonType = type;
-			toughnessLevel = ToughnessLevel.None;
+			toughnessLevel = KeypressLevel.None;
 			addedStatistics = addedStat;
 			buttonDialogueData = data;
 			goToDialogueIndx = goToIndx;
@@ -529,14 +554,14 @@ namespace NPC {
 		public DialogueButton(Texture2D tex, string name, int goToIndx, ButtonType type, Statistics addedStat, DialogueData[] data) {
 			buttonName = name;
 			buttonType = type;
-			toughnessLevel = ToughnessLevel.None;
+			toughnessLevel = KeypressLevel.None;
 			addedStatistics = addedStat;
 			buttonDialogueData = data;
 			goToDialogueIndx = goToIndx;
 			texture = tex;
 		}
 
-		public DialogueButton(string name, int goToIndx, ButtonType type, ToughnessLevel toughness, Statistics addedStat, DialogueData[] data) {
+		public DialogueButton(string name, int goToIndx, ButtonType type, KeypressLevel toughness, Statistics addedStat, DialogueData[] data) {
 			buttonName = name;
 			buttonType = type;
 			toughnessLevel = toughness;
@@ -546,7 +571,7 @@ namespace NPC {
 			texture = null;
 		}
 
-		public DialogueButton(Texture2D tex, string name, int goToIndx, ButtonType type, ToughnessLevel toughness, Statistics addedStat, DialogueData[] data) {
+		public DialogueButton(Texture2D tex, string name, int goToIndx, ButtonType type, KeypressLevel toughness, Statistics addedStat, DialogueData[] data) {
 			buttonName = name;
 			buttonType = type;
 			toughnessLevel = toughness;
@@ -566,8 +591,8 @@ namespace NPC {
 			get { return buttonType; }
 		}
 
-		private ToughnessLevel toughnessLevel;
-		public ToughnessLevel ToughnessLevel {
+		private KeypressLevel toughnessLevel;
+		public KeypressLevel KeypressLevel {
 			get { return toughnessLevel; }
 		}
 

@@ -10,39 +10,31 @@ public class PlayerInformation : MonoBehaviour {
 	# region Public Variables
 
 	[SerializeField]
-	private int teamNpcCap = 4;
-	[SerializeField]
 	private PlayerCamera playerCamera;
 
 	# endregion Public Variables
 
 	# region Private Variables
 
-	private PlayerControl playerControl;
 	private NPCNameID interactingTo;
 	private ItemData[] inventory;
 	private NPCData[] npcFound;
 	private bool playerEnabled;
 
+	private PlayerControl playerControl;
 	private GameManager gameManager;
 	private NPCManager npcManager;
 
 	# endregion Private Variables
 
-	# region Reset Variables
-
-	private int _teamNpcCap;
-
-	# endregion Reset Variables
-
 	// Public Properties
-	public int TeamNpcCap {
-		get { return _teamNpcCap; }
-	}
-
 	public NPCNameID InteractingTo {
 		get { return interactingTo; }
 		set { interactingTo = value; }
+	}
+
+	public PlayerCamera PlayerCamera {
+		get { return playerCamera; }
 	}
 
 	public ItemData[] Inventory {
@@ -53,16 +45,11 @@ public class PlayerInformation : MonoBehaviour {
 		get { return npcFound; }
 	}
 
-	public PlayerCamera PlayerCamera {
-		get { return playerCamera; }
-	}
-
 	public bool PlayerEnabled {
 		get { return playerEnabled; }
 		set {
 			playerEnabled = value;
-			playerCamera.EnableCamera = value;
-			SetPlayerActive(value);
+			SetPlayerInformationActive(value);
 		}
 	}
 	// --
@@ -71,17 +58,57 @@ public class PlayerInformation : MonoBehaviour {
 		gameManager = GameManager.current;
 		npcManager = NPCManager.current;
 		playerControl = GetComponent<PlayerControl>();
-		
-		PlayerEnabled = false;
+
+		inventory = new ItemData[11];
+		npcFound = new NPCData[npcManager.Npc.Length];
+
+        //AddInventoryItem(ItemNameID.GrassJellyMilkTea);
+        //AddInventoryItem(ItemNameID.HotCoffee);
+        //AddInventoryItem(ItemNameID.IcedTea);
+		//AddInventoryItem(ItemNameID.Milk);
+		//AddInventoryItem(ItemNameID.OrangeJuice);
+		//AddInventoryItem(ItemNameID.StrawberryMilkshake);
+		//AddInventoryItem(ItemNameID.USB);
+		//AddInventoryItem(ItemNameID.WhiteEarphones);
+		//AddInventoryItem(ItemNameID.GuitarPick);
+
+		//AddInventoryItem(ItemNameID.FanfictionNotebook);
+		//AddInventoryItem(ItemNameID.Headset);
+
+        //AddNpcToList(NPCNameID.Noelle);
+        //AddNpcToList(NPCNameID.Andy);
+        //AddNpcToList(NPCNameID.Bart);
+        //AddNpcToList(NPCNameID.Beta);
+        //AddNpcToList(NPCNameID.Franz);
+        //AddNpcToList(NPCNameID.Jenevieve);
+        //AddNpcToList(NPCNameID.Maxine);
+
+        PlayerEnabled = false;
 	}
 
-	private void SetPlayerActive(bool enable) {
-		collider.enabled = enable;
-		playerControl.PlayerAnimator.enabled = enable;
-		playerControl.EnableControl = enable;
-		playerControl.PlayerCamera.gameObject.SetActive(enable);
-		GameUtility.SetRendererActiveRecursively(transform, enable);
-		gameObject.SetActive(enable);
+	private void Update() {
+	//    if (Input.GetKeyDown(KeyCode.U)) {
+	//        AddNpcToList(NPCNameID.Noelle);
+	//        AddNpcToList(NPCNameID.Andy);
+	//        AddNpcToList(NPCNameID.Bart);
+	//        AddNpcToList(NPCNameID.Beta);
+	//        AddNpcToList(NPCNameID.Franz);
+	//        AddNpcToList(NPCNameID.Jenevieve);
+	//        AddNpcToList(NPCNameID.Maxine);
+	//        for (int i = 0; i < npcManager.Npc.Length; i++) {
+	//            NPCInformation npcInformation = npcManager.Npc[i].GetComponent<NPCInformation>();
+	//            npcInformation.BaseNpcData.NpcFound = true;
+	//        }
+	//    }
+	}
+
+	private void SetPlayerInformationActive(bool active) {
+		collider.enabled = active;
+		playerControl.PlayerAnimator.enabled = active;
+		playerControl.ControlEnabled = active;
+		playerCamera.CameraEnabled = active;
+		GameUtility.SetRendererActiveRecursively(transform, active);
+		gameObject.SetActive(active);
 	}
 
 	public void AddNpcToList(NPCNameID nameID) {
@@ -95,8 +122,8 @@ public class PlayerInformation : MonoBehaviour {
 			}
 		}
 
-		if (count < 1) {
-			npcFound[indx] = NPCDatabase.GetNPC(nameID);
+		if (count < 1 && indx < npcFound.Length) {
+			npcFound[indx] = NPCDatabase.GetNpc(nameID);
 			Debug.Log("[PLAYER] " + npcFound[indx].NpcName + " has been added to your Characters Found");
 		}
 	}
@@ -185,7 +212,6 @@ public class PlayerInformation : MonoBehaviour {
 		return count;
 	}
 
-	// Gives the total available npc count
 	public int GetNpcCount() {
 		int count = 0;
 		for (int i = 0; i < npcFound.Length; i++) {
@@ -196,38 +222,8 @@ public class PlayerInformation : MonoBehaviour {
 		return count;
 	}
 
-	public void Reset() {
-		_teamNpcCap = teamNpcCap;
-
-		inventory = new ItemData[11];
-		npcFound = new NPCData[npcManager.MainNpc.Length];
-
-        //AddInventoryItem(ItemNameID.Donut);
-        //AddInventoryItem(ItemNameID.Donut);
-        //AddInventoryItem(ItemNameID.Chrome);
-
-		AddInventoryItem(ItemNameID.GrassJellyMilkTea);
-		//AddInventoryItem(ItemNameID.HotCoffee);
-		//AddInventoryItem(ItemNameID.IcedTea);
-		//AddInventoryItem(ItemNameID.Milk);
-		//AddInventoryItem(ItemNameID.OrangeJuice);
-		//AddInventoryItem(ItemNameID.StrawberryMilkshake);
-		AddInventoryItem(ItemNameID.USB);
-		//AddInventoryItem(ItemNameID.WhiteEarphones);
-		//AddInventoryItem(ItemNameID.GuitarPick);
-
-        //AddInventoryItem(ItemNameID.FanfictionNotebook);
-        //AddInventoryItem(ItemNameID.Headset);
-
-		//AddNpcToList(NPCNameID.Noelle);
-		//AddNpcToList(NPCNameID.Andy);
-		//AddNpcToList(NPCNameID.Bart);
-		//AddNpcToList(NPCNameID.Beta);
-		//AddNpcToList(NPCNameID.Franz);
-		//AddNpcToList(NPCNameID.Jenevieve);
-		//AddNpcToList(NPCNameID.Maxine);
-		//AddNpcToList(NPCNameID.Nina);
-		//AddNpcToList(NPCNameID.Beta);
-		//AddNpcToList(NPCNameID.Nina);
+	public void ResetPlayerInformation() {
+		interactingTo = NPCNameID.None;
+		PlayerEnabled = false;
 	}
 }

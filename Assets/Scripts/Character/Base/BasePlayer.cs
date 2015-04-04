@@ -57,7 +57,7 @@ public class BasePlayer : MonoBehaviour {
 		get { return playerHead; }
 	}
 
-	public Transform PlayerRayPos {
+	public Transform PlayerRayPosition {
 		get { return playerRayPos; }
 	}
 
@@ -73,10 +73,6 @@ public class BasePlayer : MonoBehaviour {
 		get { return playerAnimator; }
 	}
 
-	public PlayerCamera PlayerCamera {
-		get { return playerCamera; }
-	}
-
 	public float LocomotionThreshold {
 		get { return _locomotionThreshold; }
 	}
@@ -88,7 +84,7 @@ public class BasePlayer : MonoBehaviour {
 	protected virtual void Awake() { }
 
 	protected virtual void Start() {
-		playerAnimator = GetComponent<Animator>();
+        playerAnimator = GetComponent<Animator>();
 		playerCamera = playerCameraT.GetComponent<PlayerCamera>();
 		playerStateInfo = playerAnimator.GetCurrentAnimatorStateInfo(0);
 		pCamera = playerCameraT.GetComponent<Camera>();
@@ -129,7 +125,7 @@ public class BasePlayer : MonoBehaviour {
 
 				// Get the nearest object
 				if (sphereHit.Length > 0 && objectHit.Count > 0) {
-					if (OnInteract != null && userInterface.InactiveUI()) {
+					if (OnInteract != null && UserInterface.InactiveUI()) {
 						OnInteract(objectHit[0].Obj);
 					}
 				}
@@ -146,6 +142,8 @@ public class BasePlayer : MonoBehaviour {
 		_locomotionThreshold = locomotionThreshold;
 
 		viewAngle = 0f;
+		sphereHit = null;
+		objectHit = null;
 	}
 
 	private int SortDistance(ObjectHit a, ObjectHit b) {

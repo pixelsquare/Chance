@@ -1,7 +1,5 @@
 ﻿using System.Collections.Generic;
-using GameEnd.Database;
 using GameUtilities;
-using Mission;
 using Player;
 using UnityEngine;
 
@@ -11,12 +9,13 @@ public enum GameState {
 	CharacterSelection, 
 	GameStory, 
 	MainGame,
+	EndingResult,
 	GameEnd
 };
 
-public delegate void StartTransition();
-public delegate void MidTransition();
-public delegate void EndTransition();
+public delegate void TransitionStart();
+public delegate void TransitionMid();
+public delegate void TransitionEnd();
 
 public class GameManager : MonoBehaviour {
 	# region Public Variables
@@ -26,9 +25,17 @@ public class GameManager : MonoBehaviour {
 	[SerializeField]
 	private GameState gameState;
 	[SerializeField]
+	private float fadeDuration = 2f;
+	[SerializeField]
+	private ParticleSystem birdParticle;
+	[SerializeField]
 	private BaseCamera mainCamera;
 	[SerializeField]
 	private RoamingCamera roamingCamera;
+	[SerializeField]
+	private Cutscene gameStory;
+	[SerializeField]
+	private GameEnding theater;
 
 	[SerializeField]
 	private Level baseLevel;
@@ -40,14 +47,20 @@ public class GameManager : MonoBehaviour {
 	private bool initializeMainGame;
 	private PlayerData basePlayerData;
 
+	private AudioSource audioSource;
+	private AudioPool audioPool;
+
 	private NPCManager npcManager;
 	private DialogueManager dialogueManager;
 	private UserInterface userInterface;
-	private ScreenFade screenFade;
 	private CharacterSelectionUI characterSelection;
-	private MissionManager missionManager;
+	private MissionUi mission;
+    private GameEnding gameEnding;
+	private AudioManager audioManager;
 
 	# endregion Private Variables
+
+	private float _fadeDuration;
 
 	# region Reset Variables
 
@@ -61,21 +74,34 @@ public class GameManager : MonoBehaviour {
 
 	public bool EnableMainCamera {
 		set { 
-			mainCamera.EnableCamera = value;
-			roamingCamera.EnableCamera = !value;
+			mainCamera.CameraEnabled = value;
+			roamingCamera.CameraEnabled = !value;
 		}
 	}
 
 	public bool EnableRoamingCamera {
 		set {
-			roamingCamera.EnableCamera = value;
-			mainCamera.EnableCamera = !value;
+			roamingCamera.CameraEnabled = value;
+			mainCamera.CameraEnabled = !value;
 		}
 	}
 
 	public PlayerData BasePlayerData {
 		get { return basePlayerData; }
 		set { basePlayerData = value; }
+	}
+
+	public Level BaseLevel {
+		get { return baseLevel; }
+		set { baseLevel = value; }
+	}
+
+    public Cutscene GameStory {
+        get { return gameStory; }
+    }
+
+	public GameEnding Theater {
+		get { return theater; }
 	}
 	// --
 
@@ -89,14 +115,14 @@ public class GameManager : MonoBehaviour {
 		npcManager = NPCManager.current;
 		dialogueManager = DialogueManager.current;
 		userInterface = UserInterface.current;
-		screenFade = ScreenFade.current;
 		characterSelection = CharacterSelectionUI.current;
-		missionManager = MissionManager.current;
+		mission = MissionUi.current;
+        gameEnding = GameEnding.current;
+		audioManager = AudioManager.current;
 
-		GameEndDatabase.Initialize();
-
-		mainCamera.EnableCamera = false;
-		roamingCamera.EnableCamera = false;
+		_fadeDuration = fadeDuration;
+		mainCamera.CameraEnabled = false;
+		roamingCamera.CameraEnabled = false;
 
 		SwitchGameState(gameState);
 	}
@@ -112,6 +138,19 @@ public class GameManager : MonoBehaviour {
 		Debug.Log("[GAME STATE] Initialize Main Menu");
 		gameState = global::GameState.MainMenu;
 		userInterface.CharacterSelectionUi.Reset();
+		birdParticle.startRotation = 0f;
+
+		if (audioSource != null) {
+			audioSource.Stop();
+			audioSource.gameObject.SetActive(false);
+		}
+
+		audioSource = audioManager.GetAudioSource(AudioNameID.MainMenuBGM, false);
+		audioSource.gameObject.SetActive(true);
+		audioSource.loop = true;
+		audioSource.Play();
+
+		//basePlayerData.PlayerInformation.ResetPlayerInformation();
 
 		InitializeGame();
 		EnableRoamingCamera = true;
@@ -121,6 +160,26 @@ public class GameManager : MonoBehaviour {
 		Debug.Log("[GAME STATE] Initialize Character Selection");
 		gameState = global::GameState.CharacterSelection;
 		userInterface.CharacterSelectionUi.Reset();
+		birdParticle.startRotation = 0f;
+
+		//audioPool = audioManager.GetAudioPool(AudioNameID.MainMenuBGM);
+		if (audioSource == null) {
+			audioSource = audioManager.GetAudioSource(AudioNameID.MainMenuBGM, false);
+			audioSource.gameObject.SetActive(true);
+			audioSource.loop = true;
+			audioSource.Play();
+		}
+		//if (audioSource.clip != audioPool.AudioClip && audioPool != null) {
+		//    if (audioSource != null) {
+		//        audioSource.Stop();
+		//        audioSource.gameObject.SetActive(false);
+		//    }
+
+		//    audioSource = audioManager.GetAudioSource(AudioNameID.MainMenuBGM, false);
+		//    audioSource.gameObject.SetActive(true);
+		//    audioSource.loop = true;
+		//    audioSource.Play();
+		//}
 
 		InitializeGame();
 		EnableRoamingCamera = true;
@@ -130,69 +189,147 @@ public class GameManager : MonoBehaviour {
 		Debug.Log("[GAME STATE] Initialize Game Story");
 		gameState = global::GameState.GameStory;
 		userInterface.CharacterSelectionUi.Reset();
-		dialogueManager.Reset();
-		dialogueManager.RunGameStory();
+		birdParticle.startRotation = 0f;
+		//dialogueManager.Reset();
+		//dialogueManager.RunGameStory();
 
-		EnableMainCamera = true;
+		if (audioSource != null) {
+			audioSource.Stop();
+			audioSource.gameObject.SetActive(false);
+		}
+
+		audioSource = audioManager.GetAudioSource(AudioNameID.GameStoryBGM, false);
+        audioSource.gameObject.SetActive(true);
+		audioSource.loop = true;
+        audioSource.Play();
+
+		gameStory.RunCutscene(GameStoryEnd);
+		InitializeGame();
+
 		mainCamera.camera.enabled = false;
+		roamingCamera.CameraEnabled = false;
+		mainCamera.CameraEnabled = false;
+		//EnableMainCamera = true;
 	}
 
 	private void MidInitMainGame() {
 		Debug.Log("[GAME STATE] Initialize Main Game");
 		gameState = global::GameState.MainGame;
+		birdParticle.startRotation = 0f;
 
 		dialogueManager.Reset();
 		userInterface.ResetMainGame();
+
+		if (audioSource != null) {
+			audioSource.Stop();
+			audioSource.gameObject.SetActive(false);
+		}
+
+		audioSource = audioManager.GetAudioSource(AudioNameID.MainGameBGM, false);
+		audioSource.gameObject.SetActive(true);
+		audioSource.loop = true;
+		audioSource.Play();
 
 		if (basePlayerData == null) {
 			basePlayerData = new PlayerData("No Name", null, Statistics.one * 50);
 			basePlayerData.PlayerT = characterSelection.CharacterOwen;		
 		}
 
-		basePlayerData.PlayerInformation.Reset();
+		basePlayerData.PlayerInformation.ResetPlayerInformation();
 		basePlayerData.PlayerInformation.PlayerEnabled = true;
+
+		mission.RunMission();
 
 		initializeMainGame = false;
 		InitializeGame();
 
-		missionManager.RunMission();
+		mainCamera.CameraEnabled = false;
+		roamingCamera.CameraEnabled = false;
+	}
 
-		mainCamera.EnableCamera = false;
-		mainCamera.camera.enabled = true;
-		roamingCamera.EnableCamera = false;
+	private void MidInitEndingResult() {
+		Debug.Log("[GAME STATE] Initialize Main End");
+		gameState = global::GameState.EndingResult;
+		birdParticle.startRotation = 0f;
+
+		if (audioSource != null) {
+			audioSource.Stop();
+			audioSource.gameObject.SetActive(false);
+		}
+
+        if (gameEnding.EndingType == EndingType.Ending3 || gameEnding.EndingType == EndingType.Ending4) {
+			audioSource = audioManager.GetAudioSource(AudioNameID.SadEnding, false);
+        }
+        else {
+			audioSource = audioManager.GetAudioSource(AudioNameID.HappyEnding, false);
+        }
+
+        audioSource.gameObject.SetActive(true);
+		audioSource.loop = true;
+        audioSource.Play();
+
+		basePlayerData.PlayerInformation.PlayerEnabled = false;
+		basePlayerData = new PlayerData();
+
+		mainCamera.camera.enabled = false;
+		roamingCamera.CameraEnabled = false;
+		mainCamera.CameraEnabled = false;
 	}
 
 	private void MidInitGameEnd() {
 		Debug.Log("[GAME STATE] Initialize Main End");
 		gameState = global::GameState.GameEnd;
+		birdParticle.startRotation = 0f;
 
-		basePlayerData.PlayerInformation.PlayerEnabled = false;
-		basePlayerData = new PlayerData();
+		//if (audioSource != null) {
+		//    audioSource.Stop();
+		//    audioSource.gameObject.SetActive(false);
+		//}
+
+		//audioSource = audioManager.GetAudioSource(AudioNameID.MainMenuBG);
+		//audioSource.gameObject.SetActive(true);
+		//audioSource.loop = true;
+		//audioSource.Play();
 
 		EnableMainCamera = true;
 	}
 
 	public void SwitchGameState(GameState state) {
-		if (!screenFade.IsTransitioning) {
+		if (!userInterface.IsTransitioning) {
 			if (state == global::GameState.Intro) {
-				screenFade.Run(new FadeTransition(null, MidInitIntro, null));
+				UserInterface.RunTransitionFade(new FadeTransition(_fadeDuration, null, MidInitIntro, null));
 			}
 			else if (state == global::GameState.MainMenu) {
-				screenFade.Run(new FadeTransition(null, MidInitMainMenu, null));
+				UserInterface.RunTransitionFade(new FadeTransition(_fadeDuration, null, MidInitMainMenu, null));
 			}
 			else if (state == global::GameState.CharacterSelection) {
-				screenFade.Run(new FadeTransition(null, MidInitCharacterSelection, null));
+				UserInterface.RunTransitionFade(new FadeTransition(_fadeDuration, null, MidInitCharacterSelection, null));
 			}
 			else if (state == global::GameState.GameStory) {
-				screenFade.Run(new FadeTransition(null, MidInitGameStory, null));
+				UserInterface.RunTransitionFade(new FadeTransition(_fadeDuration, null, MidInitGameStory, null));
 			}
 			else if (state == global::GameState.MainGame) {
-				screenFade.Run(new FadeTransition(null, MidInitMainGame, null));
+				UserInterface.RunTransitionFade(new FadeTransition(_fadeDuration, null, MidInitMainGame, null));
+			}
+			else if (state == global::GameState.EndingResult) {
+				UserInterface.RunTransitionFade(new FadeTransition(_fadeDuration, null, MidInitEndingResult, null));
 			}
 			else if (state == global::GameState.GameEnd) {
-				screenFade.Run(new FadeTransition(null, MidInitGameEnd, null));
+				UserInterface.RunTransitionFade(new FadeTransition(_fadeDuration, null, MidInitGameEnd, null));
 			}
 		}
+	}
+
+	public void SetAudioSource(AudioSource source) {
+		if (audioSource != null) {
+			audioSource.Stop();
+			audioSource.gameObject.SetActive(false);
+		}
+
+		audioSource = source;
+		audioSource.gameObject.SetActive(true);
+		audioSource.loop = true;
+		audioSource.Play();
 	}
 
 	public void InitializeGame() {
@@ -209,35 +346,14 @@ public class GameManager : MonoBehaviour {
 			System.Random rng = new System.Random();
 			int randIndx = 0;
 
-			if (npcManager.MainNpc != null) {
-				for (int i = 0; i < npcManager.MainNpc.Length; i++) {
-					if (npcManager.MainNpc[i] != null) {
+			if (npcManager.Npc != null) {
+				for (int i = 0; i < npcManager.Npc.Length; i++) {
+					if (npcManager.Npc[i] != null) {
 						randIndx = rng.Next(0, npcSpawnPoints.Count);
-						NPCControl tmpNpcControl = npcManager.MainNpc[i].GetComponent<NPCControl>();
-						tmpNpcControl.NpcInformation.NPCEnable = false;
-						tmpNpcControl.transform.position = npcSpawnPoints[randIndx].position;
-						tmpNpcControl.transform.rotation = npcSpawnPoints[randIndx].rotation;
-						tmpNpcControl.TargetPos = tmpNpcControl.transform.position;
-						tmpNpcControl.NpcInformation.NPCEnable = true;
-						npcSpawnPoints.RemoveAt(randIndx);
-					}
-				}
-			}
-
-			npcSpawnPoints = new List<Transform>();
-			GameUtility.GetChildrenRecursively(baseLevel.WandererNpcSpawnPoint, ref npcSpawnPoints);
-			randIndx = 0;
-
-			if (npcManager.WandererNpc != null) {
-				for (int i = 0; i < npcManager.WandererNpc.Length; i++) {
-					if (npcManager.WandererNpc[i] != null) {
-						randIndx = rng.Next(0, npcSpawnPoints.Count);
-						NPCControl tmpNpcControl = npcManager.WandererNpc[i].GetComponent<NPCControl>();
-						tmpNpcControl.NpcInformation.NPCEnable = false;
-						tmpNpcControl.transform.position = npcSpawnPoints[randIndx].position;
-						tmpNpcControl.transform.rotation = npcSpawnPoints[randIndx].rotation;
-						tmpNpcControl.TargetPos = tmpNpcControl.transform.position;
-						tmpNpcControl.NpcInformation.NPCEnable = true;
+						NPCControl npcControl = npcManager.Npc[i].GetComponent<NPCControl>();
+						npcControl.NpcInformation.ObjectEnabled = false;
+						npcControl.InitializeNpcControl(npcSpawnPoints[randIndx].position, npcSpawnPoints[randIndx].rotation, npcManager.FirstFloor, npcManager.SecondFloor);
+						npcControl.NpcInformation.ObjectEnabled = true;
 						npcSpawnPoints.RemoveAt(randIndx);
 					}
 				}
@@ -246,27 +362,48 @@ public class GameManager : MonoBehaviour {
 			initializeMainGame = true;
 		}
 	}
+
+	private void GameStoryEnd() {
+		SwitchGameState(global::GameState.MainGame);
+	}
 }
 
 public struct FadeTransition {
-	public FadeTransition(StartTransition start, MidTransition midT, EndTransition endT) {
+	public FadeTransition(float duration, TransitionStart start, TransitionMid midT, TransitionEnd endT) {
+		fadeDuration = duration;
 		startTransition = start;
 		midTransition = midT;
 		endTransition = endT;
 	}
 
-	private StartTransition startTransition;
-	public StartTransition StartTransition {
+	public FadeTransition(float duration) {
+		fadeDuration = duration;
+		startTransition = null;
+		midTransition = null;
+		endTransition = null;
+	}
+
+	public static FadeTransition none {
+		get { return new FadeTransition(); }
+	}
+
+	private float fadeDuration;
+	public float FadeDuration {
+		get { return fadeDuration; }
+	}
+
+	private TransitionStart startTransition;
+	public TransitionStart StartTransition {
 		get { return startTransition; }
 	}
 
-	private MidTransition midTransition;
-	public MidTransition Midtransition {
+	private TransitionMid midTransition;
+	public TransitionMid Midtransition {
 		get { return midTransition; }
 	}
 
-	private EndTransition endTransition;
-	public EndTransition EndTransition {
+	private TransitionEnd endTransition;
+	public TransitionEnd EndTransition {
 		get { return endTransition; }
 	}
 }
@@ -286,8 +423,8 @@ public class Level {
 	}
 
 	[SerializeField]
-	private Transform wandererNpcSpawnPoint;
-	public Transform WandererNpcSpawnPoint {
-		get { return wandererNpcSpawnPoint; }
+	private Transform hideAndSeekSpawnPoints;
+	public Transform HideAndSeekSpawnPoints {
+		get { return hideAndSeekSpawnPoints; }
 	}
 }

@@ -35,3 +35,17 @@ C:\Users\Anthony\Desktop\devGround v0.110.5.9.4\Temp\bin\Debug\ICSharpCode.NRefa
 C:\Users\Anthony\Desktop\devGround v0.110.5.9.4\obj\Debug\Assembly-CSharp-vs.csprojResolveAssemblyReference.cache
 C:\Users\Anthony\Desktop\devGround v0.110.5.9.4\obj\Debug\Assembly-CSharp.dll
 C:\Users\Anthony\Desktop\devGround v0.110.5.9.4\obj\Debug\Assembly-CSharp.pdb
+C:\Users\Anthony\Desktop\Chance v0.110.5.9.6\obj\Debug\Assembly-CSharp-vs.csprojResolveAssemblyReference.cache
+C:\Users\Anthony\Desktop\Chance v0.110.5.9.6\obj\Debug\Assembly-CSharp.pdb
+C:\Users\Anthony\Desktop\Chance v0.110.5.9.8\Temp\bin\Debug\Assembly-CSharp.dll
+C:\Users\Anthony\Desktop\Chance v0.110.5.9.8\Temp\bin\Debug\Assembly-CSharp.pdb
+C:\Users\Anthony\Desktop\Chance v0.110.5.9.8\Temp\bin\Debug\JoystickManager.dll
+C:\Users\Anthony\Desktop\Chance v0.110.5.9.8\Temp\bin\Debug\UnityEditor.dll
+C:\Users\Anthony\Desktop\Chance v0.110.5.9.8\Temp\bin\Debug\UnityEngine.dll
+C:\Users\Anthony\Desktop\Chance v0.110.5.9.8\Temp\bin\Debug\Mono.Cecil.dll
+C:\Users\Anthony\Desktop\Chance v0.110.5.9.8\Temp\bin\Debug\nunit.framework.dll
+C:\Users\Anthony\Desktop\Chance v0.110.5.9.8\Temp\bin\Debug\Unity.DataContract.dll
+C:\Users\Anthony\Desktop\Chance v0.110.5.9.8\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+C:\Users\Anthony\Desktop\Chance v0.110.5.9.8\obj\Debug\Assembly-CSharp-vs.csprojResolveAssemblyReference.cache
+C:\Users\Anthony\Desktop\Chance v0.110.5.9.8\obj\Debug\Assembly-CSharp.dll
+C:\Users\Anthony\Desktop\Chance v0.110.5.9.8\obj\Debug\Assembly-CSharp.pdb

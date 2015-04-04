@@ -38,6 +38,38 @@ namespace GameUtilities {
 				}
 				SetRendererActiveRecursively(obj, active);
 			}
+
+			if (root.renderer != null) {
+				root.renderer.enabled = active;
+			}
+		}
+
+		// Recursively change the material of an object
+		public static void SetRendererMaterialRecursively(Transform root, Material material) {
+			foreach (Transform obj in root) {
+				if (obj.renderer != null && obj.renderer.material != null) {
+					obj.renderer.material = material;
+				}
+				SetRendererMaterialRecursively(obj, material);
+			}
+
+			if (root.renderer != null && root.renderer.material != null) {
+				root.renderer.material = material;
+			}
+		}
+
+		// Recursively change the color of the material
+		public static void SetRendererMaterialColorRecursively(Transform root, Color color) {
+			foreach (Transform obj in root) {
+				if (obj.renderer != null && obj.renderer.material != null) {
+					obj.renderer.material.color = color;
+				}
+				SetRendererMaterialColorRecursively(obj, color);
+			}
+
+			if (root.renderer != null && root.renderer.material != null) {
+				root.renderer.material.color = color;
+			}
 		}
 
 		// Recursively change gameobject layer
@@ -76,6 +108,20 @@ namespace GameUtilities {
 				mainRect = new Rect(Screen.width * 0.5f, Screen.height * 0.5f, Screen.width, Screen.height * screenHeightRatio);
 				AnchorPoint.AnchorPoint.SetAnchor(ref mainRect, AnchorPoint.Anchor.MiddleCenter);
 			}
+		}
+
+		public static Transform TransformCopy(Transform t1, Transform t2) {
+			Transform t = t1;
+			t.position = t2.position;
+			t.rotation = t2.rotation;
+
+			//t.localPosition = t2.localPosition;
+			//t.localRotation = t2.localRotation;
+			//t.localScale = t2.localScale;
+
+			//t.localEulerAngles = t2.localEulerAngles;
+
+			return t;
 		}
 	}
 
@@ -128,11 +174,6 @@ namespace GameUtilities {
 				get { return layerNpcInteracted; }
 			}
 
-			private static int layerNpcWanderer = 17;
-			public static int LayerNpcWanderer {
-				get { return layerNpcWanderer; }
-			}
-
 			private static int layerGround = 31;
 			public static int LayerGround {
 				get { return layerGround; }
@@ -168,6 +209,8 @@ namespace GameUtilities {
 			public static string DialogueButton2 = "Dialogue Button 2";
 			public static string DialogueButton3 = "Dialogue Button 3";
 			public static string Sprint = "Sprint";
+			public static string ArrowVertical = "Arrow Vertical";
+			public static string ArrowHorizontal = "Arrow Horizontal";
 		}
 	}
 	
@@ -223,75 +266,7 @@ namespace GameUtilities {
 	}
 
 	// Progress bar and Slider
-	namespace GameGUI {
-		public class GameGUI {
-			public static void ProgressBar(string name, float val, float max, Rect barRect, GUIStyle baseStyle, GUIStyle overlayStyle) {
-				GUI.BeginGroup(barRect);
-
-				// Progress bar Background
-				Rect bgRect = new Rect(0f, 0f, barRect.width, barRect.height);
-				GUI.Box(bgRect, name, baseStyle);
-
-				// Convert value to decimal place
-				float value = val / max;
-
-				# region Progress bar Overlay
-				GUI.BeginGroup(new Rect(0f, 0f, barRect.width * value, barRect.height));
-
-				Rect overlayRect = new Rect(0f, 0f, barRect.width, barRect.height);
-				GUI.Box(overlayRect, name, overlayStyle);
-
-				GUI.EndGroup();
-				# endregion Progress bar Overlay
-
-				GUI.EndGroup();
-			}
-
-			public static void SliderBox(string name, float value, Rect bgRect, GUIStyle leftStyle, GUIStyle rightStyle, GUIStyle textStyle) {
-				GUI.BeginGroup(bgRect);
-
-				# region Left Slider
-				Rect leftRect = new Rect(0f, bgRect.height * 0.5f, bgRect.width, bgRect.height);
-				AnchorPoint.AnchorPoint.SetAnchor(ref leftRect, AnchorPoint.Anchor.MiddleLeft);
-				//GUI.Box(leftRect, string.Empty);
-
-				GUI.BeginGroup(new Rect(0f, 0f, bgRect.width * value, bgRect.height));
-				Rect leftValRect = new Rect(0f, leftRect.height * 0.5f, leftRect.width, leftRect.height);
-				AnchorPoint.AnchorPoint.SetAnchor(ref leftValRect, AnchorPoint.Anchor.MiddleLeft);
-				GUI.Box(leftValRect, string.Empty, leftStyle);
-				GUI.EndGroup();
-				# endregion Left Slider
-
-				# region Right Slider
-				Rect rightRect = new Rect(bgRect.width, bgRect.height * 0.5f, bgRect.width, bgRect.height);
-				AnchorPoint.AnchorPoint.SetAnchor(ref rightRect, AnchorPoint.Anchor.MiddleRight);
-				//GUI.Box(rightRect, string.Empty);
-
-				GUI.BeginGroup(new Rect(rightRect.width * value, 0f, rightRect.width, rightRect.height));
-				Rect rightValRect = new Rect(rightRect.width * (1 - value), rightRect.height * 0.5f, rightRect.width, rightRect.height);
-				AnchorPoint.AnchorPoint.SetAnchor(ref rightValRect, AnchorPoint.Anchor.MiddleRight);
-				GUI.Box(rightValRect, string.Empty, rightStyle);
-				GUI.EndGroup();
-				# endregion Right Slider
-
-				GUI.EndGroup();
-				GUI.Box(bgRect, name, textStyle);
-			}
-
-			public static void HotkeyBox(Rect bgRect, float xOffset, string key, string keyText, GUIStyle textSkin) {
-				GUI.BeginGroup(bgRect);
-				Rect keyRect = new Rect(bgRect.width * 0.2f, bgRect.height * 0.5f, bgRect.width * 0.3f, bgRect.height * 0.9f);
-				AnchorPoint.AnchorPoint.SetAnchor(ref keyRect, AnchorPoint.Anchor.MiddleCenter);
-				GUI.Box(keyRect, "[" + key + "]", textSkin);
-
-				Rect keyTextRect = new Rect(bgRect.width * xOffset, bgRect.height * 0.5f, bgRect.width * 0.6f, bgRect.height * 0.9f);
-				AnchorPoint.AnchorPoint.SetAnchor(ref keyTextRect, AnchorPoint.Anchor.MiddleCenter);
-				GUI.Box(keyTextRect, keyText, textSkin);
-
-				GUI.EndGroup();
-			}
-		}
-
+	namespace GUIDepth {
 		public class GUIDepth {
 			public static int transitionDepth = 0;
 			public static int dialogueDepth = 1;

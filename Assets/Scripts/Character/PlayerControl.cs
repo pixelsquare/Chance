@@ -1,5 +1,4 @@
-﻿using GameUtilities.LayerManager;
-using GameUtilities.PlayerUtility;
+﻿using GameUtilities.PlayerUtility;
 using UnityEngine;
 
 public class PlayerControl : BasePlayer {
@@ -12,7 +11,21 @@ public class PlayerControl : BasePlayer {
 	[SerializeField]
 	private float rotationDegreePerSecond = 120f;
 	[SerializeField]
-	private Camera dialogueCamera;
+	private Transform keypressCameraInitialPos;
+	[SerializeField]
+	private Transform keypressPlayerT;
+	[SerializeField]
+	private Transform keypressNpcT;
+	[SerializeField]
+	private Transform danceOffCameraInitialPos;
+	[SerializeField]
+	private Transform danceOffCameraMainPos;
+	[SerializeField]
+	private Transform danceOffCameraNpcPos;
+	[SerializeField]
+	private Transform danceOffPlayerPos;
+	[SerializeField]
+	private Transform danceOffNpcPos;
 
 	# endregion Public Variables
 
@@ -20,13 +33,15 @@ public class PlayerControl : BasePlayer {
 
 	private float speed;
 	private float direction;
-	private bool enableControl;
-	private bool isGrounded;
+	private bool controlEnabled;
 
 	// Controls
 	private float horizontalInput;
 	private float verticalInput;
 	private float sprint;
+
+	private bool sprintLocked;
+	private float keyLockTime = -1f;
 
 	# endregion Private Variables
 
@@ -47,9 +62,44 @@ public class PlayerControl : BasePlayer {
 		get { return direction; }
 	}
 
-	public bool EnableControl {
-		get { return enableControl; }
-		set { enableControl = value; }
+	public bool ControlEnabled {
+		get { return controlEnabled; }
+		set {
+			controlEnabled = value;
+			enabled = value;
+		}
+	}
+
+	public Transform KeypressCameraInitialPos {
+		get { return keypressCameraInitialPos; }
+	}
+
+	public Transform KeypressPlayerT {
+		get { return keypressPlayerT; }
+	}
+
+	public Transform KeypressNpcT {
+		get { return keypressNpcT; }
+	}
+
+	public Transform DanceOffCameraInitialPos {
+		get { return danceOffCameraInitialPos; }
+	}
+
+	public Transform DanceOffCameraMainPos {
+		get { return danceOffCameraMainPos; }
+	}
+
+	public Transform DanceOffCameraNpcPos {
+		get { return danceOffCameraNpcPos; }
+	}
+
+	public Transform DanceOffPlayerPos {
+		get { return danceOffPlayerPos; }
+	}
+
+	public Transform DanceOffNpcPos {
+		get { return danceOffNpcPos; }
 	}
 	// --
 
@@ -68,8 +118,30 @@ public class PlayerControl : BasePlayer {
 				playerStateInfo = playerAnimator.GetCurrentAnimatorStateInfo(0);
 				horizontalInput = Input.GetAxis(PlayerUtility.Horizontal);
 				verticalInput = Input.GetAxis(PlayerUtility.Vertical);
-				sprint = Input.GetAxis(PlayerUtility.Sprint);
-				JoystickToWorldspace(transform, PlayerCamera.transform, ref direction, ref speed);
+				//sprint = Input.GetAxis(PlayerUtility.Sprint);
+				JoystickToWorldspace(transform, pCamera.transform, ref direction, ref speed);
+
+				if (Input.GetButtonDown(PlayerUtility.Vertical) && verticalInput > 0.1f) {
+					if (keyLockTime > 0) {
+						sprintLocked = true;
+						//sprint = 1f;
+					}
+					else {
+						keyLockTime = 0.5f;
+					}
+				}
+
+				if (keyLockTime > 0f) {
+					keyLockTime -= Time.deltaTime;
+				}
+
+				if (sprintLocked && Input.GetButtonUp(PlayerUtility.Vertical)) {
+					//sprint = 0f;
+					keyLockTime = 0f;
+					sprintLocked = false;
+				}
+
+				sprint = (sprintLocked) ? 1f : 0f;
 			}
 			else {
 				horizontalInput = 0f;
@@ -104,24 +176,15 @@ public class PlayerControl : BasePlayer {
 
 	protected override void Reset() {
 		base.Reset();
-		speed = 0f;
-		direction = 0f;
-		horizontalInput = 0f;
-		verticalInput = 0f;
-
 		_directionDampTime = directionDampTime;
 		_directionSpeed = directionSpeed;
 		_rotationDegreePerSecond = rotationDegreePerSecond;
-	}
 
-	public void SwitchToDialogueCamera() {
-		dialogueCamera.gameObject.SetActive(true);
-		pCamera.transform.position = dialogueCamera.transform.position;
-		pCamera.transform.rotation = dialogueCamera.transform.rotation;
-	}
-
-	public void EndDialogueCamera() {
-		dialogueCamera.gameObject.SetActive(false);
+		speed = 0f;
+		sprint = 0f;
+		direction = 0f;
+		horizontalInput = 0f;
+		controlEnabled = false;
 	}
 
 	private void JoystickToWorldspace(Transform root, Transform camera, ref float directionOut, ref float speedOut) {
@@ -143,6 +206,16 @@ public class PlayerControl : BasePlayer {
 	}
 
 	private bool CanMove() {
-		return enableControl && userInterface.InactiveUI();
+		return controlEnabled && UserInterface.InactiveUI();
 	}
+
+	//public void SwitchToDialogueCamera() {
+	//    dialogueCamera.gameObject.SetActive(true);
+	//    pCamera.transform.position = dialogueCamera.transform.position;
+	//    pCamera.transform.rotation = dialogueCamera.transform.rotation;
+	//}
+
+	//public void EndDialogueCamera() {
+	//    dialogueCamera.gameObject.SetActive(false);
+	//}
 }

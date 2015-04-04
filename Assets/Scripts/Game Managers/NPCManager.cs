@@ -1,32 +1,30 @@
-﻿using UnityEngine;
+﻿using NPC;
 using NPC.Database;
-using NPC;
+using UnityEngine;
 
 public class NPCManager : MonoBehaviour {
 	# region Public Variables
 
 	[SerializeField]
-	private Transform[] mainNpc;
-
+	private Transform[] npc;
 	[SerializeField]
-	private Transform[] wandererNpc;
+	private BoxCollider firstFloor;
+	[SerializeField]
+	private BoxCollider secondFloor;
 
 	# endregion Public Variables
 
 	// Public Properties
-	public Transform[] MainNpc {
-		get { return mainNpc; }
+	public Transform[] Npc{
+		get { return npc; }
 	}
 
-	public Transform[] WandererNpc {
-		get { return wandererNpc; }
+	public BoxCollider FirstFloor {
+		get { return firstFloor; }
 	}
 
-	public void EnableNpcs(bool enable) {
-		for (int i = 0; i < MainNpc.Length; i++) {
-			NPCInformation npcInformation = MainNpc[i].GetComponent<NPCInformation>();
-			npcInformation.NPCEnable = enable;
-		}
+	public BoxCollider SecondFloor {
+		get { return secondFloor; }
 	}
 	// --
 
@@ -36,16 +34,22 @@ public class NPCManager : MonoBehaviour {
 		current = this;
 	}
 
-	// Used to average like and dislike
-	public Statistics GetMainNpcAverageStatistics() {
+	public void EnableNpcs(bool enable) {
+		for (int i = 0; i < npc.Length; i++) {
+			NPCInformation npcInformation = npc[i].GetComponent<NPCInformation>();
+			npcInformation.ObjectEnabled = enable;
+		}
+	}
+
+	public Statistics GetNpcAverageStatistics() {
 		int count = 0;
-		Statistics[] tmpStat = new Statistics[mainNpc.Length];
-		for (int i = 0; i < mainNpc.Length; i++) {
-			if (mainNpc[i] != null) {
-				NPCInformation npcInformation = mainNpc[i].GetComponent<NPCInformation>();
+		Statistics[] tmpStat = new Statistics[npc.Length];
+		for (int i = 0; i < npc.Length; i++) {
+			if (npc[i] != null) {
+				NPCInformation npcInformation = npc[i].GetComponent<NPCInformation>();
 				// Add if npc has information
-				if (npcInformation.NpcNameID != NPCNameID.None) {
-					tmpStat[i] = NPCDatabase.GetNPC(npcInformation.NpcNameID).NpcStatistics;
+				if (npcInformation.BaseNpcData.NpcNameID != NPCNameID.None) {
+					tmpStat[i] = NPCDatabase.GetNpc(npcInformation.BaseNpcData.NpcNameID).NpcStatistics;
 					count++;
 				}
 			}
@@ -53,31 +57,31 @@ public class NPCManager : MonoBehaviour {
 		return Statistics.GetAverage(tmpStat, count);
 	}
 
-	public Transform GetMainNpc(NPCNameID nameID) {
-		for (int i = 0; i < mainNpc.Length; i++) {
-			NPCInformation npcInformation = mainNpc[i].GetComponent<NPCInformation>();
-			if (npcInformation.NpcNameID == nameID) {
-				return mainNpc[i];
+	public Transform GetNpc(NPCNameID nameID) {
+		for (int i = 0; i < npc.Length; i++) {
+			NPCInformation npcInformation = npc[i].GetComponent<NPCInformation>();
+			if (npcInformation.BaseNpcData.NpcNameID == nameID) {
+				return npc[i];
 			}
 		}
 		return null;
 	}
 
-	public NPCControl GetMainNpcControl(NPCNameID nameID) {
-		for (int i = 0; i < mainNpc.Length; i++) {
-			NPCControl npcControl = mainNpc[i].GetComponent<NPCControl>();
-			NPCInformation npcInformation = mainNpc[i].GetComponent<NPCInformation>();
-			if (npcControl != null && npcInformation.NpcNameID == nameID) {
+	public NPCControl GetNpcControl(NPCNameID nameID) {
+		for (int i = 0; i < npc.Length; i++) {
+			NPCControl npcControl = npc[i].GetComponent<NPCControl>();
+			NPCInformation npcInformation = npc[i].GetComponent<NPCInformation>();
+			if (npcControl != null && npcInformation.BaseNpcData.NpcNameID == nameID) {
 				return npcControl;
 			}
 		}
 		return null;
 	}
 
-	public NPCInformation GetMainNpcInformation(NPCNameID nameID) {
-		for (int i = 0; i < mainNpc.Length; i++) {
-			NPCInformation npcInformation = mainNpc[i].GetComponent<NPCInformation>();
-			if (npcInformation != null && npcInformation.NpcNameID == nameID) {
+	public NPCInformation GetNpcInformation(NPCNameID nameID) {
+		for (int i = 0; i < npc.Length; i++) {
+			NPCInformation npcInformation = npc[i].GetComponent<NPCInformation>();
+			if (npcInformation != null && npcInformation.BaseNpcData.NpcNameID == nameID) {
 				return npcInformation;
 			}
 		}

@@ -2,7 +2,7 @@
 
 namespace Item {
     public enum ItemNameID {
-        None, Chrome, Donut, FanfictionNotebook, StrawberryMilkshake, USB, GrassJellyMilkTea, GuitarPick, HotCoffee, Markers, OrangeJuice, WhiteEarphones, IcedTea, Headset, Milk
+        None, Chrome, Donut, FanfictionNotebook, StrawberryMilkshake, USB, GrassJellyMilkTea, Guitar, HotCoffee, Markers, OrangeJuice, WhiteEarphones, IcedTea, Headset, Milk
     };
 
 	namespace Database {
@@ -15,7 +15,7 @@ namespace Item {
 			public static void Initialize() {
                 itemDataInfoList[0] = new ItemData(
                     "Chrome of Enlightenment",
-                    TextureResource.IconDatabase.ChromeIcon,
+                    Resources.IconDatabase.ChromeIcon,
                     ItemNameID.Chrome,
                     "The Item that will enlighten your way.",
                     new Statistics(),
@@ -24,7 +24,7 @@ namespace Item {
 
                 itemDataInfoList[1] = new ItemData(
                     "Donut of OZ",
-                    TextureResource.IconDatabase.DonutIcon,
+                    Resources.IconDatabase.DonutIcon,
                     ItemNameID.Donut,
                     "The donut that came from the world of OZ.",
                     new Statistics(),
@@ -33,7 +33,7 @@ namespace Item {
 
                 itemDataInfoList[2] = new ItemData(
                     "Fanfiction Notebook",
-                    TextureResource.IconDatabase.IconPlaceholder,
+                    Resources.IconDatabase.FanfictionNotebookIcon,
                     ItemNameID.FanfictionNotebook,
                     "Where a certain person's imaginative secret lies...",
                     new Statistics(15, 0),
@@ -42,7 +42,7 @@ namespace Item {
 
                 itemDataInfoList[3] = new ItemData(
                     "Strawberry Milkshake",
-                    TextureResource.IconDatabase.IconPlaceholder,
+                    Resources.IconDatabase.StrawberryMilkshakeIcon,
                     ItemNameID.StrawberryMilkshake,
                     "Favored drink for a sweet tooth",
                     new Statistics(15, 0),
@@ -51,7 +51,7 @@ namespace Item {
 
                 itemDataInfoList[4] = new ItemData(
                     "USB",
-                    TextureResource.IconDatabase.IconPlaceholder,
+                    Resources.IconDatabase.USBIcon,
                     ItemNameID.USB,
                     "Someone's Life",
                     new Statistics(15, 0),
@@ -60,7 +60,7 @@ namespace Item {
 
                 itemDataInfoList[5] = new ItemData(
                     "Grass Jelly Milk Tea",
-                    TextureResource.IconDatabase.IconPlaceholder,
+                    Resources.IconDatabase.GrassJellyMilkteaIcon,
                     ItemNameID.GrassJellyMilkTea,
                     "Tea made from Grass",
                     new Statistics(15, 0),
@@ -68,17 +68,17 @@ namespace Item {
                 );
 
                 itemDataInfoList[6] = new ItemData(
-                    "Guitar Pick",
-                    TextureResource.IconDatabase.IconPlaceholder,
-                    ItemNameID.GuitarPick,
-                    "Nail and Finger Savior",
+                    "Guitar",
+                    Resources.IconDatabase.GuitarPickIcon,
+                    ItemNameID.Guitar,
+                    "The Sound of Muuuuusic~",
                     new Statistics(15, 0),
                     new Statistics(0, 10)
                 );
 
                 itemDataInfoList[7] = new ItemData(
                     "Hot Coffee",
-                    TextureResource.IconDatabase.IconPlaceholder,
+                    Resources.IconDatabase.HotCoffeeIcon,
                     ItemNameID.HotCoffee,
                     "If it's not Starbucks, then it's either Coffee Bean, Seattle's Best or Bo's Coffee. If it's not one of those, it's not coffee.",
                     new Statistics(15, 0),
@@ -87,7 +87,7 @@ namespace Item {
 
                 itemDataInfoList[8] = new ItemData(
                     "Markers",
-                    TextureResource.IconDatabase.IconPlaceholder,
+                    Resources.IconDatabase.MarkersIcon,
                     ItemNameID.Markers,
                     "Something that can make your world colorful",
                     new Statistics(15, 0),
@@ -96,7 +96,7 @@ namespace Item {
 
                 itemDataInfoList[9] = new ItemData(
                     "Orange Juice",
-                    TextureResource.IconDatabase.IconPlaceholder,
+                    Resources.IconDatabase.OrangeJuiceIcon,
                     ItemNameID.OrangeJuice,
                     "Drink perfect for meals",
                     new Statistics(15, 0),
@@ -105,7 +105,7 @@ namespace Item {
 
                 itemDataInfoList[10] = new ItemData(
                     "White Earphones",
-                    TextureResource.IconDatabase.IconPlaceholder,
+                    Resources.IconDatabase.WhiteEarphonesIcon,
                     ItemNameID.WhiteEarphones,
                     "It's either this or the headset. Take your pick.",
                     new Statistics(15, 0),
@@ -114,7 +114,7 @@ namespace Item {
 
                 itemDataInfoList[11] = new ItemData(
                     "Iced Tea",
-                    TextureResource.IconDatabase.IconPlaceholder,
+                    Resources.IconDatabase.IcedTeaIcon,
                     ItemNameID.IcedTea,
                     "Drink perfect during summer",
                     new Statistics(15, 0),
@@ -123,7 +123,7 @@ namespace Item {
 
                 itemDataInfoList[12] = new ItemData(
                     "Headset",
-                    TextureResource.IconDatabase.IconPlaceholder,
+                    Resources.IconDatabase.HeadphonesIcon,
                     ItemNameID.Headset,
                     "It's either this or the earphones. Take your pick.",
                     new Statistics(15, 0),
@@ -132,7 +132,7 @@ namespace Item {
 
                 itemDataInfoList[13] = new ItemData(
                     "Milk",
-                    TextureResource.IconDatabase.IconPlaceholder,
+                    Resources.IconDatabase.MilkIcon,
                     ItemNameID.Milk,
                     "Not for Lactose Intolerant",
                     new Statistics(15, 0),

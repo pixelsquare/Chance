@@ -1,12 +1,12 @@
 ﻿using System.Collections;
 using GameUtilities;
 using GameUtilities.AnchorPoint;
-using GameUtilities.GameGUI;
 using GameUtilities.PlayerUtility;
 using Item;
 using NPC;
 using NPC.Database;
 using UnityEngine;
+using Mission.Database;
 
 public class MainGameUI : MonoBehaviour {
 	# region Public Variables
@@ -17,13 +17,13 @@ public class MainGameUI : MonoBehaviour {
 	private GUISkin playerProfileSkin;
 	[SerializeField]
 	private GUISkin inventorySkin;
+    [SerializeField]
+    private GUISkin missionProgressSkin;
 
 	[SerializeField]
 	private GUISkin progressBarSkin;
 	[SerializeField]
 	private GUISkin tempSkin;
-	[SerializeField]
-	private Texture2D blackTexture;
 	[SerializeField]
 	private Vector2 inventorySize;
 
@@ -76,7 +76,7 @@ public class MainGameUI : MonoBehaviour {
 	// Hotkey Text
 	private bool showHotkeyText;
 	private float hotkeyTextAlpha;
-	private float hotkeyFadeDelay = 0.5f;
+	private float hotkeyFadeDelay = 0.2f;
 
 	private float likeAverage;
 	private float oldLikeAverage;
@@ -84,11 +84,17 @@ public class MainGameUI : MonoBehaviour {
 	// Camera Status Text
 	private string cameraStatus;
 
-	// Getting Item Indicator Text
-	private bool showInventoryIndicator;
-	private bool inventoryFull;
-	private float inventoryIndicatorAlpha;
-	private string inventoryIndicatorStr;
+	// Progress Window
+	private int completedMissions;
+	private int failedMissions;
+	private int miniGameCount;
+	private int charactersFound;
+
+	private float missionProgress;
+	private float missionProgressTime;
+
+	private string[] windowGeneralKeys = new string[4] { "[I] Inventory", "[C] Player Profile", "[X] Settings", "[ESC] Exit" };
+	private string[] givingItemKeys = new string[2] { "[Enter] Give Item", "[ESC] Cancel" };
 
 	private UserInterface userInterface;
 	private GameManager gameManager;
@@ -115,7 +121,6 @@ public class MainGameUI : MonoBehaviour {
 
 		userInterface.InventorySlotMax = (int)(inventorySize.x * inventorySize.y) - 1;
 		inventorySlot = new ItemData[userInterface.InventorySlotMax];
-		likeAverage = (float)npcManager.GetMainNpcAverageStatistics().Like / (float)Statistics.statMax;	
 	}
 
 	private void Update() {
@@ -127,23 +132,35 @@ public class MainGameUI : MonoBehaviour {
 			GameUtility.FitOnScreen(ref screenHeightRatio, ref oldScreenHeightRatio, ref mainRect);
 
 			// Keyboard function for Player Profile
-			if (Input.GetButtonDown(PlayerUtility.PlayerProfile) && (userInterface.InactiveUI() || userInterface.ShowPlayerProfile)) {
-				userInterface.ShowPlayerProfile = true;
+			if (Input.GetButtonDown(PlayerUtility.PlayerProfile) && (UserInterface.InactiveUI() || userInterface.ShowPlayerProfile)) {
 				selectedNpcIndx = 0;
 				selectedNpcAlphaTime = 0;
 				selectedNpc = new NPCData();
+				likeAverage = (float)npcManager.GetNpcAverageStatistics().Like / (float)Statistics.statMax;
+				ResetStatisticWindow();
+				HotkeyTextInit();
+				userInterface.ShowPlayerProfile = true;
+
+				//userInterface.ShowPlayerProfile = true;
+				//selectedNpcIndx = 0;
+				//selectedNpcAlphaTime = 0;
+				//selectedNpc = new NPCData();
 			}
 
 			// Keyboard function for Inventory
-			if (Input.GetButtonDown(PlayerUtility.Inventory) && (userInterface.InactiveUI() || userInterface.ShowInventory)) {
-				userInterface.ShowInventory = true;
+			if (Input.GetButtonDown(PlayerUtility.Inventory) && (UserInterface.InactiveUI() || userInterface.ShowInventory)) {
 				ResetInventoryWindow();
+				userInterface.ShowInventory = true;
+				
 			}
 
 			// Keyboard Function for Settings
-			//if (Input.GetButtonDown(PlayerUtility.Settings) && (userInterface.InactiveUI() || userInterface.ShowSettings)) {
-			//    userInterface.ShowSettings = true;
-			//}
+			if (Input.GetButtonDown(PlayerUtility.Settings) && (UserInterface.InactiveUI() || userInterface.ShowSettings)) {
+				InitializeProgressInfo();
+				userInterface.ShowSettings = true;
+			}
+
+			Time.timeScale = (userInterface.ShowSettings) ? 0f : 1f;
 
 			// Escape for windows
 			if (Input.GetButtonDown(PlayerUtility.ExitWindow)) {
@@ -247,7 +264,7 @@ public class MainGameUI : MonoBehaviour {
 					if (hasPickedItem) {
 						// Give an Item
 						NPCNameID npcName = playerInformation.InteractingTo;
-						NPCDatabase.GiveItemToNpc(npcName, selectedItem.ItemNameID, selectedItemGiveIndx);
+						NPCDatabase.GiveNpcItem(npcName, selectedItem.ItemNameID, selectedItemGiveIndx);
 
 						hoveredItemIndx = selectedItemGiveIndx;
 						hoveredItem = selectedItem;
@@ -294,157 +311,152 @@ public class MainGameUI : MonoBehaviour {
 					selectedNpcAlpha = Mathf.Lerp(1f, 0.1f, Mathf.PingPong(selectedNpcAlphaTime, 0.5f) / 0.5f);
 				}
 			}
+
+			if (userInterface.ShowSettings) {
+				missionProgressTime += Time.deltaTime;
+				missionProgress = Mathf.Lerp(0f, (float)completedMissions, missionProgressTime * 5f);
+			}
 		}
 	}
 
 	public void MainGUI(Event e) {
-		Rect playerInfoRect = new Rect(mainRect.width * 0.2f, mainRect.height * 0.08f, mainRect.height * 0.4f, mainRect.height * 0.16f);
-		AnchorPoint.SetAnchor(ref playerInfoRect, Anchor.MiddleCenter);
-		//GUI.Box(playerInfoRect, string.Empty);
+		if (UserInterface.InactiveUI()) {
+			Rect playerInfoRect = new Rect(mainRect.width * 0.2f, mainRect.height * 0.08f, mainRect.height * 0.4f, mainRect.height * 0.16f);
+			AnchorPoint.SetAnchor(ref playerInfoRect, Anchor.MiddleCenter);
+			//GUI.Box(playerInfoRect, string.Empty);
 
-		GUI.BeginGroup(playerInfoRect);
+			GUI.BeginGroup(playerInfoRect);
 
-		// Avatar BG
-		Rect playerAvatarRect = new Rect(playerInfoRect.width * 0.17f, playerInfoRect.height * 0.5f, playerInfoRect.width * 0.25f, playerInfoRect.height * 0.9f);
-		AnchorPoint.SetAnchor(ref playerAvatarRect, Anchor.MiddleCenter);
-		GUI.Box(playerAvatarRect, string.Empty, userInterfaceSkin.GetStyle("Player Avatar BG"));
+			// Avatar BG
+			Rect playerAvatarRect = new Rect(playerInfoRect.width * 0.17f, playerInfoRect.height * 0.5f, playerInfoRect.width * 0.25f, playerInfoRect.height * 0.9f);
+			AnchorPoint.SetAnchor(ref playerAvatarRect, Anchor.MiddleCenter);
+			GUI.Box(playerAvatarRect, string.Empty, userInterfaceSkin.GetStyle("Player Avatar BG"));
 
-		if (gameManager.BasePlayerData != null) {
-			if (gameManager.BasePlayerData.PlayerAvatar != null) {
-				GUI.BeginGroup(playerAvatarRect);
-				// Avatar
-				Rect playerAvatarFrameRect = new Rect(playerAvatarRect.width * 0.5f, playerAvatarRect.height * 0.5f, playerAvatarRect.width * 0.8f, playerAvatarRect.height * 0.8f);
-				AnchorPoint.SetAnchor(ref playerAvatarFrameRect, Anchor.MiddleCenter);
-				GUI.DrawTexture(playerAvatarFrameRect, gameManager.BasePlayerData.PlayerAvatar);
-				GUI.EndGroup();
+			if (gameManager.BasePlayerData != null) {
+				if (gameManager.BasePlayerData.PlayerAvatar != null) {
+					GUI.BeginGroup(playerAvatarRect);
+					// Avatar
+					Rect playerAvatarFrameRect = new Rect(playerAvatarRect.width * 0.6f, playerAvatarRect.height * 0.55f, playerAvatarRect.width * 0.55f, playerAvatarRect.height * 0.45f);
+					AnchorPoint.SetAnchor(ref playerAvatarFrameRect, Anchor.MiddleCenter);
+					GUI.DrawTexture(playerAvatarFrameRect, gameManager.BasePlayerData.PlayerAvatar);
+					GUI.EndGroup();
+				}
+
+				// Name BG
+				Rect nameRect = new Rect(playerInfoRect.width * 0.25f, playerInfoRect.height * 0.8f, playerInfoRect.width * 0.35f, playerInfoRect.height * 0.2f);
+				AnchorPoint.SetAnchor(ref nameRect, Anchor.MiddleCenter);
+				GUI.Box(nameRect, string.Empty, userInterfaceSkin.GetStyle("Player Name BG"));
+
+				// Name
+				Rect nameFrameRect = new Rect(playerInfoRect.width * 0.25f, playerInfoRect.height * 0.8f, playerInfoRect.width * 0.4f, playerInfoRect.height * 0.3f);
+				AnchorPoint.SetAnchor(ref nameFrameRect, Anchor.MiddleCenter);
+				GUI.Box(nameFrameRect, gameManager.BasePlayerData.PlayerName, userInterfaceSkin.GetStyle("Player Name"));
 			}
 
-			// Name BG
-			Rect nameRect = new Rect(playerInfoRect.width * 0.25f, playerInfoRect.height * 0.8f, playerInfoRect.width * 0.5f, playerInfoRect.height * 0.35f);
-			AnchorPoint.SetAnchor(ref nameRect, Anchor.MiddleCenter);
-			GUI.Box(nameRect, string.Empty, userInterfaceSkin.GetStyle("Player Name BG"));
+			# region Player Information Button
+			Rect statsRect = new Rect(playerInfoRect.width * 0.3f, playerInfoRect.height * 0.2f, mainRect.width * 0.03f, mainRect.height * 0.03f);
+			AnchorPoint.SetAnchor(ref statsRect, Anchor.MiddleCenter);
+			GUI.Box(statsRect, string.Empty, userInterfaceSkin.GetStyle("Player Profile Btn"));
 
-			// Name
-			Rect nameFrameRect = new Rect(playerInfoRect.width * 0.25f, playerInfoRect.height * 0.8f, playerInfoRect.width * 0.4f, playerInfoRect.height * 0.3f);
-			AnchorPoint.SetAnchor(ref nameFrameRect, Anchor.MiddleCenter);
-			GUI.Box(nameFrameRect, gameManager.BasePlayerData.PlayerName, userInterfaceSkin.GetStyle("Player Name"));
-		}
-
-		# region Player Information Button
-		Rect statsRect = new Rect(playerInfoRect.width * 0.3f, playerInfoRect.height * 0.2f, mainRect.width * 0.03f, mainRect.height * 0.03f);
-		AnchorPoint.SetAnchor(ref statsRect, Anchor.MiddleCenter);
-		GUI.Box(statsRect, string.Empty, userInterfaceSkin.GetStyle("Player Profile Btn"));
-
-		if (statsRect.Contains(e.mousePosition) && userInterface.InactiveUI()) {
-			if (e.button == 0 && e.type == EventType.mouseUp) {
-				selectedNpcIndx = 0;
-				selectedNpcAlphaTime = 0;
-				selectedNpc = new NPCData();
-				likeAverage = (float)npcManager.GetMainNpcAverageStatistics().Like / (float)Statistics.statMax;
-				userInterface.ShowPlayerProfile = true;
-				ResetHovers();
-				ResetStatisticWindow();
-				HotkeyTextInit();
+			if (statsRect.Contains(e.mousePosition) && UserInterface.InactiveUI()) {
+				if (e.button == 0 && e.type == EventType.mouseUp) {
+					selectedNpcIndx = 0;
+					selectedNpcAlphaTime = 0;
+					selectedNpc = new NPCData();
+					likeAverage = (float)npcManager.GetNpcAverageStatistics().Like / (float)Statistics.statMax;
+					userInterface.ShowPlayerProfile = true;
+					ResetHovers();
+					ResetStatisticWindow();
+					HotkeyTextInit();
+				}
 			}
-		}
-		# endregion Player Information Button
+			# endregion Player Information Button
 
-		# region Inventory Button
-		Rect inventoryRect = new Rect(playerInfoRect.width * 0.3f, playerInfoRect.height * 0.4f, mainRect.width * 0.03f, mainRect.height * 0.03f);
-		AnchorPoint.SetAnchor(ref inventoryRect, Anchor.MiddleCenter);
-		GUI.Box(inventoryRect, string.Empty, userInterfaceSkin.GetStyle("Player Inventory"));
+			# region Inventory Button
+			Rect inventoryRect = new Rect(playerInfoRect.width * 0.3f, playerInfoRect.height * 0.4f, mainRect.width * 0.03f, mainRect.height * 0.03f);
+			AnchorPoint.SetAnchor(ref inventoryRect, Anchor.MiddleCenter);
+			GUI.Box(inventoryRect, string.Empty, userInterfaceSkin.GetStyle("Player Inventory"));
 
-		if (inventoryRect.Contains(e.mousePosition) && userInterface.InactiveUI()) {
-			if (e.button == 0 && e.type == EventType.mouseUp) {
-				userInterface.ShowInventory = true;
-				ResetHovers();
-				ResetInventoryWindow();
-				HotkeyTextInit();
+			if (inventoryRect.Contains(e.mousePosition) && UserInterface.InactiveUI()) {
+				if (e.button == 0 && e.type == EventType.mouseUp) {
+					userInterface.ShowInventory = true;
+					ResetHovers();
+					ResetInventoryWindow();
+					HotkeyTextInit();
+				}
 			}
-		}
-		# endregion Inventory Button
+			# endregion Inventory Button
 
-		# region Settings Button
-		Rect settingsRect = new Rect(playerInfoRect.width * 0.3f, playerInfoRect.height * 0.6f, mainRect.width * 0.03f, mainRect.height * 0.03f);
-		AnchorPoint.SetAnchor(ref settingsRect, Anchor.MiddleCenter);
-		GUI.Box(settingsRect, string.Empty, userInterfaceSkin.GetStyle("Player Settings"));
+			# region Settings Button
+			Rect settingsRect = new Rect(playerInfoRect.width * 0.3f, playerInfoRect.height * 0.6f, mainRect.width * 0.03f, mainRect.height * 0.03f);
+			AnchorPoint.SetAnchor(ref settingsRect, Anchor.MiddleCenter);
+			GUI.Box(settingsRect, string.Empty, userInterfaceSkin.GetStyle("Player Settings"));
 
-		//if (settingsRect.Contains(e.mousePosition) && userInterface.InactiveUI()) {
-		//    if (e.button == 0 && e.type == EventType.mouseUp) {
-		//        userInterface.ShowSettings = true;
-		//        ResetHovers();
-		//        ResetSettingsWindow();
-		//        HotkeyTextInit();
-		//    }
-		//}
-		# endregion Settings Button
+			if (settingsRect.Contains(e.mousePosition) && UserInterface.InactiveUI()) {
+				if (e.button == 0 && e.type == EventType.mouseUp) {
+					userInterface.ShowSettings = true;
+					ResetHovers();
+					ResetSettingsWindow();
+					HotkeyTextInit();
+					InitializeProgressInfo();
+				}
+			}
+			# endregion Settings Button
 
-		if (userInterface.InactiveUI()) {
+
 			showHoveredStats = statsRect.Contains(e.mousePosition);
 			showHoveredInventory = inventoryRect.Contains(e.mousePosition);
 			showHoveredSettings = settingsRect.Contains(e.mousePosition);
-		}
 
-		GUI.EndGroup();
+			GUI.EndGroup();
 
-		// Makes the button hover in full scale
+			// Makes the button hover in full scale
 
-		if (showHoveredStats && !showHoveredInventory && !showHoveredSettings) {
-			Rect statsTooltipRect = new Rect(e.mousePosition.x + 10f, e.mousePosition.y, mainRect.width * 0.12f, mainRect.height * 0.025f);
-			AnchorPoint.SetAnchor(ref statsTooltipRect, Anchor.TopLeft);
-			GUI.Box(statsTooltipRect, "Player Statistics", tempSkin.GetStyle("Block"));
-		}
-
-		if (showHoveredInventory && !showHoveredStats && !showHoveredSettings) {
-			Rect inventoryTooltipRect = new Rect(e.mousePosition.x + 10f, e.mousePosition.y, mainRect.width * 0.1f, mainRect.height * 0.025f);
-			AnchorPoint.SetAnchor(ref inventoryTooltipRect, Anchor.TopLeft);
-			GUI.Box(inventoryTooltipRect, "Inventory", tempSkin.GetStyle("Block"));
-		}
-
-		if (showHoveredSettings && !showHoveredStats && !showHoveredInventory) {
-			Rect settingsTooltipRect = new Rect(e.mousePosition.x + 10f, e.mousePosition.y, mainRect.width * 0.07f, mainRect.height * 0.025f);
-			AnchorPoint.SetAnchor(ref settingsTooltipRect, Anchor.TopLeft);
-			GUI.Box(settingsTooltipRect, "Settings", tempSkin.GetStyle("Block"));
-		}
-
-		if (playerInformation != null) {
-			if (playerInformation.PlayerCamera.CameraState == CameraState.Behind) {
-				cameraStatus = "Camera: Locked";
+			if (showHoveredStats && !showHoveredInventory && !showHoveredSettings) {
+				Rect statsTooltipRect = new Rect(e.mousePosition.x + 10f, e.mousePosition.y, mainRect.width * 0.12f, mainRect.height * 0.025f);
+				AnchorPoint.SetAnchor(ref statsTooltipRect, Anchor.TopLeft);
+				GUI.Box(statsTooltipRect, "Player Statistics", tempSkin.GetStyle("Block"));
 			}
-			else if (playerInformation.PlayerCamera.CameraState == CameraState.OrbitFollow) {
-				cameraStatus = "Camera: Free";
-			}
-			else if (playerInformation.PlayerCamera.CameraState == CameraState.FirstPerson) {
-				cameraStatus = "Camera: FPV";
-			}
-		}
 
-		Rect cameraStatusRect = new Rect(mainRect.width * 0.07f, mainRect.height * 0.6f, mainRect.width * 0.15f, mainRect.height * 0.03f);
-		AnchorPoint.SetAnchor(ref cameraStatusRect, Anchor.MiddleCenter);
-		GUI.Box(cameraStatusRect, cameraStatus, userInterfaceSkin.GetStyle("Player Camera Text"));
+			if (showHoveredInventory && !showHoveredStats && !showHoveredSettings) {
+				Rect inventoryTooltipRect = new Rect(e.mousePosition.x + 10f, e.mousePosition.y, mainRect.width * 0.1f, mainRect.height * 0.025f);
+				AnchorPoint.SetAnchor(ref inventoryTooltipRect, Anchor.TopLeft);
+				GUI.Box(inventoryTooltipRect, "Inventory", tempSkin.GetStyle("Block"));
+			}
 
-		GUI.BeginGroup(mainRect);
-		if (showInventoryIndicator) {
-			guiOriginalColor = GUI.color;
-			GUI.color = new Color(1f, 1f, 1f, inventoryIndicatorAlpha);
-			Rect inventoryFullText = new Rect(mainRect.width * 0.5f, mainRect.height * 0.8f, mainRect.width * 0.3f, mainRect.height * 0.3f);
-			AnchorPoint.SetAnchor(ref inventoryFullText, Anchor.MiddleCenter);
-			if (inventoryFull) {
-				GUI.Box(inventoryFullText, inventoryIndicatorStr, userInterfaceSkin.GetStyle("Player Inventory Full"));
+			if (showHoveredSettings && !showHoveredStats && !showHoveredInventory) {
+				Rect settingsTooltipRect = new Rect(e.mousePosition.x + 10f, e.mousePosition.y, mainRect.width * 0.07f, mainRect.height * 0.025f);
+				AnchorPoint.SetAnchor(ref settingsTooltipRect, Anchor.TopLeft);
+				GUI.Box(settingsTooltipRect, "Settings", tempSkin.GetStyle("Block"));
 			}
-			else {
-				GUI.Box(inventoryFullText, inventoryIndicatorStr, userInterfaceSkin.GetStyle("Player Inventory Almost Full"));
+
+			if (playerInformation != null) {
+				if (playerInformation.PlayerCamera.CameraState == CameraState.Behind) {
+					cameraStatus = "Locked";
+				}
+				else if (playerInformation.PlayerCamera.CameraState == CameraState.OrbitFollow) {
+					cameraStatus = "Free";
+				}
+				else if (playerInformation.PlayerCamera.CameraState == CameraState.FirstPerson) {
+					cameraStatus = "FPV";
+				}
 			}
-			GUI.color = guiOriginalColor;
+
+			Rect cameraTextRect = new Rect(Screen.width * 0.1f, Screen.height * 0.95f, Screen.width * 0.3f, Screen.height * 0.1f * screenHeightRatio);
+			AnchorPoint.SetAnchor(ref cameraTextRect, Anchor.MiddleCenter);
+			GUI.Box(cameraTextRect, "[Q] Camera:", userInterfaceSkin.GetStyle("Player Camera Text"));
+
+			Rect cameraStatusRect = new Rect(Screen.width * 0.025f, Screen.height * 0.95f, Screen.width * 0.3f, Screen.height * 0.1f * screenHeightRatio);
+			AnchorPoint.SetAnchor(ref cameraStatusRect, Anchor.MiddleLeft);
+			GUI.Box(cameraStatusRect, cameraStatus, userInterfaceSkin.GetStyle("Player Camera Text"));
 		}
-		GUI.EndGroup();
 	}
 
 	public void PlayerProfileWindow(Event e) {
 		GUI.BeginGroup(mainRect);
 		guiOriginalColor = GUI.color;
 		GUI.color = textureColor;
-		GUI.DrawTexture(mainRect, blackTexture);
+		GUI.DrawTexture(mainRect, Resources.BlackTexture);
 		GUI.color = guiOriginalColor;
 
 		// Character Stat Background
@@ -470,7 +482,7 @@ public class MainGameUI : MonoBehaviour {
 		if (gameManager.BasePlayerData.PlayerAvatar != null) {
 			// Character Avatar
 			GUI.BeginGroup(charAvatarBgRect);
-			Rect charAvatarRect = new Rect(charAvatarBgRect.width * 0.5f, charAvatarBgRect.height * 0.5f, charAvatarBgRect.width * 0.9f, charAvatarBgRect.height * 0.9f);
+			Rect charAvatarRect = new Rect(charAvatarBgRect.width * 0.5f, charAvatarBgRect.height * 0.58f, charAvatarBgRect.width * 0.55f, charAvatarBgRect.height * 0.8f);
 			AnchorPoint.SetAnchor(ref charAvatarRect, Anchor.MiddleCenter);
 			GUI.DrawTexture(charAvatarRect, gameManager.BasePlayerData.PlayerAvatar);
 			GUI.EndGroup();
@@ -501,7 +513,7 @@ public class MainGameUI : MonoBehaviour {
 		// Art
 		Rect artRect = new Rect(statLRect.width * 0.5f, statLRect.height * 0.3f, statLRect.width * 0.88f, statLRect.height * 0.1f);
 		AnchorPoint.SetAnchor(ref artRect, Anchor.MiddleCenter);
-		GameGUI.ProgressBar(
+		UserInterface.ProgressBar(
 			"Art",
 			(float)gameManager.BasePlayerData.PlayerStatistics.Art,
 			(float)Statistics.statMax,
@@ -513,7 +525,7 @@ public class MainGameUI : MonoBehaviour {
 		// Programming
 		Rect progRect = new Rect(statLRect.width * 0.5f, statLRect.height * 0.44f, statLRect.width * 0.88f, statLRect.height * 0.1f);
 		AnchorPoint.SetAnchor(ref progRect, Anchor.MiddleCenter);
-		GameGUI.ProgressBar(
+		UserInterface.ProgressBar(
 			"Programming",
 			(float)gameManager.BasePlayerData.PlayerStatistics.Programming,
 			(float)Statistics.statMax,
@@ -525,7 +537,7 @@ public class MainGameUI : MonoBehaviour {
 		// Design
 		Rect designRect = new Rect(statLRect.width * 0.5f, statLRect.height * 0.58f, statLRect.width * 0.88f, statLRect.height * 0.1f);
 		AnchorPoint.SetAnchor(ref designRect, Anchor.MiddleCenter);
-		GameGUI.ProgressBar(
+		UserInterface.ProgressBar(
 			"Design",
 			(float)gameManager.BasePlayerData.PlayerStatistics.Design,
 			(float)Statistics.statMax,
@@ -537,7 +549,7 @@ public class MainGameUI : MonoBehaviour {
 		// Sound
 		Rect soundRect = new Rect(statLRect.width * 0.5f, statLRect.height * 0.72f, statLRect.width * 0.88f, statLRect.height * 0.1f);
 		AnchorPoint.SetAnchor(ref soundRect, Anchor.MiddleCenter);
-		GameGUI.ProgressBar(
+		UserInterface.ProgressBar(
 			"Sound",
 			(float)gameManager.BasePlayerData.PlayerStatistics.Sound,
 			(float)Statistics.statMax,
@@ -549,8 +561,8 @@ public class MainGameUI : MonoBehaviour {
 		// Like / Dislike
 		Rect likeDislikeRect = new Rect(statLRect.width * 0.5f, statLRect.height * 0.86f, statLRect.width * 0.88f, statLRect.height * 0.1f);
 		AnchorPoint.SetAnchor(ref likeDislikeRect, Anchor.MiddleCenter);
-		GameGUI.SliderBox(
-			"Avg. Society Like",
+		UserInterface.SliderBox(
+			"Overall Like",
 			likeAverage,
 			likeDislikeRect,
 			progressBarSkin.GetStyle("Progress Bar Overlay"),
@@ -657,7 +669,7 @@ public class MainGameUI : MonoBehaviour {
 		if (playerInformation.GetNpcCount() > 0) {
 			Rect npcTitle = new Rect(rightPanel.width * 0.5f, rightPanel.height * 0.08f, rightPanel.width * 0.9f, rightPanel.height * 0.1f);
 			AnchorPoint.SetAnchor(ref npcTitle, Anchor.MiddleCenter);
-			GUI.Box(npcTitle, "Character Information", playerProfileSkin.GetStyle("Profile Npc Info Title"));
+			GUI.Box(npcTitle, string.Empty, playerProfileSkin.GetStyle("Profile Npc Info Title"));
 		}
 
 		if (selectedNpc != null && selectedNpc.NpcAvatar != null) {
@@ -666,7 +678,7 @@ public class MainGameUI : MonoBehaviour {
 			GUI.Box(npcAvatarBg, string.Empty, playerProfileSkin.GetStyle("Profile Npc Info Avatar Bg"));
 
 			GUI.BeginGroup(npcAvatarBg);
-			Rect npcAvatar = new Rect(npcAvatarBg.width * 0.5f, npcAvatarBg.height * 0.5f, npcAvatarBg.width * 0.4f, npcAvatarBg.height * 0.4f * screenHeightRatio);
+			Rect npcAvatar = new Rect(npcAvatarBg.width * 0.5f, npcAvatarBg.height * 0.5f, npcAvatarBg.width * 0.45f, npcAvatarBg.height * 0.6f * screenHeightRatio);
 			AnchorPoint.SetAnchor(ref npcAvatar, Anchor.MiddleCenter);
 			GUI.DrawTexture(npcAvatar, selectedNpc.NpcAvatar);
 			//GUI.Box(npcAvatar, string.Empty);
@@ -699,7 +711,7 @@ public class MainGameUI : MonoBehaviour {
 			// Art
 			Rect npcArtRect = new Rect(statLRect.width * 0.5f, statLRect.height * 0.3f, statLRect.width * 0.88f, statLRect.height * 0.1f);
 			AnchorPoint.SetAnchor(ref npcArtRect, Anchor.MiddleCenter);
-			GameGUI.ProgressBar(
+			UserInterface.ProgressBar(
 				"Art",
 				(float)selectedNpc.NpcStatistics.Art,
 				(float)Statistics.statMax,
@@ -711,7 +723,7 @@ public class MainGameUI : MonoBehaviour {
 			// Programming
 			Rect npcProgRect = new Rect(statLRect.width * 0.5f, statLRect.height * 0.44f, statLRect.width * 0.88f, statLRect.height * 0.1f);
 			AnchorPoint.SetAnchor(ref npcProgRect, Anchor.MiddleCenter);
-			GameGUI.ProgressBar(
+			UserInterface.ProgressBar(
 				"Programming",
 				(float)selectedNpc.NpcStatistics.Programming,
 				(float)Statistics.statMax,
@@ -723,7 +735,7 @@ public class MainGameUI : MonoBehaviour {
 			// Design
 			Rect npcDesignRect = new Rect(statLRect.width * 0.5f, statLRect.height * 0.58f, statLRect.width * 0.88f, statLRect.height * 0.1f);
 			AnchorPoint.SetAnchor(ref npcDesignRect, Anchor.MiddleCenter);
-			GameGUI.ProgressBar(
+			UserInterface.ProgressBar(
 				"Design",
 				(float)selectedNpc.NpcStatistics.Design,
 				(float)Statistics.statMax,
@@ -735,7 +747,7 @@ public class MainGameUI : MonoBehaviour {
 			// Sound
 			Rect npcSoundRect = new Rect(statLRect.width * 0.5f, statLRect.height * 0.72f, statLRect.width * 0.88f, statLRect.height * 0.1f);
 			AnchorPoint.SetAnchor(ref npcSoundRect, Anchor.MiddleCenter);
-			GameGUI.ProgressBar(
+			UserInterface.ProgressBar(
 				"Sound",
 				(float)selectedNpc.NpcStatistics.Sound,
 				(float)Statistics.statMax,
@@ -747,7 +759,7 @@ public class MainGameUI : MonoBehaviour {
 			// Like / Dislike
 			Rect npcLikeDislikeRect = new Rect(statLRect.width * 0.5f, statLRect.height * 0.86f, statLRect.width * 0.88f, statLRect.height * 0.1f);
 			AnchorPoint.SetAnchor(ref npcLikeDislikeRect, Anchor.MiddleCenter);
-			GameGUI.SliderBox(
+			UserInterface.SliderBox(
 				"Like / Dislike",
 				(float)selectedNpc.NpcStatistics.Like / (float)Statistics.statMax,
 				npcLikeDislikeRect,
@@ -789,7 +801,7 @@ public class MainGameUI : MonoBehaviour {
 		guiOriginalColor = GUI.color;
 		GUI.color = textureColor;
 		// Dialogue Backdrop
-		GUI.DrawTexture(mainRect, blackTexture);
+		GUI.DrawTexture(mainRect, Resources.BlackTexture);
 		GUI.color = guiOriginalColor;
 
 		Rect inventoryBGRect = new Rect(mainRect.width * 0.5f, mainRect.height * 0.45f, mainRect.width * 0.4f, mainRect.height * 0.4f);
@@ -950,7 +962,7 @@ public class MainGameUI : MonoBehaviour {
 		# region Exit
 		Rect exitRect = new Rect(inventoryBGRect.width * 0.9f, inventoryBGRect.height * 0.1f, mainRect.width * 0.03f, Screen.height * 0.03f * screenHeightRatio);
 		AnchorPoint.SetAnchor(ref exitRect, Anchor.MiddleCenter);
-		GUI.Box(exitRect, "X", inventorySkin.GetStyle("Inventory Exit Button"));
+		GUI.Box(exitRect, string.Empty, inventorySkin.GetStyle("Inventory Exit Button"));
 
 		if (exitRect.Contains(e.mousePosition)) {
 			if (e.button == 0 && e.type == EventType.mouseUp) {
@@ -1030,24 +1042,6 @@ public class MainGameUI : MonoBehaviour {
 				showHotkeyText = true;
 			}
 		}
-
-		Rect textRect = new Rect(Screen.width * 0.5f, Screen.height * 0.96f, Screen.width * 0.9f, Screen.height * 0.1f * screenHeightRatio);
-		AnchorPoint.SetAnchor(ref textRect, Anchor.MiddleCenter);
-		//GUI.Box(textRect, string.Empty);
-
-		GUI.BeginGroup(textRect);
-
-		if (userInterface.ShowInventory || (userInterface.GivingItem && !hasPickedItem)) {
-			Rect keyMouseRect = new Rect(textRect.width * 0.53f, textRect.height * 0.15f, textRect.width * 0.65f, textRect.height * 0.25f);
-			AnchorPoint.SetAnchor(ref keyMouseRect, Anchor.MiddleCenter);
-			GameGUI.HotkeyBox(keyMouseRect, 0.37f, "WASD", "Hover Item", tempSkin.GetStyle("Text"));
-
-			Rect inventoryKeyText = new Rect(textRect.width * 0.775f, textRect.height * 0.15f, textRect.width * 0.65f, textRect.height * 0.25f);
-			AnchorPoint.SetAnchor(ref inventoryKeyText, Anchor.MiddleCenter);
-			GameGUI.HotkeyBox(inventoryKeyText, 0.35f, "Enter", "Select Item", tempSkin.GetStyle("Text"));
-		}
-
-		GUI.EndGroup();
 	}
 
 	public void SettingsWindow(Event e) {
@@ -1059,25 +1053,112 @@ public class MainGameUI : MonoBehaviour {
 		GUI.DrawTexture(mainRect, tempSkin.GetStyle("Black BG").normal.background);
 		GUI.color = guiOriginalColor;
 
+		Rect pauseText = new Rect(mainRect.width * 0.5f, mainRect.height * 0.25f, mainRect.width * 0.4f, mainRect.height * 0.1f);
+		AnchorPoint.SetAnchor(ref pauseText, Anchor.MiddleCenter);
+        GUI.DrawTexture(pauseText, userInterfaceSkin.GetStyle("Pause Texture").normal.background);
+        //GUI.Box(pauseText, "PAUSED", tempSkin.GetStyle("Text"));
+
 		Rect settingsBGRect = new Rect(mainRect.width * 0.5f, mainRect.height * 0.5f, mainRect.width * 0.4f, mainRect.height * 0.3f);
 		AnchorPoint.SetAnchor(ref settingsBGRect, Anchor.MiddleCenter);
-		GUI.Box(settingsBGRect, string.Empty, tempSkin.GetStyle("Block"));
+        GUI.Box(settingsBGRect, string.Empty, missionProgressSkin.GetStyle("Mission Progress BG"));
 
 		GUI.BeginGroup(settingsBGRect);
 
-		# region Exit
-		Rect exitRect = new Rect(settingsBGRect.width * 0.95f, settingsBGRect.height * 0.05f, mainRect.width * 0.02f, Screen.height * 0.02f * screenHeightRatio);
-		AnchorPoint.SetAnchor(ref exitRect, Anchor.MiddleCenter);
-		GUI.Box(exitRect, "X", tempSkin.GetStyle("Button"));
+        //Rect missionTitle = new Rect(settingsBGRect.width * 0.5f, settingsBGRect.height * 0.15f, settingsBGRect.width * 0.9f, settingsBGRect.height * 0.1f);
+        //AnchorPoint.SetAnchor(ref missionTitle, Anchor.MiddleCenter);
+        //GUI.Box(missionTitle, "MISSION PROGRESS", tempSkin.GetStyle("Text"));
 
-		if (exitRect.Contains(e.mousePosition)) {
-			if (e.button == 0 && e.type == EventType.mouseUp) {
-				userInterface.ShowSettings = false;
-				ResetSettingsWindow();
-				HotkeyTextEnd();
-			}
-		}
-		# endregion Exit
+		Rect progressInfo = new Rect(settingsBGRect.width * 0.5f, settingsBGRect.height * 0.5f, settingsBGRect.width * 0.9f, settingsBGRect.height * 0.8f);
+		AnchorPoint.SetAnchor(ref progressInfo, Anchor.MiddleCenter);
+		GUI.Box(progressInfo, string.Empty, missionProgressSkin.GetStyle("Mission Progress Box"));
+
+		GUI.BeginGroup(progressInfo);
+
+            Rect missionProgressRect = new Rect(progressInfo.width * 0.5f, progressInfo.height * 0.2f, progressInfo.width * 0.9f, progressInfo.height * 0.1f);
+            AnchorPoint.SetAnchor(ref missionProgressRect, Anchor.MiddleCenter);
+            UserInterface.ProgressBar(
+                string.Empty,
+                missionProgress,
+                (float)MissionDatabase.MissionDataList.Length,
+                missionProgressRect,
+                progressBarSkin.GetStyle("Progress Bar BG"),
+                progressBarSkin.GetStyle("Progress Bar Overlay"));
+
+            Rect flagRect = new Rect(progressInfo.width * 0.9f, progressInfo.height * 0.2f, progressInfo.width * 0.15f, progressInfo.height * 0.15f);
+            AnchorPoint.SetAnchor(ref flagRect, Anchor.MiddleCenter);
+            GUI.DrawTexture(flagRect, missionProgressSkin.GetStyle("Mission Progress Flag").normal.background);
+
+            Rect informationRect = new Rect(progressInfo.width * 0.5f, progressInfo.height * 0.5f, progressInfo.width * 0.9f, progressInfo.height * 0.5f);
+            AnchorPoint.SetAnchor(ref informationRect, Anchor.MiddleCenter);
+            //GUI.Box(informationRect, string.Empty);
+
+            GUI.BeginGroup(informationRect);
+            Rect missionCompletedRect = new Rect(informationRect.width * 0.5f, informationRect.height * 0.2f, informationRect.width * 0.9f, informationRect.height * 0.15f);
+			AnchorPoint.SetAnchor(ref missionCompletedRect, Anchor.MiddleCenter);
+			GUI.Box(missionCompletedRect, "Missions Completed: " + completedMissions, tempSkin.GetStyle("Text1"));
+
+            Rect missionFailedRect = new Rect(informationRect.width * 0.5f, informationRect.height * 0.4f, informationRect.width * 0.9f, informationRect.height * 0.15f);
+			AnchorPoint.SetAnchor(ref missionFailedRect, Anchor.MiddleCenter);
+			GUI.Box(missionFailedRect, "Missions Failed: " + failedMissions, tempSkin.GetStyle("Text1"));
+
+            Rect miniGamesRect = new Rect(informationRect.width * 0.5f, informationRect.height * 0.6f, informationRect.width * 0.9f, informationRect.height * 0.15f);
+			AnchorPoint.SetAnchor(ref miniGamesRect, Anchor.MiddleCenter);
+			GUI.Box(miniGamesRect, "Mini Games Played: " + miniGameCount, tempSkin.GetStyle("Text1"));
+
+            Rect charactersFoundRect = new Rect(informationRect.width * 0.5f, informationRect.height * 0.8f, informationRect.width * 0.9f, informationRect.height * 0.15f);
+			AnchorPoint.SetAnchor(ref charactersFoundRect, Anchor.MiddleCenter);
+			GUI.Box(charactersFoundRect, "Characters Found: " + charactersFound, tempSkin.GetStyle("Text1"));
+            GUI.EndGroup();
+
+            Rect buttonsRect = new Rect(progressInfo.width * 0.5f, progressInfo.height * 0.85f, progressInfo.width * 0.9f, progressInfo.height * 0.15f);
+            AnchorPoint.SetAnchor(ref buttonsRect, Anchor.MiddleCenter);
+
+            GUI.BeginGroup(buttonsRect);
+            Rect endBtn = new Rect(buttonsRect.width * 0.25f, buttonsRect.height * 0.5f, buttonsRect.width * 0.3f, buttonsRect.height * 0.9f);
+            AnchorPoint.SetAnchor(ref endBtn, Anchor.MiddleCenter);
+            GUI.Box(endBtn, string.Empty, missionProgressSkin.GetStyle("Mission Progress End Btn"));
+
+            if (endBtn.Contains(e.mousePosition))
+            {
+                if (e.button == 0 && e.type == EventType.mouseUp)
+                {
+                    userInterface.ShowSettings = false;
+                    ResetSettingsWindow();
+                    HotkeyTextEnd();
+                    Application.Quit();
+                }
+            }
+
+            Rect cancelBtn = new Rect(buttonsRect.width * 0.75f, buttonsRect.height * 0.5f, buttonsRect.width * 0.3f, buttonsRect.height * 0.9f);
+            AnchorPoint.SetAnchor(ref cancelBtn, Anchor.MiddleCenter);
+            GUI.Box(cancelBtn, string.Empty, missionProgressSkin.GetStyle("Mission Progress Cancel Btn"));
+
+            if (cancelBtn.Contains(e.mousePosition))
+            {
+                if (e.button == 0 && e.type == EventType.mouseUp)
+                {
+                    userInterface.ShowSettings = false;
+                    ResetSettingsWindow();
+                    HotkeyTextEnd();
+                }
+            }
+
+            GUI.EndGroup();
+		GUI.EndGroup();
+
+		//# region Exit
+		//Rect exitRect = new Rect(settingsBGRect.width * 0.95f, settingsBGRect.height * 0.05f, mainRect.width * 0.02f, Screen.height * 0.02f * screenHeightRatio);
+		//AnchorPoint.SetAnchor(ref exitRect, Anchor.MiddleCenter);
+		//GUI.Box(exitRect, "X", tempSkin.GetStyle("Button"));
+
+		//if (exitRect.Contains(e.mousePosition)) {
+		//    if (e.button == 0 && e.type == EventType.mouseUp) {
+		//        userInterface.ShowSettings = false;
+		//        ResetSettingsWindow();
+		//        HotkeyTextEnd();
+		//    }
+		//}
+		//# endregion Exit
 
 		GUI.EndGroup();
 
@@ -1102,19 +1183,10 @@ public class MainGameUI : MonoBehaviour {
 		if (submitRect.Contains(e.mousePosition)) {
 			if (e.button == 0 && e.type == EventType.mouseUp) {
 				NPCNameID npcName = playerInformation.InteractingTo;
-				NPCDatabase.GiveItemToNpc(npcName, selectedItem.ItemNameID, selectedItemGiveIndx);
+				NPCDatabase.GiveNpcItem(npcName, selectedItem.ItemNameID, selectedItemGiveIndx);
 			}
 		}
 
-		GUI.EndGroup();
-
-		Rect textRect = new Rect(mainRect.width * 0.5f, mainRect.height * 0.78f, mainRect.width * 0.5f, mainRect.height * 0.05f);
-		AnchorPoint.SetAnchor(ref textRect, Anchor.MiddleCenter);
-
-		GUI.BeginGroup(textRect);
-		Rect giveItemTextRect = new Rect(textRect.width * 0.55f, textRect.height * 0.5f, textRect.width * 0.5f, textRect.height * 0.9f);
-		AnchorPoint.SetAnchor(ref giveItemTextRect, Anchor.MiddleCenter);
-		GameGUI.HotkeyBox(giveItemTextRect, 0.52f, "Enter", "Give Item", tempSkin.GetStyle("Text"));
 		GUI.EndGroup();
 
 		GUI.EndGroup();
@@ -1132,7 +1204,8 @@ public class MainGameUI : MonoBehaviour {
 		// NPC Avatar
 		Rect avatarRect = new Rect(avatarBgRect.width * 0.5f, avatarBgRect.height * 0.5f, avatarBgRect.width * 0.6f, avatarBgRect.height * 0.6f);
 		AnchorPoint.SetAnchor(ref avatarRect, Anchor.MiddleCenter);
-		GUI.Box(avatarRect, avatar, playerProfileSkin.GetStyle("Profile Friend Avatar"));
+        GUI.DrawTexture(avatarRect, avatar);
+        //GUI.Box(avatarRect, avatar, playerProfileSkin.GetStyle("Profile Friend Avatar"));
 		GUI.EndGroup();
 
 		// NPC Name BG
@@ -1148,36 +1221,75 @@ public class MainGameUI : MonoBehaviour {
 		GUI.EndGroup();
 	}
 
+	private void InitializeProgressInfo() {
+		completedMissions = gameManager.BasePlayerData.MissionsCompleted;
+		missionProgress = completedMissions;
+		failedMissions = gameManager.BasePlayerData.MissionsFailed;
+		miniGameCount = gameManager.BasePlayerData.MiniGamesPlayed;
+		charactersFound = playerInformation.NpcFound.Length;
+		missionProgressTime = 0f;
+	}
+
 	public void HotKeyText() {
+		Rect keyText = new Rect();
+		Rect textRect = new Rect(Screen.width * 0.5f, Screen.height * 0.9f, Screen.width, Screen.height * 0.1f * screenHeightRatio);
+		AnchorPoint.SetAnchor(ref textRect, Anchor.MiddleCenter);
+
 		if (showHotkeyText) {
 			guiOriginalColor = GUI.color;
 			GUI.color = new Color(1f, 1f, 1f, hotkeyTextAlpha);
 
-			Rect textRect = new Rect(Screen.width * 0.5f, Screen.height * 0.94f, Screen.width * 0.8f, Screen.height * 0.1f * screenHeightRatio);
+			GUI.BeginGroup(textRect);
+			for (int i = 0; i < windowGeneralKeys.Length; i++) {
+				keyText = new Rect((textRect.width * 0.2f) * i + (textRect.width * 0.2f), textRect.height * 0.5f, textRect.width * 0.2f, textRect.height);
+				AnchorPoint.SetAnchor(ref keyText, Anchor.MiddleCenter);
+				GUI.Box(keyText, windowGeneralKeys[i], tempSkin.GetStyle("Text"));
+			}
+			GUI.EndGroup();
+
+			textRect = new Rect(Screen.width * 0.5f, Screen.height * 0.85f, Screen.width, Screen.height * 0.1f * screenHeightRatio);
 			AnchorPoint.SetAnchor(ref textRect, Anchor.MiddleCenter);
-			//GUI.Box(textRect, string.Empty);
 
 			GUI.BeginGroup(textRect);
-			Rect inventoryTextRect = new Rect(textRect.width * 0.25f, textRect.height * 0.5f, textRect.width * 0.35f, textRect.height * 0.25f);
-			AnchorPoint.SetAnchor(ref inventoryTextRect, Anchor.MiddleCenter);
-			GameGUI.HotkeyBox(inventoryTextRect, 0.4f, "I", "Inventory", tempSkin.GetStyle("Text"));
-
-			Rect playerProfileKeyRect = new Rect(textRect.width * 0.475f, textRect.height * 0.5f, textRect.width * 0.5f, textRect.height * 0.25f);
-			AnchorPoint.SetAnchor(ref playerProfileKeyRect, Anchor.MiddleCenter);
-			GameGUI.HotkeyBox(playerProfileKeyRect, 0.4f, "C", "Player Profile", tempSkin.GetStyle("Text"));
-
-			Rect settingsTextRect = new Rect(textRect.width * 0.675f, textRect.height * 0.5f, textRect.width * 0.35f, textRect.height * 0.25f);
-			AnchorPoint.SetAnchor(ref settingsTextRect, Anchor.MiddleCenter);
-			GameGUI.HotkeyBox(settingsTextRect, 0.4f, "X", "Settings", tempSkin.GetStyle("Text"));
-
-			Rect exitTextRect = new Rect(textRect.width * 0.825f, textRect.height * 0.5f, textRect.width * 0.26f, textRect.height * 0.25f);
-			AnchorPoint.SetAnchor(ref exitTextRect, Anchor.MiddleCenter);
-			GameGUI.HotkeyBox(exitTextRect, 0.48f, "Esc", "Cancel", tempSkin.GetStyle("Text"));
-
+			if (userInterface.ShowInventory) {
+				keyText = new Rect(textRect.width * 0.5f, textRect.height * 0.5f, textRect.width * 0.25f, textRect.height);
+				AnchorPoint.SetAnchor(ref keyText, Anchor.MiddleCenter);
+				if (!hasPickedItem) {
+					GUI.Box(keyText, "[Enter] Select Item", tempSkin.GetStyle("Text"));
+				}
+				else {
+					GUI.Box(keyText, "[Enter] Swap Item", tempSkin.GetStyle("Text"));
+				}
+			}
 			GUI.EndGroup();
 
 			GUI.color = guiOriginalColor;
 		}
+
+		textRect = new Rect(Screen.width * 0.5f, Screen.height * 0.85f, Screen.width, Screen.height * 0.1f * screenHeightRatio);
+		AnchorPoint.SetAnchor(ref textRect, Anchor.MiddleCenter);
+
+		guiOriginalColor = GUI.color;
+		GUI.color = new Color(1f, 1f, 1f, hotkeyTextAlpha);
+
+		GUI.BeginGroup(textRect);
+		if (userInterface.GivingItem) {
+			if (!hasPickedItem) {
+				keyText = new Rect(textRect.width * 0.5f, textRect.height * 0.5f, textRect.width * 0.5f, textRect.height * 0.9f);
+				AnchorPoint.SetAnchor(ref keyText, Anchor.MiddleCenter);
+				GUI.Box(keyText, "[Enter] Select Item", tempSkin.GetStyle("Text"));
+			}
+			else {
+				for (int i = 0; i < givingItemKeys.Length; i++) {
+					keyText = new Rect((textRect.width * 0.2f) * i + (textRect.width * 0.4f), textRect.height * 0.8f, textRect.width * 0.2f, textRect.height);
+					AnchorPoint.SetAnchor(ref keyText, Anchor.MiddleCenter);
+					GUI.Box(keyText, givingItemKeys[i], tempSkin.GetStyle("Text"));
+				}
+			}
+		}
+		GUI.EndGroup();
+
+		GUI.color = guiOriginalColor;
 	}
 
 	public void HotkeyTextInit() {
@@ -1197,11 +1309,11 @@ public class MainGameUI : MonoBehaviour {
 		float time = 0f;
 		while (hotkeyTextAlpha > 0f) {
 			time += Time.deltaTime;
-			hotkeyTextAlpha = Mathf.Lerp(hotkeyTextAlpha, -0.1f, time);
+			hotkeyTextAlpha = Mathf.Lerp(hotkeyTextAlpha, -0.1f, Mathf.PingPong(time, 1f) / 1f);
 			yield return null;
 		}
-		showHotkeyText = false;
 		hotkeyTextAlpha = 0f;
+		showHotkeyText = false;
 	}
 
 	private Rect GetInventorySlotRect(int x, int y, Rect inventoryRect) {
@@ -1224,27 +1336,6 @@ public class MainGameUI : MonoBehaviour {
 		ItemData previousItem = playerInformation.Inventory[previousIndx];
 		playerInformation.Inventory[previousIndx] = playerInformation.Inventory[curIndx];
 		playerInformation.Inventory[curIndx] = previousItem;
-	}
-
-	public void RunInventoryFullIndicator(string indicatorString) {
-		inventoryFull = playerInformation.IsInventoryFull();
-		inventoryIndicatorStr = indicatorString;
-		inventoryIndicatorAlpha = 1f;
-		showInventoryIndicator = true;
-		StopCoroutine("InventoryFullIndicator");
-		StartCoroutine("InventoryFullIndicator");
-	}
-
-	private IEnumerator InventoryFullIndicator() {
-		yield return new WaitForSeconds(1f);
-		float time = 0;
-		while (time < 0.5f) {
-			time += Time.deltaTime;
-			inventoryIndicatorAlpha = Mathf.Lerp(1f, 0f, Mathf.PingPong(time, 0.5f) / 0.5f);
-			yield return null;
-		}
-
-		showInventoryIndicator = false;
 	}
 
 	private void ResetHovers() {
