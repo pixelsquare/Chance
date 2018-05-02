@@ -45,7 +45,7 @@ public class NPCControl : BaseNPC {
 	private Vector3 randPoint;
 	private BoxCollider firstFloor;
 	private BoxCollider secondFloor;
-	private NavMeshAgent navAgent;
+	private UnityEngine.AI.NavMeshAgent navAgent;
 
 	private int randomLocationIndx;
 	private bool newDirection;
@@ -82,7 +82,7 @@ public class NPCControl : BaseNPC {
 	                                                           
 	protected override void Start() {                  
 		base.Start();
-		navAgent = GetComponent<NavMeshAgent>(); 
+		navAgent = GetComponent<UnityEngine.AI.NavMeshAgent>(); 
 	}
 	              
 	protected override void Update() {

@@ -6,7 +6,7 @@ public class BaseCamera : MonoBehaviour {
 		get { return cameraEnabled; }
 		set {
 			cameraEnabled = value;
-			camera.enabled = value;
+			GetComponent<Camera>().enabled = value;
 			enabled = value;
 			gameObject.SetActive(value);
 		}

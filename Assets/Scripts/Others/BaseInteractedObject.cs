@@ -50,10 +50,10 @@ public class BaseInteractedObject : MonoBehaviour {
 		get { return ojbectEnabled; }
 		set { 
 			ojbectEnabled = value;
-			collider.enabled = value;
+			GetComponent<Collider>().enabled = value;
 
-			if (renderer != null) {
-				renderer.enabled = value;
+			if (GetComponent<Renderer>() != null) {
+				GetComponent<Renderer>().enabled = value;
 			}
 
 			enabled = value;
@@ -80,16 +80,16 @@ public class BaseInteractedObject : MonoBehaviour {
 		distanceToPlayer = 0f;
 		angleToPlayer = 0f;
 
-		if (renderer != null) {
+		if (GetComponent<Renderer>() != null) {
 			//normalMaterial = renderer.material;
 			//currentMaterialColor = renderer.material.color;
 			//originalMaterialColor = currentMaterialColor;
 
-			normalShaders = new Shader[renderer.materials.Length];
-			originalColors = new Color[renderer.materials.Length];
-			for (int i = 0; i < renderer.materials.Length; i++) {
-				normalShaders[i] = renderer.materials[i].shader;
-				originalColors[i] = renderer.materials[i].color;
+			normalShaders = new Shader[GetComponent<Renderer>().materials.Length];
+			originalColors = new Color[GetComponent<Renderer>().materials.Length];
+			for (int i = 0; i < GetComponent<Renderer>().materials.Length; i++) {
+				normalShaders[i] = GetComponent<Renderer>().materials[i].shader;
+				originalColors[i] = GetComponent<Renderer>().materials[i].color;
 			}
 
 			//if (hoveredMaterial != null) {
@@ -114,7 +114,7 @@ public class BaseInteractedObject : MonoBehaviour {
 				playerInformation = gameManager.BasePlayerData.PlayerInformation;
 			}
 
-			if (renderer != null) {
+			if (GetComponent<Renderer>() != null) {
 				//// Change the material when hovered
 				//renderer.material = (objectTooltipEnabled && hoveredMaterial != null) ? hoveredMaterial : normalMaterial;
 
@@ -122,15 +122,15 @@ public class BaseInteractedObject : MonoBehaviour {
 				//currentMaterialColor = Color.Lerp(originalMaterialColor, Color.gray, Mathf.PingPong(Time.time, 1f) / 1f);
 				//renderer.material.color = currentMaterialColor;
 
-				for (int i = 0; i < renderer.materials.Length; i++) {
+				for (int i = 0; i < GetComponent<Renderer>().materials.Length; i++) {
 					if (objectTooltipEnabled && hoveredMaterial != null) {
-						renderer.materials[i].shader = hoveredMaterial.shader;
+						GetComponent<Renderer>().materials[i].shader = hoveredMaterial.shader;
 					}
 					else {
-						renderer.materials[i].shader = normalShaders[i];
+						GetComponent<Renderer>().materials[i].shader = normalShaders[i];
 					}
 
-					renderer.materials[i].color = Color.Lerp(originalColors[i], Color.gray, Mathf.PingPong(Time.time, 1f) / 1f);
+					GetComponent<Renderer>().materials[i].color = Color.Lerp(originalColors[i], Color.gray, Mathf.PingPong(Time.time, 1f) / 1f);
 				}
 			}
 
@@ -171,14 +171,14 @@ public class BaseInteractedObject : MonoBehaviour {
 		distanceToPlayer = 0f;
 		angleToPlayer = 0f;
 
-		if (renderer != null) {
+		if (GetComponent<Renderer>() != null) {
 			//renderer.material = normalMaterial;
 			//currentMaterialColor = renderer.material.color;
 			//originalMaterialColor = currentMaterialColor;
 
-			for (int i = 0; i < renderer.materials.Length; i++) {
-				renderer.materials[i].shader = normalShaders[i];
-				renderer.materials[i].color = originalColors[i];
+			for (int i = 0; i < GetComponent<Renderer>().materials.Length; i++) {
+				GetComponent<Renderer>().materials[i].shader = normalShaders[i];
+				GetComponent<Renderer>().materials[i].color = originalColors[i];
 			}
 		}
 	}

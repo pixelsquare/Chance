@@ -103,7 +103,7 @@ public class PlayerInformation : MonoBehaviour {
 	}
 
 	private void SetPlayerInformationActive(bool active) {
-		collider.enabled = active;
+		GetComponent<Collider>().enabled = active;
 		playerControl.PlayerAnimator.enabled = active;
 		playerControl.ControlEnabled = active;
 		playerCamera.CameraEnabled = active;

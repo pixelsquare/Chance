@@ -206,7 +206,7 @@ public class GameManager : MonoBehaviour {
 		gameStory.RunCutscene(GameStoryEnd);
 		InitializeGame();
 
-		mainCamera.camera.enabled = false;
+		mainCamera.GetComponent<Camera>().enabled = false;
 		roamingCamera.CameraEnabled = false;
 		mainCamera.CameraEnabled = false;
 		//EnableMainCamera = true;
@@ -271,7 +271,7 @@ public class GameManager : MonoBehaviour {
 		basePlayerData.PlayerInformation.PlayerEnabled = false;
 		basePlayerData = new PlayerData();
 
-		mainCamera.camera.enabled = false;
+		mainCamera.GetComponent<Camera>().enabled = false;
 		roamingCamera.CameraEnabled = false;
 		mainCamera.CameraEnabled = false;
 	}

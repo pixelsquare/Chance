@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(NPCInformation))]
-[RequireComponent(typeof(NavMesh))]
+[RequireComponent(typeof(UnityEngine.AI.NavMesh))]
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(CapsuleCollider))]
 

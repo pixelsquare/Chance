@@ -33,42 +33,42 @@ namespace GameUtilities {
 		// Recursively look for renderers in a gameobject to enable or disable
 		public static void SetRendererActiveRecursively(Transform root, bool active) {
 			foreach (Transform obj in root) {
-				if (obj.renderer != null) {
-					obj.renderer.enabled = active;
+				if (obj.GetComponent<Renderer>() != null) {
+					obj.GetComponent<Renderer>().enabled = active;
 				}
 				SetRendererActiveRecursively(obj, active);
 			}
 
-			if (root.renderer != null) {
-				root.renderer.enabled = active;
+			if (root.GetComponent<Renderer>() != null) {
+				root.GetComponent<Renderer>().enabled = active;
 			}
 		}
 
 		// Recursively change the material of an object
 		public static void SetRendererMaterialRecursively(Transform root, Material material) {
 			foreach (Transform obj in root) {
-				if (obj.renderer != null && obj.renderer.material != null) {
-					obj.renderer.material = material;
+				if (obj.GetComponent<Renderer>() != null && obj.GetComponent<Renderer>().material != null) {
+					obj.GetComponent<Renderer>().material = material;
 				}
 				SetRendererMaterialRecursively(obj, material);
 			}
 
-			if (root.renderer != null && root.renderer.material != null) {
-				root.renderer.material = material;
+			if (root.GetComponent<Renderer>() != null && root.GetComponent<Renderer>().material != null) {
+				root.GetComponent<Renderer>().material = material;
 			}
 		}
 
 		// Recursively change the color of the material
 		public static void SetRendererMaterialColorRecursively(Transform root, Color color) {
 			foreach (Transform obj in root) {
-				if (obj.renderer != null && obj.renderer.material != null) {
-					obj.renderer.material.color = color;
+				if (obj.GetComponent<Renderer>() != null && obj.GetComponent<Renderer>().material != null) {
+					obj.GetComponent<Renderer>().material.color = color;
 				}
 				SetRendererMaterialColorRecursively(obj, color);
 			}
 
-			if (root.renderer != null && root.renderer.material != null) {
-				root.renderer.material.color = color;
+			if (root.GetComponent<Renderer>() != null && root.GetComponent<Renderer>().material != null) {
+				root.GetComponent<Renderer>().material.color = color;
 			}
 		}
 
